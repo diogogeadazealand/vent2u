@@ -18,8 +18,8 @@ import { Component } from '@angular/core'
         <div class="presets">
             Presets
             <ul class="expanded-menu">
-                <li>Item 1</li>
-                <li>Item 2</li>
+                <li><span>23#176;C</span>Item 1</li>
+                <li><span>53%</span>Item 2</li>
                 <li>Item 3</li>
             </ul>
         </div>

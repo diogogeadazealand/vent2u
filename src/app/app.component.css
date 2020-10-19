@@ -18,7 +18,8 @@ header {
     background-color: #222;
     color: white;
     padding: 20px 0;
-    text-align: center;
+    text-align: left;
+    padding-left: 25px;
 }
 
 footer {
@@ -34,6 +35,16 @@ footer nav ul {
     justify-content: space-around;
     list-style: none;
     height: 100%;
+    align-items: center;
+}
+
+footer nav ul li {
+    font-size: 11px;
+}
+
+footer nav ul li span {
+    font-size: 20px;
+    display: block;
 }
 
 dashboard-main {

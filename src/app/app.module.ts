@@ -8,6 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Main Dashboard --TEMPERATURE--
 import { DashboardMain } from './main/main.component';
 
+// Material Design
+
 @NgModule({
   declarations: [
     AppComponent,
