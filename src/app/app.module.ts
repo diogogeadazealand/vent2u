@@ -5,9 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// Main Dashboard --TEMPERATURE--
+import { DashboardMain } from './main/main.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardMain
   ],
   imports: [
     BrowserModule,
