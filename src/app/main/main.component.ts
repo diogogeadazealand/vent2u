@@ -16,12 +16,24 @@ import { Component } from '@angular/core'
         </div>
         <!-- Presets -->
         <div class="presets">
-            Presets
-            <ul class="expanded-menu">
-                <li><span>23#176;C</span>Item 1</li>
-                <li><span>53%</span>Item 2</li>
-                <li>Item 3</li>
-            </ul>
+            <div class="presets-menu">
+                <button mat-button [matMenuTriggerFor]="presets">Presets</button>
+                <mat-menu #presets="matMenu">
+                    <button mat-menu-item>
+                        <mat-icon>dialpad</mat-icon>
+                        <span>Item 1</span>
+                    </button>
+                    <button mat-menu-item disabled>
+                        <mat-icon>voicemail</mat-icon>
+                        <span>Iitem 2</span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>notifications_off</mat-icon>
+                        <span>Item 3</span>
+                    </button>
+                </mat-menu>
+            </div>
+            <button mat-button>Save</button>
         </div>
     `,
 
