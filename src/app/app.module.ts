@@ -15,6 +15,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
+// Modules
+import {DashboardModule} from './dashboard/dashboard.module';
+
+
 
 
 @NgModule({
@@ -22,6 +26,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     AppComponent,
     DashboardMain,
     Login
+
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatMenuModule,
     MatIconModule,
     MatToolbarModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
