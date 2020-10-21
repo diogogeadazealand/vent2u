@@ -13,13 +13,13 @@
 
 /* Placeholder */
 
-mat-toolbar-row {
+mat-toolbar {
+    justify-content: space-between;
     width: 100%;
     background-color: #222;
     color: white;
-    padding: 20px 0;
+    padding: 20px 25px;
     text-align: left;
-    padding-left: 25px;
 }
 
 footer {
@@ -53,4 +53,10 @@ footer nav ul li span {
 
 dashboard-main {
     padding: 0 30px;
+}
+#logo{
+  font-size: 22pt;
+}
+#username{
+  font-size: 13pt;
 }
