@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import $ from 'jquery';
+import * as $ from 'jquery';
 window.jQuery = $;
 import 'round-slider';
 

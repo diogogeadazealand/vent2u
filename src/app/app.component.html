@@ -2,16 +2,22 @@
     <mat-toolbar-row>
         <span>Header</span>
     </mat-toolbar-row>
-  <app-temp-control></app-temp-control>
-  <login></login>
+
+<!--  Page Output-->
+  <router-outlet></router-outlet>
+
+
+<!--  <app-temp-control></app-temp-control>-->
+<!--  <login></login>-->
     <!-- <dashboard-main></dashboard-main> -->
     <footer>
         <nav>
             <ul>
-                <li><span>23&#176;C</span>Temp</li>
-                <li><span>53%</span>Humidity</li>
+              <li><a routerLink="Dashboard"><span>23&#176;C</span>Temp</a></li>
+              <li><a routerLink="**"><span>53%</span>Humidity</a></li>
                 <li>
-                    <span><mat-icon>settings</mat-icon></span>Settings</li>
+                  <a routerLink=""><span> <mat-icon>#</mat-icon> </span>Settings</a>
+                </li>
             </ul>
         </nav>
     </footer>

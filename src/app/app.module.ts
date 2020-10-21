@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { PageNotFoundComponent } from './notfound.component';
+
 // Main Dashboard --TEMPERATURE--
 import { DashboardMain } from './main/main.component';
 import { Login } from './login/login.component';
@@ -25,7 +27,8 @@ import {DashboardModule} from './dashboard/dashboard.module';
   declarations: [
     AppComponent,
     DashboardMain,
-    Login
+    Login,
+    PageNotFoundComponent
 
   ],
   imports: [
