@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { WeatherService } from '../temperature.service';
 
 @Component({
-    selector: '<outside-temperature>',
+    selector: 'outside-temperature',
     template: `
     <div class="outside-temp">
         <span *ngIf="isLoading">Getting data...</span>

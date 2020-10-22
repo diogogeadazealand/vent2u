@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 
 @Component({
-    selector: '<app-temperature>',
+    selector: 'app-temperature',
     templateUrl: './temperature.component.html',
     styleUrls: ['./temperature.component.css']
 })
