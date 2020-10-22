@@ -13,6 +13,7 @@ import {MatSliderModule} from '@angular/material/slider';
 import { Temperature } from './temperature.component';
 import { DashboardSlider } from './Slider/slider.component';
 import { Presets } from './Presets/presets.component';
+import { OTempModule } from './OutsideTemp/otemp.module';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { Presets } from './Presets/presets.component';
     FormsModule,
     MatSelectModule,
     MatIconModule,
-    MatSliderModule
+    MatSliderModule,
+    OTempModule
   ]
 })
 export class DashboardTemperature { }
