@@ -24,21 +24,3 @@ h2 {
     text-align: center;
     padding: 5px 0;
 }
-
-.presets button {
-    border: 1px dotted #000;
-}
-
-.presets {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-column-gap: 30px;
-    margin-top: 60px;
-}
-
-button.mat-menu-trigger {
-    width: 100%;
-    padding: 10px 0;
-    text-align: center;
-    background-color: transparent;
-}
