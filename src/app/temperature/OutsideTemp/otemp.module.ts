@@ -3,16 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { OTempComponent } from './otemp.component';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
-
 import { WeatherService } from '../temperature.service';
 
-
 @NgModule({
-  declarations: [
-      
-    ],
-  exports: [
-  ],
+  declarations: [],
+  exports: [],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -21,4 +16,4 @@ import { WeatherService } from '../temperature.service';
   providers: [WeatherService],
   bootstrap: [OTempComponent]
 })
-export class OTempModule { }
+export class OTempModule {}
