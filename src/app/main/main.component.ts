@@ -5,6 +5,18 @@ import { Component } from '@angular/core'
     template: `
         <!-- Temperature Counter -->
         <input class="temperature-counter" type="number" value="22" />
+        <app-circular-slider 
+    [progress]='progress' 
+    [total]='100' 
+    [startingAngle]='15' 
+    [endingAngle]='345' 
+    [grooveColor]="'#68696A'" 
+    [grooveWidth]='6' [progressWidth]='4' 
+    [backgroundColor]="'#333333'" 
+    [handleWidth]='1.5'
+    [progressColor]="'#33B5E5'" 
+    (onProgressChanged)='setprogress($event)'>
+</app-circular-slider>
         <!-- Outside/Inside Temperature -->
         <div class="outside-inside-temp">
             <div class="outside-temp">

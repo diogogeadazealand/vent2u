@@ -15,7 +15,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
-
+// Custom Inputs
+import { CircularSliderModule } from 'angular-circular-slider';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatMenuModule,
     MatIconModule,
     MatToolbarModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    CircularSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

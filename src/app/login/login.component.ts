@@ -1,13 +1,19 @@
 import { Component } from '@angular/core'
 
+// Modules
+import { CircularSliderModule } from 'angular-circular-slider';
+
 @Component({
     selector: '<login>',
     template: `
-    <mat-form-field appearance="outline">
-        <mat-label>Type in your username</mat-label>
-        <input matInput placeholder="Username">
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Legacy form field</mat-label>
+      <input matInput placeholder="Placeholder">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint>Hint</mat-hint>
     </mat-form-field>
+  </p>
     `,
 
     styleUrls: ['./login.component.css'],
