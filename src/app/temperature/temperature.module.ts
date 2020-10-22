@@ -6,15 +6,18 @@ import { FormsModule } from '@angular/forms';
 // Material Design
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSliderModule} from '@angular/material/slider';
+
 
 // Custom Components
 import { Temperature } from './temperature.component';
-
+import { DashboardSlider } from './Slider/slider.component';
 
 
 @NgModule({
   declarations: [
-    Temperature
+    Temperature,
+    DashboardSlider
     ],
   exports: [
   ],
@@ -23,6 +26,7 @@ import { Temperature } from './temperature.component';
     FormsModule,
     MatMenuModule,
     MatIconModule,
+    MatSliderModule
   ]
 })
 export class DashboardTemperature { }

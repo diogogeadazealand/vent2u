@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import { DashboardSlider } from './Slider/slider.component';
 
 @Component({
     selector: '<app-temperature>',
