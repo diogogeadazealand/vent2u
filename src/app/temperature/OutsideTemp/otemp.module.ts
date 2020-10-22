@@ -1,20 +1,24 @@
   
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { OTemp } from './otemp.component';
-import { HttpClientModule } from '@angular/common/http';
+import { OTempComponent } from './otemp.component';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+
+import { WeatherService } from '../temperature.service';
 
 
 @NgModule({
   declarations: [
-        OTemp
+      
     ],
   exports: [
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    HttpClientJsonpModule
   ],
-  bootstrap: [OTemp]
+  providers: [WeatherService],
+  bootstrap: [OTempComponent]
 })
 export class OTempModule { }

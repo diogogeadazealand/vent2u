@@ -1,15 +1,29 @@
 import { Component } from '@angular/core';
-import { OTempService } from './otemp.service';
+import { WeatherService } from '../temperature.service';
 
 @Component({
     selector: '<outside-temperature>',
-    templateUrl: './otemp.component.html',
+    template: `
+    <div class="outside-temp">
+        <span *ngIf="isLoading">Getting data...</span>
+        <span *ngIf="!isLoading">Outside {{ temperature }}&#176;C</span>
+    </div>`,
     styleUrls: ['./otemp.component.css'],
-    providers: [OTempService]
+    providers: [WeatherService]
 })
-export class OTemp {
-    constructor(private _otempService: OTempService) {
-        this._otempService.getOTempData()
-        .subscribe(data => console.log(data));
+export class OTempComponent {
+    temperature = 0;
+    isLoading = true;
+    constructor(private _otempService: WeatherService) {
+    }
+    
+    ngOnInit() {
+        this._otempService.getData()
+        .subscribe(data => {
+            this.isLoading = false;
+            let weather = data;
+            // We get information in Kelvin, we substract here to get Celsius
+            this.temperature = weather['main'].temp - 273.15;
+        })
     }
 } 

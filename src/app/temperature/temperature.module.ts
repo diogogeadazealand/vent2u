@@ -13,6 +13,7 @@ import {MatSliderModule} from '@angular/material/slider';
 import { Temperature } from './temperature.component';
 import { DashboardSlider } from './Slider/slider.component';
 import { Presets } from './Presets/presets.component';
+import { OTempComponent } from './OutsideTemp/otemp.component';
 import { OTempModule } from './OutsideTemp/otemp.module';
 
 
@@ -20,7 +21,8 @@ import { OTempModule } from './OutsideTemp/otemp.module';
   declarations: [
     Temperature,
     DashboardSlider,
-    Presets
+    Presets,
+    OTempComponent
     ],
   exports: [
   ],
