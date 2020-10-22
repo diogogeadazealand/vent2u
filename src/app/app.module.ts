@@ -12,11 +12,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 
-
-
 // Custom Views
 import { PageNotFoundComponent } from './notfound.component';
-import { DefaultComponent } from './default.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 // auth
 import { AuthModule } from './auth/auth.module';
@@ -26,11 +24,11 @@ import { DashboardTemperature } from './main/temperature.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent,
-    DefaultComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +41,8 @@ import {MatButtonModule} from '@angular/material/button';
     DashboardTemperature,
     ReactiveFormsModule,
     AuthModule,
-    MatButtonModule
+    MatButtonModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
