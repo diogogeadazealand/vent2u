@@ -13,14 +13,17 @@ import { MatMenuModule } from '@angular/material/menu';
 
 // Custom Views
 import { PageNotFoundComponent } from './notfound.component';
+import { DefaultComponent } from './default.component';
 
 // Modules
 import { DashboardTemperature } from './main/temperature.module';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DefaultComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,7 @@ import { DashboardTemperature } from './main/temperature.module';
     MatIconModule,
     MatToolbarModule,
     MatFormFieldModule,
+    LoginModule,
     DashboardTemperature
   ],
   providers: [],

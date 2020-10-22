@@ -1,21 +1,34 @@
-import { Component } from '@angular/core'
-
+import { Component } from '@angular/core';
+import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PasswordValidator } from './passwordValidator';
+import { AuthService } from './login.service';
 
 @Component({
-    selector: '<login>',
-    template: `
-    <p>
-    <mat-form-field appearance="legacy">
-      <mat-label>Legacy form field</mat-label>
-      <input matInput placeholder="Placeholder">
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-  </p>
-    `,
-
-    styleUrls: ['./login.component.css'],
-    providers: []    
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class Login {
-} 
+export class LoginComponent {
+  form: FormGroup;
+  constructor(fb: FormBuilder, private _loginService: AuthService) {
+    this.form = fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.compose([Validators.required, PasswordValidator.cannotContainSpace])]
+    });
+  }
+  login(){
+    const result = this._loginService.login(this.form.controls.username.value, this.form.controls.password.value);
+    if ( !result ){
+      this.form.controls.password.setErrors({
+        invalidLogin: true
+      });
+      console.log('Failed to Log In!');
+    }
+    else {
+      console.log(this.form.value);
+      console.log('Logged In!');
+
+    }
+  }
+}
+
