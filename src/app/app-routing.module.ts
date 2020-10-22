@@ -31,7 +31,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       // Default Layout Childs
-      { path: 'Temperature', component: Temperature, outlet: 'outletInMain'}, // Temperature Page
+      { path: 'Temperature', component: Temperature, canActivate: [AuthGuard] }, // Temperature Page
     ]},
   { path: '**', component: PageNotFoundComponent } // Wildcard 404 page
 ];
