@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-default',
@@ -7,6 +9,8 @@ import { Component } from '@angular/core';
     <mat-toolbar>
       <span id="logo" routerLink="Dashboard">Vent<b style="color: green">2</b>u</span>
       <span><mat-icon>menu</mat-icon></span>
+<!--        <button (click)="tryLogout()" type="submit">Logout</button>-->
+
     </mat-toolbar>
     <router-outlet></router-outlet>
     <footer>
@@ -23,5 +27,9 @@ import { Component } from '@angular/core';
   `
 })
 export class DefaultComponent {
-  title = 'Vent2u';
+  constructor(
+    private router: Router
+  ) {
+  }
+  //TODO Make logout btn
 }

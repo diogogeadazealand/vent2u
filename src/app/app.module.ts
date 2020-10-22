@@ -15,9 +15,12 @@ import { MatMenuModule } from '@angular/material/menu';
 import { PageNotFoundComponent } from './notfound.component';
 import { DefaultComponent } from './default.component';
 
+// auth
+import { AuthModule } from './auth/auth.module';
+
 // Modules
 import { DashboardTemperature } from './main/temperature.module';
-import { LoginModule } from './login/login.module';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,8 +36,9 @@ import { LoginModule } from './login/login.module';
     MatIconModule,
     MatToolbarModule,
     MatFormFieldModule,
-    LoginModule,
-    DashboardTemperature
+    DashboardTemperature,
+    ReactiveFormsModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

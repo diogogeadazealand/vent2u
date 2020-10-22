@@ -12,28 +12,37 @@ import { Routes, RouterModule } from '@angular/router';
 import { DefaultComponent } from './default.component';
 import { PageNotFoundComponent } from './notfound.component';
 import { Temperature } from './main/temperature.component';
-import { LoginModule } from './login/login.module';
-import { LoginComponent } from './login/login.component';
-import { AuthGuard } from './login/auth-gaurd.service';
-import { PreventUnsavedChangesGuard } from './login/prevent-unsaved-changes-gaurd.service';
+import { LoginComponent } from './auth/login/login.component';
+import { AuthGuard } from './auth/auth.guard';
+
+// import { PreventUnsavedChangesGuard } from './login/prevent-unsaved-changes-gaurd.service';
 
 
 const routes: Routes = [
-  {// Start Page
-    path: '',
-    component: LoginComponent,
-    canDeactivate: [PreventUnsavedChangesGuard]
-  },
-  {  // Default Layout Page
+  // {// Start Page
+  //   path: '',
+  //   component: LoginComponent
+  // },
+  // {  // Default Layout Page
+  //   path: 'default',
+  //   component: DefaultComponent,
+  //   canDeactivate: [],
+  //   canActivate: [AuthGuard],
+  //   children: [
+  //     // Default Layout Childs
+  //     { path: 'Temperature', component: Temperature, canActivate: [AuthGuard] }, // Temperature Page
+  //   ]},
+  // { path: '**', component: PageNotFoundComponent }, // Wildcard 404 page
+
+
+  {
     path: 'default',
     component: DefaultComponent,
-    canDeactivate: [PreventUnsavedChangesGuard],
-    canActivate: [AuthGuard],
-    children: [
-      // Default Layout Childs
-      { path: 'Temperature', component: Temperature, canActivate: [AuthGuard] }, // Temperature Page
-    ]},
-  { path: '**', component: PageNotFoundComponent } // Wildcard 404 page
+    canLoad: [AuthGuard]
+  },
+
+  { path: '',   component: LoginComponent },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
