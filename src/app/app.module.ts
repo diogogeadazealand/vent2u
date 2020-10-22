@@ -24,6 +24,7 @@ import { AuthModule } from './auth/auth.module';
 // Modules
 import { DashboardTemperature } from './main/temperature.module';
 import {ReactiveFormsModule} from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatFormFieldModule,
     DashboardTemperature,
     ReactiveFormsModule,
-    AuthModule
+    AuthModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

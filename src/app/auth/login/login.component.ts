@@ -9,10 +9,8 @@ import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
 })
 export class LoginComponent {
   message: string;
-  form: FormGroup;
   hide = true;
   email = new FormControl('', [Validators.required, Validators.email]);
-
   constructor(public authService: AuthService, public router: Router) {
     this.setMessage();
   }
@@ -29,7 +27,7 @@ export class LoginComponent {
       if (this.authService.isLoggedIn) {
         // Usually you would use the redirect URL from the auth service.
         // However to keep the example simple, we will always redirect to `/admin`.
-        const redirectUrl = '/admin';
+        const redirectUrl = '/default';
 
         // Set our navigation extras object
         // that passes on our global query params and fragment

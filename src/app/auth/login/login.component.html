@@ -3,35 +3,30 @@
     <h1>Vent<span style="color: green">2</span>u</h1>
   </div>
 
-  <div class="loginForm">
-    <h2>LOGIN</h2>
-    <form [formGroup]="form" class="example-container">
-      <mat-form-field >
+  <div>
+    <h3>LOGIN</h3>
+    <form class="example-container">
+      <mat-form-field>
         <mat-label>Enter your email</mat-label>
-        <label>
-          Email:
-          <input matInput placeholder="pat@example.com" [(ngModel)]="email" required>
-        </label>
+        <input matInput type="text" placeholder="pat@example.com"  name="email" required>
         <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
-
+      <br>
       <mat-form-field>
-        <mat-label>Enter your password</mat-label>
-        <label>
-          Password:
-          <input matInput [type]="hide ? 'password' : 'text'">
-        </label>
+        <label mat-label>Enter your password</label>
+        <input matInput [type]="hide ? 'password' : 'text'">
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
       </mat-form-field>
+      <br>
       <p>
-        <button (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
-        <button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
+        <button mat-raised-button class="loginBtn" (click)="login()"  *ngIf="!authService.isLoggedIn">Login</button>
+        <button mat-raised-button (click)="logout()" *ngIf="authService.isLoggedIn">Logout</button>
       </p>
       <p>{{message}}</p>
     </form>
-
+    <a href="https://medium.com/amp/p/c56838f49738">Having Trouble?</a>
   </div>
 </div>
 
