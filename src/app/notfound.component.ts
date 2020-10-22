@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-notfound',
   template: `
+<!--    Styling / CSS Part-->
     <style>
       .layout{
         height: 100%;
@@ -21,6 +22,7 @@ import { Component } from '@angular/core';
         margin-left: 20%;
       }
     </style>
+<!--    Html Part -->
     <div class="layout">
       <div>
         <h3>Page Not Found</h3>

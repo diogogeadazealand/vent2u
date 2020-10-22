@@ -19,20 +19,15 @@ import { AuthGuard } from './auth/auth.guard';
 
 
 const routes: Routes = [
-  // {// Start Page
-  //   path: '',
-  //   component: LoginComponent
-  // },
+
   // {  // Default Layout Page
   //   path: 'default',
-  //   component: DefaultComponent,
   //   canDeactivate: [],
   //   canActivate: [AuthGuard],
   //   children: [
   //     // Default Layout Childs
   //     { path: 'Temperature', component: Temperature, canActivate: [AuthGuard] }, // Temperature Page
   //   ]},
-  // { path: '**', component: PageNotFoundComponent }, // Wildcard 404 page
 
 
   {
