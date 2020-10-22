@@ -5,24 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// Main Dashboard --TEMPERATURE--
-import { DashboardMain } from './main/main.component';
-import { Login } from './login/login.component';
-
 // Material Design
-import {MatMenuModule} from '@angular/material/menu';
-import {MatIconModule} from '@angular/material/icon';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
-// Custom Inputs
-import { CircularSliderModule } from 'angular-circular-slider';
+// Custom Views
+import { PageNotFoundComponent } from './notfound.component';
+
+// Modules
+import { DashboardTemperature } from './main/temperature.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardMain,
-    Login
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +30,7 @@ import { CircularSliderModule } from 'angular-circular-slider';
     MatIconModule,
     MatToolbarModule,
     MatFormFieldModule,
-    CircularSliderModule
+    DashboardTemperature
   ],
   providers: [],
   bootstrap: [AppComponent]

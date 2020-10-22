@@ -1,16 +1,18 @@
 <div class="layout">
-    <mat-toolbar-row>
-        <span>Header</span>
-    </mat-toolbar-row>
-    <!-- <login></login> -->
-    <dashboard-main></dashboard-main>
+    <mat-toolbar>
+        <span id="logo" routerLink="Dashboard">Vent<b style="color: green">2</b>u</span>
+        <span><mat-icon>menu</mat-icon></span>
+    </mat-toolbar>
+
+    <!--  Page Output-->
+    <router-outlet></router-outlet>
     <footer>
         <nav>
             <ul>
-                <li><span>23&#176;C</span>Temp</li>
-                <li><span>53%</span>Humidity</li>
-                <li>
-                    <span><mat-icon>settings</mat-icon></span>Settings</li>
+                <li routerLink="Temperature">23&#176; Temp</li>
+                <li routerLink="**">53% Humidity</li>
+                <li routerLink="">Settings
+                </li>
             </ul>
         </nav>
     </footer>

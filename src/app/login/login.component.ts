@@ -1,7 +1,5 @@
 import { Component } from '@angular/core'
 
-// Modules
-import { CircularSliderModule } from 'angular-circular-slider';
 
 @Component({
     selector: '<login>',
