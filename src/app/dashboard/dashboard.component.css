@@ -1,3 +1,9 @@
 #dashboard{
   text-align: center;
 }
+app-temp-control{
+  z-index: 10;
+}
+app-clima-view{
+  z-index: 20;
+}
