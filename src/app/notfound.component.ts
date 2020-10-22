@@ -34,5 +34,4 @@ import { Component } from '@angular/core';
     `
 })
 export class PageNotFoundComponent {
-  title = 'Not Found';
 }
