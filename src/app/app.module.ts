@@ -10,6 +10,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 
 // Modules TODO Should be moved to dashboard.
 import { DashboardTemperature } from './main/temperature.module';
+import {AuthModule} from './auth/auth.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { DashboardTemperature } from './main/temperature.module';
     BrowserModule,
     AppRoutingModule,
     DashboardTemperature,
-    DashboardModule
+    DashboardModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

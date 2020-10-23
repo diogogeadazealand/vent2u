@@ -4,13 +4,14 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { LoginComponent } from './login/login.component';
 import { AuthRoutingModule } from './auth-routing.module';
-
-//This is weird... Cant get them directly from app.module
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatIconModule} from '@angular/material/icon';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
-import {MatInput, MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+// This is weird... Cant get them directly from app.module
+
 
 @NgModule({
   imports: [
@@ -18,11 +19,11 @@ import {MatInput, MatInputModule} from '@angular/material/input';
     FormsModule,
     AuthRoutingModule,
     ReactiveFormsModule,
-    MatFormFieldModule,
+    MatButtonModule,
     MatIconModule,
-    BrowserAnimationsModule,
+    MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    BrowserAnimationsModule
   ],
   declarations: [
     LoginComponent
