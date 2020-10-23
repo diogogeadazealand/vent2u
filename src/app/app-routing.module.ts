@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 // Pages
 import { PageNotFoundComponent } from './notfound.component';
-import { Temperature } from './main/temperature.component';
+import { Temperature } from './temperature/temperature.component';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [

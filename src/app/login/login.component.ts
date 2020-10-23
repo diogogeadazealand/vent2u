@@ -2,7 +2,7 @@ import { Component } from '@angular/core'
 
 
 @Component({
-    selector: '<login>',
+    selector: 'login',
     template: `
     <p>
     <mat-form-field appearance="legacy">
