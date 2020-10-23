@@ -16,11 +16,13 @@ import { PageNotFoundComponent } from './notfound.component';
 
 // Modules
 import { DashboardTemperature } from './main/temperature.module';
+import { ClaimGridComponent } from './claim-grid/claim-grid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ClaimGridComponent
   ],
   imports: [
     BrowserModule,
