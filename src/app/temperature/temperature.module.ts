@@ -16,7 +16,6 @@ import { Presets } from './Presets/presets.component';
 import { OTempComponent } from './OutsideTemp/otemp.component';
 import { OTempModule } from './OutsideTemp/otemp.module';
 
-
 @NgModule({
   declarations: [
     Temperature,
