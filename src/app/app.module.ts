@@ -15,7 +15,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { PageNotFoundComponent } from './notfound.component';
 
 // Modules
-import { DashboardTemperature } from './main/temperature.module';
+import { DashboardTemperature } from './temperature/temperature.module';
 
 @NgModule({
   declarations: [

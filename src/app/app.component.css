@@ -54,3 +54,7 @@ footer nav ul li span {
 dashboard-main {
     padding: 0 30px;
 }
+
+router-outlet {
+    display: none;
+}
