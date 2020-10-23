@@ -59,14 +59,9 @@ export class VentService {
             },
             {
               name: "G1-V3",
-              claimed: true,
+              claimed: false,
               claimRequests: [],
-              claimedBy: {
-                id: 25,
-                name: "George Wellington",
-                role: "Student",
-                class: "w12rt1"
-              }
+              claimedBy: {}
             },
             {
               name: "G1-V4",
