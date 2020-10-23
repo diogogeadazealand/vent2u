@@ -10,6 +10,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+
 
 // Custom Views
 import { PageNotFoundComponent } from './notfound.component';
@@ -17,12 +19,15 @@ import { PageNotFoundComponent } from './notfound.component';
 // Modules
 import { ClaimGridComponent } from './claim-grid/claim-grid.component';
 import { DashboardTemperature } from './temperature/temperature.module';
+import { VentService } from './vent.service';
+import { VentComponent } from './claim-grid/vent/vent.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    ClaimGridComponent
+    ClaimGridComponent,
+    VentComponent
   ],
   imports: [
     BrowserModule,
@@ -32,9 +37,10 @@ import { DashboardTemperature } from './temperature/temperature.module';
     MatIconModule,
     MatToolbarModule,
     MatFormFieldModule,
-    DashboardTemperature
+    DashboardTemperature,
+    MatButtonModule
   ],
-  providers: [],
+  providers: [VentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
