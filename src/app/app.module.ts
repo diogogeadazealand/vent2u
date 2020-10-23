@@ -9,7 +9,7 @@ import { NotFoundComponent } from './404/notfound.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 
 // Modules TODO Should be moved to dashboard.
-import { DashboardTemperature } from './main/temperature.module';
+import { DashboardTemperature } from './temperature/temperature.module';
 import {AuthModule} from './auth/auth.module';
 
 

@@ -12,13 +12,14 @@ import { DashboardComponent } from './dashboard/dashboard.component'; // This is
 // Child Routes Dashboard
 import { MainComponent } from './dashboard/main/main.component'; // Page1
 import { VentsComponent } from './dashboard/vents/vents.component'; // Page2
-import { ClaimComponent } from './dashboard/claim/claim.component'; // Page 3
+import { ClaimComponent } from './dashboard/claim/claim.component';
+import { Temperature } from './temperature/temperature.component'; // Page 3
 
 
 const routes: Routes = [
   { path: 'Dashboard', component: DashboardComponent, canLoad: [AuthGuard],
     children: [
-      { path: 'Main', component: MainComponent, },
+      { path: 'Main', component: Temperature, },
       { path: 'Vents', component: VentsComponent },
       { path: 'Claim', component: ClaimComponent }
     ] },
