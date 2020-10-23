@@ -16,11 +16,13 @@ import { PageNotFoundComponent } from './notfound.component';
 
 // Modules
 import { DashboardTemperature } from './main/temperature.module';
+import { ClassModule } from './class/class.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,8 @@ import { DashboardTemperature } from './main/temperature.module';
     MatIconModule,
     MatToolbarModule,
     MatFormFieldModule,
-    DashboardTemperature
+    DashboardTemperature,
+    ClassModule
   ],
   providers: [],
   bootstrap: [AppComponent]
