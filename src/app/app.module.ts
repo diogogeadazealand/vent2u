@@ -3,37 +3,28 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// Material Design
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
+// Main UI
+import { NotFoundComponent } from './404/notfound.component';
+import { DashboardModule } from './dashboard/dashboard.module';
 
-
-// Custom Views
-import { PageNotFoundComponent } from './notfound.component';
-
-// Modules
-import { DashboardTemperature } from './main/temperature.module';
-import { ClassModule } from './class/class.module';
+// Modules TODO Should be moved to dashboard.
+import { DashboardTemperature } from './temperature/temperature.module';
+import {AuthModule} from './auth/auth.module';
+import {ClassModule} from './class/class.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MatMenuModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatFormFieldModule,
     DashboardTemperature,
+    DashboardModule,
+    AuthModule,
     ClassModule
   ],
   providers: [],
