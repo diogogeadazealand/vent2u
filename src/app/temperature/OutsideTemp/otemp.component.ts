@@ -22,8 +22,8 @@ export class OTempComponent {
         .subscribe(data => {
             this.isLoading = false;
             let weather = data;
-            // We get information in Kelvin, we substract here to get Celsius
-            this.temperature = weather['main'].temp - 273.15;
+            // We get information in Kelvin, we substract here to get Celsius, we round it to avoid numbers like 11.000000007
+            this.temperature = Math.round(weather['main'].temp - 273.15);
         })
     }
 } 
