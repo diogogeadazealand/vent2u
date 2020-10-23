@@ -1,0 +1,16 @@
+.layout{
+  height: 100%;
+  text-align: center;
+  align-content: center;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+h3{
+  font-size: 38pt;
+}
+button{
+  width: 60%;
+  height: 35px;
+  margin-left: 20%;
+}
