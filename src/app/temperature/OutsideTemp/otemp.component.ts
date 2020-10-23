@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { WeatherService } from '../temperature.service';
+import { WeatherService } from '../../weather.service';
 
 @Component({
     selector: 'outside-temperature',
@@ -18,7 +18,7 @@ export class OTempComponent {
     }
     
     ngOnInit() {
-        this._otempService.getData()
+        this._otempService.getWeatherData()
         .subscribe(data => {
             this.isLoading = false;
             let weather = data;
