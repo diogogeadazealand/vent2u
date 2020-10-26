@@ -12,7 +12,7 @@ import { TemperatureModule } from './views/temperature/temperature.module';
 import {AuthModule} from './auth/auth.module';
 
 import { HeaderModule } from './shared/Components/Header/header.module';
-import { Navigation } from './shared/Components/Navigation/navigation.component';
+import { NavigationModule } from './shared/Components/Navigation/navigation.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { Navigation } from './shared/Components/Navigation/navigation.component'
     TemperatureModule,
     AuthModule,
     HeaderModule,
-    Navigation
+    NavigationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
