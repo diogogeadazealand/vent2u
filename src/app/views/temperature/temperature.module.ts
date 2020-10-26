@@ -34,4 +34,4 @@ import { OTempModule } from './OutsideTemp/otemp.module';
     OTempModule
   ]
 })
-export class DashboardTemperature { }
+export class TemperatureModule { }
