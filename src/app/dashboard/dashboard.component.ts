@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Input,Component } from '@angular/core';
 import { Router } from '@angular/router';
+import {CelsiusPipe} from '../celsius.pipe';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,5 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-
+@Input() temperature=0;
+@Input() humidity=0;
 }

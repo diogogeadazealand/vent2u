@@ -13,11 +13,13 @@ import { DashboardTemperature } from './temperature/temperature.module';
 import {AuthModule} from './auth/auth.module';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    NotFoundComponent
-  ],
+    NotFoundComponent,
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -5,12 +5,10 @@ import { DashboardComponent } from './dashboard.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-
 import { MainComponent } from './main/main.component';
 import { VentsComponent } from './vents/vents.component';
 import { ClaimComponent } from './claim/claim.component';
-
-
+import { CelsiusPipe } from '../celsius.pipe';
 
 @NgModule({
   declarations: [
@@ -18,13 +16,20 @@ import { ClaimComponent } from './claim/claim.component';
     // Pages
     MainComponent,
     VentsComponent,
-    ClaimComponent
+    ClaimComponent,
+    CelsiusPipe
   ],
+
+  exports:[
+    CelsiusPipe
+  ],
+
   imports: [
     CommonModule,
     RouterModule,
     MatIconModule,
     MatToolbarModule
-  ]
+  ],
 })
 export class DashboardModule { }
+
