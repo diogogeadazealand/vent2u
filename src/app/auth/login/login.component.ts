@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit{
         this.isLoginFailed = true;
       }
     );
+    console.log('submit test complete');
   }
   reloadPage(): void {
     window.location.reload();

@@ -13,6 +13,7 @@
       #f="ngForm"
       novalidate
     >
+<!--      TODO need to make helpers /pipes to control the username input-->
       <mat-form-field>
         <mat-label>Enter Username</mat-label>
         <input
@@ -28,7 +29,7 @@
       </mat-form-field>
 
       <br>
-
+<!--      TODO need to make helpers and errMsg here -->
       <mat-form-field>
         <mat-label>Enter Password</mat-label>
         <input
@@ -48,17 +49,17 @@
 
       <br>
 
-        <button mat-raised-button >Login</button>
-
+        <button mat-raised-button type="submit">Login</button>
+<!--        TODO This error msg dosnt work properly-->
       <mat-error *ngIf="f.submitted && isLoginFailed">Login Failed: {{errMsg}}</mat-error>
-      <!--      <p>{{message}}</p>-->
+      <!--   TODO   <p>{{message}}</p>-->
     </form>
 
     <div *ngIf="isLoggedIn">
       <p>Logged in as: {{roles}}</p>
     </div>
 
-
+<!-- TODO Connection Problems-->
 
 
   </div>
