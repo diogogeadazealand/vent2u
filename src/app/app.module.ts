@@ -17,17 +17,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { PageNotFoundComponent } from './notfound.component';
 
 // Modules
-import { ClaimGridComponent } from './claim-grid/claim-grid.component';
 import { DashboardTemperature } from './temperature/temperature.module';
 import { VentService } from './vent.service';
-import { VentComponent } from './claim-grid/vent/vent.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    ClaimGridComponent,
-    VentComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +36,7 @@ import { VentComponent } from './claim-grid/vent/vent.component';
     DashboardTemperature,
     MatButtonModule
   ],
-  providers: [VentService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
