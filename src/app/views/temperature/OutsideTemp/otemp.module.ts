@@ -4,7 +4,7 @@ import { OTempComponent } from './otemp.component';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 // Shared Services
-import { WeatherService } from '../../../shared/Services/weather.service';
+import { WeatherService } from '../../../shared/Services/Weather/weather.service';
 
 @NgModule({
   declarations: [],
