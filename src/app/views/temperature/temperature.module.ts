@@ -9,12 +9,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSliderModule} from '@angular/material/slider';
 
 
-// Custom Components
+// View Components
 import { Temperature } from './temperature.component';
 import { DashboardSlider } from './Slider/slider.component';
-import { Presets } from './Presets/presets.component';
 import { OTempComponent } from './OutsideTemp/otemp.component';
 import { OTempModule } from './OutsideTemp/otemp.module';
+
+// Shared Components
+import { Presets } from './../../shared/Components/Presets/presets.component';
 
 @NgModule({
   declarations: [
