@@ -7,6 +7,7 @@ import { AuthGuard } from './auth/auth.guard';
 // Main Routes - Depending on login status.
 import { NotFoundComponent} from './404/notfound.component'; // Unknown page
 import { LoginComponent } from './auth/login/login.component'; // Login for dashboard
+import { DashboardComponent } from './views/dashboard.component'; // This is the UI behind Auth - This is our main view.
 
 // Child Routes Dashboard
 import { VentsComponent } from './views/vents/vents.component'; // Page2
@@ -15,9 +16,12 @@ import { Temperature } from './views/temperature/temperature.component'; // Page
 
 
 const routes: Routes = [
-  { path: 'Temperature', component: Temperature, canLoad: [AuthGuard]},
-  { path: 'Vents', component: VentsComponent, canLoad: [AuthGuard]},
-  { path: 'Claim', component: ClaimComponent, canLoad: [AuthGuard] },
+  { path: 'Dashboard', component: DashboardComponent, canLoad: [AuthGuard],
+    children: [
+      { path: 'Temperature', component: Temperature, },
+      { path: 'Vents', component: VentsComponent },
+      { path: 'Claim', component: ClaimComponent }
+    ] },
   { path: '',   component: LoginComponent },
   { path: '**', component: NotFoundComponent }
 ];

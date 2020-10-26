@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 
 // Main UI
 import { NotFoundComponent } from './404/notfound.component';
+import { DashboardModule } from './views/dashboard.module';
+
 
 // Modules TODO Should be moved to dashboard.
 import { TemperatureModule } from './views/temperature/temperature.module';
@@ -20,7 +22,8 @@ import {AuthModule} from './auth/auth.module';
     BrowserModule,
     AppRoutingModule,
     TemperatureModule,
-    AuthModule
+    AuthModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

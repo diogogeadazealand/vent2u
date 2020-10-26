@@ -26,7 +26,7 @@ export class LoginComponent {
       this.setMessage();
       if (this.authService.isLoggedIn) {
         // Usually you would use the redirect URL from the auth service.
-        const redirectUrl = '/Temperature';
+        const redirectUrl = '/Dashboard/Temperature';
 
         // Set our navigation extras object
         // that passes on our global query params and fragment
