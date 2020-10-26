@@ -11,9 +11,6 @@ import { NotFoundComponent } from './404/notfound.component';
 import { TemperatureModule } from './views/temperature/temperature.module';
 import {AuthModule} from './auth/auth.module';
 
-import { HeaderModule } from './shared/Components/Header/header.module';
-import { NavigationModule } from './shared/Components/Navigation/navigation.module';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,9 +20,7 @@ import { NavigationModule } from './shared/Components/Navigation/navigation.modu
     BrowserModule,
     AppRoutingModule,
     TemperatureModule,
-    AuthModule,
-    HeaderModule,
-    NavigationModule
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

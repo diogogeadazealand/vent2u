@@ -15,7 +15,7 @@ import { Temperature } from './views/temperature/temperature.component'; // Page
 
 
 const routes: Routes = [
-  { path: 'Main', component: Temperature, canLoad: [AuthGuard]},
+  { path: 'Temperature', component: Temperature, canLoad: [AuthGuard]},
   { path: 'Vents', component: VentsComponent, canLoad: [AuthGuard]},
   { path: 'Claim', component: ClaimComponent, canLoad: [AuthGuard] },
   { path: '',   component: LoginComponent },
