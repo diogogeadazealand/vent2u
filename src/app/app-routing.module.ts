@@ -21,9 +21,6 @@ const routes: Routes = [
     ] },
   { path: 'Signup', component: RegisterComponent },
   { path: '',   component: LoginComponent },
-
-  // test Paths
-
   { path: '**', component: NotFoundComponent }
 ];
 
