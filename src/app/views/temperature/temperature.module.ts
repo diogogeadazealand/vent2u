@@ -16,9 +16,9 @@ import { OTempComponent } from './OutsideTemp/otemp.component';
 import { OTempModule } from './OutsideTemp/otemp.module';
 
 // Shared Components
-import { Presets } from './../../shared/Components/Presets/presets.component';
-import { Header } from './../../shared/Components/Header/header.component';
-import { Navigation } from './../../shared/Components/Navigation/navigation.component';
+import { Presets } from '../../shared/_components/Presets/presets.component';
+import { Header } from '../../shared/_components/Header/header.component';
+import { Navigation } from '../../shared/_components/Navigation/navigation.component';
 
 @NgModule({
   declarations: [
