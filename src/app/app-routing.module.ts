@@ -13,7 +13,8 @@ import { DashboardComponent } from './dashboard/dashboard.component'; // This is
 import { MainComponent } from './dashboard/main/main.component'; // Page1
 import { VentsComponent } from './dashboard/vents/vents.component'; // Page2
 import { ClaimComponent } from './dashboard/claim/claim.component';
-import { Temperature } from './temperature/temperature.component'; // Page 3
+import { Temperature } from './temperature/temperature.component';
+import {RegisterComponent} from './auth/register/register.component'; // Page 3
 
 
 const routes: Routes = [
@@ -23,7 +24,11 @@ const routes: Routes = [
       { path: 'Vents', component: VentsComponent },
       { path: 'Claim', component: ClaimComponent }
     ] },
+  { path: 'Signup', component: RegisterComponent },
   { path: '',   component: LoginComponent },
+
+  // test Paths
+
   { path: '**', component: NotFoundComponent }
 ];
 

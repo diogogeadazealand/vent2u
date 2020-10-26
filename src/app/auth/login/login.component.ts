@@ -1,57 +1,48 @@
-import { Component } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
-import { AuthService } from '../auth.service';
-import { FormControl, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+
+import { AuthService } from '../_services/auth.service';
+import { TokenStorageService } from '../_services/token-storage.service';
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['../_styles/style.css']
 })
-export class LoginComponent {
-  message: string;
-  hide = true;
-  email = new FormControl('', [Validators.required, Validators.email]);
-  constructor(public authService: AuthService, public router: Router) {
-    this.setMessage();
+export class LoginComponent implements OnInit{
+  form: any = {};
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errMsg = '';
+  roles: string[] = [];
+  hide: boolean;
+
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) {
   }
-
-  setMessage() {
-    this.message = 'Logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
-  }
-
-  login() {
-    this.message = 'Trying to log in ...';
-
-    this.authService.login().subscribe(() => {
-      this.setMessage();
-      if (this.authService.isLoggedIn) {
-        // Usually you would use the redirect URL from the auth service.
-        const redirectUrl = '/Dashboard/Main';
-
-        // Set our navigation extras object
-        // that passes on our global query params and fragment
-        const navigationExtras: NavigationExtras = {
-          queryParamsHandling: 'preserve',
-          preserveFragment: true
-        };
-
-        // Redirect the user
-        this.router.navigate([redirectUrl], navigationExtras);
-      }
-    });
-  }
-
-  logout() {
-    this.authService.logout();
-    this.setMessage();
-  }
-
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
+  ngOnInit(): void {
+    if (this.tokenStorage.getToken()){
+      this.isLoggedIn = true;
+      this.roles = this.tokenStorage.getUser().roles;
     }
-
-    return this.email.hasError('email') ? 'Not a valid email' : '';
+  }
+  onSubmit(): void {
+    this.authService.login(this.form).subscribe(
+      data => {
+        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveUser(data);
+        this.isLoggedIn = true;
+        this.isLoginFailed = false;
+        this.roles = this.tokenStorage.getUser().roles;
+        this.reloadPage();
+      },
+      err => {
+        this.errMsg = err.error.message;
+        this.isLoginFailed = true;
+      }
+    );
+  }
+  reloadPage(): void {
+    window.location.reload();
   }
 }
 

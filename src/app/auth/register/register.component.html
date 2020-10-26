@@ -4,30 +4,49 @@
   </div>
 
   <div class="cred-box">
-    <h3>LOGIN</h3>
+    <h3>SIGN UP</h3>
     <form
       class="example-container"
-      *ngIf="!isLoggedIn"
       name="form"
       (ngSubmit)="f.form.valid && onSubmit()"
       #f="ngForm"
       novalidate
     >
       <mat-form-field>
-        <mat-label>Enter Username</mat-label>
+        <mat-label>
+          Enter Username
+        </mat-label>
         <input
           matInput
           type="text"
-          placeholder="VladimirTakeout"
+          placeholder="Vladimir"
           name="username"
           [(ngModel)]="form.username"
           required
+          minlength="3"
+          maxlength="20"
           #username="ngModel"
         >
         <mat-error *ngIf="username.invalid">{{errMsg}}</mat-error>
       </mat-form-field>
 
       <br>
+
+      <mat-form-field>
+        <mat-label>
+          Enter Email
+        </mat-label>
+        <input
+          matInput
+          type="email"
+          name="email"
+          [(ngModel)]="form.email"
+          required
+          email
+          #email="ngModel"
+        >
+        <mat-error *ngIf="email.invalid">{{errMsg}}</mat-error>
+      </mat-form-field>
 
       <mat-form-field>
         <mat-label>Enter Password</mat-label>
@@ -43,30 +62,18 @@
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
-        <mat-error *ngIf="password.invalid">{{errMsg}}</mat-error>
       </mat-form-field>
 
       <br>
 
-        <button mat-raised-button >Login</button>
-
-      <mat-error *ngIf="f.submitted && isLoginFailed">Login Failed: {{errMsg}}</mat-error>
-      <!--      <p>{{message}}</p>-->
+      <button mat-raised-button type="submit">Sign Up</button>
     </form>
-
-    <div *ngIf="isLoggedIn">
-      <p>Logged in as: {{roles}}</p>
-    </div>
-
-
-
 
   </div>
   <div class="trouble-box">
     <div class="sign-box">
-      <a routerLink="Signup">Sign Up</a>
+      <a routerLink="">Sign In</a>
     </div>
     <a href="https://medium.com/amp/p/c56838f49738">Having Trouble?</a>
   </div>
 </div>
-
