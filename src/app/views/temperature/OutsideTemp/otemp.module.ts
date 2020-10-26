@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { OTempComponent } from './otemp.component';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
-import { WeatherService } from './weather.service';
+
+// Shared Services
+import { WeatherService } from '../../../shared/Services/weather.service';
 
 @NgModule({
   declarations: [],
