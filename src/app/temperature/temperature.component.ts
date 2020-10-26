@@ -6,4 +6,4 @@ import { Component } from '@angular/core'
     styleUrls: ['./temperature.component.css']
 })
 export class Temperature {
-} 
+}

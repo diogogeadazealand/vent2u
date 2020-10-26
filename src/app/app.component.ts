@@ -3,20 +3,8 @@ import { VentService } from './vent.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `<router-outlet></router-outlet>`
 })
 export class AppComponent {
-  title = 'SemesterProject';
-  public vents;
-
-  constructor(private _ventService: VentService){}
-
-  ngOnInit(){
-    this.vents = this._ventService.GetVents();
-    console.log(this.vents);
-  }
-
-
-
+  title = 'Vent2u Project';
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { WeatherService } from '../../weather.service';
+import { WeatherService } from './weather.service';
 
 @Component({
     selector: 'outside-temperature',
@@ -16,7 +16,6 @@ export class OTempComponent {
     isLoading = true;
     constructor(private _otempService: WeatherService) {
     }
-    
     ngOnInit() {
         this._otempService.getWeatherData()
         .subscribe(data => {
@@ -24,6 +23,6 @@ export class OTempComponent {
             let weather = data;
             // We get information in Kelvin, we substract here to get Celsius, we round it to avoid numbers like 11.000000007
             this.temperature = Math.round(weather['main'].temp - 273.15);
-        })
+        });
     }
-} 
+}

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'dashboard-slider',
@@ -7,4 +7,4 @@ import { Component } from '@angular/core'
 })
 export class DashboardSlider {
     temp = 24;
-} 
+}
