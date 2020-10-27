@@ -10,6 +10,8 @@ import { MainComponent } from './main/main.component';
 import { VentsComponent } from './vents/vents.component';
 import { ClaimComponent } from './claim/claim.component';
 
+import { Header } from './../shared/_components/Header/header.component'
+import { Navigation } from './../shared/_components/Navigation/navigation.component';
 
 
 @NgModule({
@@ -18,13 +20,15 @@ import { ClaimComponent } from './claim/claim.component';
     // Pages
     MainComponent,
     VentsComponent,
-    ClaimComponent
+    ClaimComponent,
+    Header,
+    Navigation
   ],
   imports: [
     CommonModule,
     RouterModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
   ]
 })
 export class DashboardModule { }

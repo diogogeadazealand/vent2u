@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { WeatherService } from './weather.service';
+import { WeatherService } from '../../../shared/_services/Weather/weather.service';
 
 @Component({
     selector: 'outside-temperature',

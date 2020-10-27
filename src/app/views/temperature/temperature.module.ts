@@ -7,14 +7,16 @@ import { FormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSliderModule} from '@angular/material/slider';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
-
-// Custom Components
+// View Components
 import { Temperature } from './temperature.component';
 import { DashboardSlider } from './Slider/slider.component';
-import { Presets } from './Presets/presets.component';
 import { OTempComponent } from './OutsideTemp/otemp.component';
 import { OTempModule } from './OutsideTemp/otemp.module';
+
+// Shared Components
+import { Presets } from '../../shared/_components/Presets/presets.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { OTempModule } from './OutsideTemp/otemp.module';
     MatSelectModule,
     MatIconModule,
     MatSliderModule,
+    MatToolbarModule,
     OTempModule
   ]
 })
-export class DashboardTemperature { }
+export class TemperatureModule { }

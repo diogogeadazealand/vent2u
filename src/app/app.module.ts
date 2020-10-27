@@ -6,12 +6,12 @@ import { AppComponent } from './app.component';
 
 // Main UI
 import { NotFoundComponent } from './404/notfound.component';
-import { DashboardModule } from './dashboard/dashboard.module';
+import { DashboardModule } from './views/dashboard.module';
+
 
 // Modules TODO Should be moved to dashboard.
-import { DashboardTemperature } from './temperature/temperature.module';
+import { TemperatureModule } from './views/temperature/temperature.module';
 import {AuthModule} from './auth/auth.module';
-
 
 @NgModule({
   declarations: [
@@ -21,9 +21,9 @@ import {AuthModule} from './auth/auth.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DashboardTemperature,
-    DashboardModule,
-    AuthModule
+    TemperatureModule,
+    AuthModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
