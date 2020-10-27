@@ -15,14 +15,13 @@ import { DashboardSlider } from './Slider/slider.component';
 import { OTempComponent } from './OutsideTemp/otemp.component';
 import { OTempModule } from './OutsideTemp/otemp.module';
 
-// Shared Components
-import { Presets } from '../../shared/_components/Presets/presets.component';
+// Shared Modules
+import { PresetsModule } from '../../shared/_components/Presets/presets.module';
 
 @NgModule({
   declarations: [
     Temperature,
     DashboardSlider,
-    Presets,
     OTempComponent
   ],
   exports: [
@@ -34,7 +33,8 @@ import { Presets } from '../../shared/_components/Presets/presets.component';
     MatIconModule,
     MatSliderModule,
     MatToolbarModule,
-    OTempModule
+    OTempModule,
+    PresetsModule
   ]
 })
 export class TemperatureModule { }

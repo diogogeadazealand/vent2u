@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'dashboard-slider',
+    selector: 'temp-slider',
     templateUrl: './slider.component.html',
     styleUrls: ['./slider.component.css']
 })

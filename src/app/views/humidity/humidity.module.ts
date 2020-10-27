@@ -7,21 +7,28 @@ import { FormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSliderModule} from '@angular/material/slider';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
-
-// Custom Components
-// import { Temperature } from './temperature.component';
+// View Components
+import { Humidity } from './humidity.component';
 // import { DashboardSlider } from './Slider/slider.component';
-// import { Presets } from './Presets/presets.component';
 // import { OTempComponent } from './OutsideTemp/otemp.component';
 // import { OTempModule } from './OutsideTemp/otemp.module';
 
+
+import { HumiditySlider } from './HumiditySlider/hslider.component';
+
+// Modules
+import { OHumidityComponent } from './OutsideHumidity/ohumidity.component';
+import { OHumidityModule } from './OutsideHumidity/ohumidity.module';
+
+// Shared Components
+import { PresetsModule } from '../../shared/_components/Presets/presets.module';
 @NgModule({
   declarations: [
-    // Temperature,
-    // DashboardSlider,
-    // Presets,
-    // OTempComponent
+    Humidity,
+    HumiditySlider,
+    OHumidityComponent
   ],
   exports: [
   ],
@@ -31,7 +38,9 @@ import {MatSliderModule} from '@angular/material/slider';
     MatSelectModule,
     MatIconModule,
     MatSliderModule,
-    // OTempModule
+    MatToolbarModule,
+    PresetsModule,
+    OHumidityModule
   ]
 })
-export class DashboardTemperature { }
+export class HumidityModule { }

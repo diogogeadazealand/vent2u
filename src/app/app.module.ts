@@ -11,6 +11,8 @@ import { DashboardModule } from './views/dashboard.module';
 
 // Modules TODO Should be moved to dashboard.
 import { TemperatureModule } from './views/temperature/temperature.module';
+import { HumidityModule } from './views/humidity/humidity.module';
+
 import {AuthModule} from './auth/auth.module';
 
 @NgModule({
@@ -22,6 +24,7 @@ import {AuthModule} from './auth/auth.module';
     BrowserModule,
     AppRoutingModule,
     TemperatureModule,
+    HumidityModule,
     AuthModule,
     DashboardModule
   ],
