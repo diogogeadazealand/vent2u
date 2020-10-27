@@ -10,15 +10,17 @@ import { LoginComponent } from './auth/login/login.component'; // Login for dash
 import { DashboardComponent } from './views/dashboard.component'; // This is the UI behind Auth - This is our main view.
 
 // Child Routes Dashboard
-import { VentsComponent } from './views/vents/vents.component'; // Page2
-import { ClaimComponent } from './views/claim/claim.component';
-import { Temperature } from './views/temperature/temperature.component'; // Page 3
+import { VentsComponent } from './views/vents/vents.component'; // View Vents
+import { ClaimComponent } from './views/claim/claim.component'; // View Vents
+import { Temperature } from './views/temperature/temperature.component'; // View Temperature
+import { Humidity } from './views/humidity/humidity.component'; // View Humidity
 
 
 const routes: Routes = [
   { path: 'Dashboard', component: DashboardComponent, canLoad: [AuthGuard],
     children: [
       { path: 'Temperature', component: Temperature, },
+      { path: 'Humidity', component: Humidity },
       { path: 'Vents', component: VentsComponent },
       { path: 'Claim', component: ClaimComponent }
     ] },

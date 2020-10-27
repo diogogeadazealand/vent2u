@@ -1,0 +1,25 @@
+.humidity-view {
+    padding: 0 30px;
+}
+
+.humidity-counter {
+    padding: 20px 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+.outside-inside {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+    margin-top: 30px;
+}
+
+.inside-humidity {
+    border: 1px solid #000;
+    text-align: center;
+    padding: 5px 0;
+}
