@@ -1,30 +1,38 @@
 import { Component } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
-import { FormControl, Validators } from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['../../shared/_styles/auth.css']
 })
 export class LoginComponent {
+  form = new FormGroup({
+    username: new FormControl(),
+    password: new FormControl()
+  });
+
   message: string;
   hide = true;
   email = new FormControl('', [Validators.required, Validators.email]);
   constructor(public authService: AuthService, public router: Router) {
-    this.setMessage();
   }
 
-  setMessage() {
-    this.message = 'Logged ' + (this.authService.isLoggedIn ? 'in' : 'out');
+  setMessage() { // TODO This needs to work somehow....
+    if (this.authService.isLoginFailed === true){
+      this.message = 'Incorrect Credentials';
+    }
+    if (this.authService.isLoginFailed === false){
+      this.message = 'Logging In';
+    }
   }
 
   login() {
-    this.message = 'Trying to log in ...';
-
-    this.authService.login().subscribe(() => {
-      this.setMessage();
+    this.setMessage();
+    this.authService.login(this.form.controls['username'].value, this.form.controls['password'].value).subscribe(() => {
       if (this.authService.isLoggedIn) {
+
         // Usually you would use the redirect URL from the auth service.
         const redirectUrl = '/Dashboard/Temperature';
 
@@ -34,8 +42,6 @@ export class LoginComponent {
           queryParamsHandling: 'preserve',
           preserveFragment: true
         };
-
-        // Redirect the user
         this.router.navigate([redirectUrl], navigationExtras);
       }
     });
@@ -50,7 +56,6 @@ export class LoginComponent {
     if (this.email.hasError('required')) {
       return 'You must enter a value';
     }
-
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
 }

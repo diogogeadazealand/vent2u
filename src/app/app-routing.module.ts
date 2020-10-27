@@ -12,7 +12,8 @@ import { DashboardComponent } from './views/dashboard.component'; // This is the
 // Child Routes Dashboard
 import { VentsComponent } from './views/vents/vents.component'; // Page2
 import { ClaimComponent } from './views/claim/claim.component';
-import { Temperature } from './views/temperature/temperature.component'; // Page 3
+import { Temperature } from './views/temperature/temperature.component';
+import {RegisterComponent} from './auth/register/register.component'; // Page 3
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
       { path: 'Vents', component: VentsComponent },
       { path: 'Claim', component: ClaimComponent }
     ] },
+  { path: 'Register', component: RegisterComponent },
   { path: '',   component: LoginComponent },
   { path: '**', component: NotFoundComponent }
 ];

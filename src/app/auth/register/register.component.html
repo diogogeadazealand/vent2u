@@ -1,0 +1,80 @@
+<div class="layout">
+  <div class="logo">
+    <h1>Vent<span>2</span>u</h1>
+  </div>
+
+<!--  TODO need pipes and errMsg here-->
+  <div class="cred-box">
+    <h3>SIGN UP</h3>
+    <form
+      class="example-container"
+      name="form"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      #f="ngForm"
+      novalidate
+    >
+      <mat-form-field>
+        <mat-label>
+          Enter Username
+        </mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Vladimir"
+          name="username"
+          [(ngModel)]="form.username"
+          required
+          minlength="3"
+          maxlength="20"
+          #username="ngModel"
+        >
+        <mat-error *ngIf="username.invalid">{{errMsg}}</mat-error>
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field>
+        <mat-label>
+          Enter Email
+        </mat-label>
+        <input
+          matInput
+          type="email"
+          name="email"
+          [(ngModel)]="form.email"
+          required
+          email
+          #email="ngModel"
+        >
+        <mat-error *ngIf="email.invalid">{{errMsg}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Enter Password</mat-label>
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          name="password"
+          [(ngModel)]="form.password"
+          required
+          minlength="6"
+          #password="ngModel"
+        >
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <br>
+
+      <button mat-raised-button type="submit">Sign Up</button>
+    </form>
+
+  </div>
+  <div class="trouble-box">
+    <div class="sign-box">
+      <a routerLink="">Sign In</a>
+    </div>
+    <a href="https://medium.com/amp/p/c56838f49738">Having Trouble?</a>
+  </div>
+</div>
