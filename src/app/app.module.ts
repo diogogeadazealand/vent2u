@@ -12,6 +12,7 @@ import { DashboardModule } from './views/dashboard.module';
 // Modules TODO Should be moved to dashboard.
 import { TemperatureModule } from './views/temperature/temperature.module';
 import {AuthModule} from './auth/auth.module';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {AuthModule} from './auth/auth.module';
     AppRoutingModule,
     TemperatureModule,
     AuthModule,
-    DashboardModule
+    DashboardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
