@@ -7,7 +7,9 @@ import { AuthGuard } from './auth/auth.guard';
 // Main Routes - Depending on login status.
 import { NotFoundComponent} from './404/notfound.component'; // Unknown page
 import { LoginComponent } from './auth/login/login.component'; // Login for dashboard
-import { DashboardComponent } from './dashboard/dashboard.component'; // This is the UI behind Auth - This is our main view.
+import { RegisterComponent } from './auth/register/register.component';
+import { DashboardComponent } from './views/dashboard.component'; // This is the UI behind Auth - This is our main view.
+
 
 // Child Routes Dashboard
 import { MainComponent } from './dashboard/main/main.component'; // Page1
@@ -23,6 +25,7 @@ const routes: Routes = [
       { path: 'Vents', component: VentsComponent },
       { path: 'Claim', component: ClaimComponent }
     ] },
+  { path: 'Signup', component: RegisterComponent},
   { path: '',   component: LoginComponent },
   { path: '**', component: NotFoundComponent }
 ];

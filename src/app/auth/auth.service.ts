@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { Observable, of } from 'rxjs';
 import { tap, delay } from 'rxjs/operators';
 
@@ -8,15 +7,22 @@ import { tap, delay } from 'rxjs/operators';
 })
 export class AuthService {
   isLoggedIn = false;
-
-  // store the URL so we can redirect after logging in
+  isLoginFailed = false;
+  userName = 'test';
+  userPassword = 'test';
   redirectUrl: string;
 
-  login(): Observable<boolean> {
-    return of(true).pipe(
-      delay(1000),
-      tap(val => this.isLoggedIn = true)
-    );
+  login(username, password): Observable<boolean> {
+    if (username === this.userName && password === this.userPassword){
+      return of(true).pipe(
+        delay(1500),
+        tap(val => this.isLoggedIn = true)
+      );
+    }
+    if (username !== this.userName || password !== this.userPassword){
+      console.log('if statement work');
+      this.isLoginFailed = true;
+    }
   }
 
   logout(): void {
