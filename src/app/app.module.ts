@@ -13,11 +13,17 @@ import { DashboardModule } from './views/dashboard.module';
 import { TemperatureModule } from './views/temperature/temperature.module';
 import {AuthModule} from './auth/auth.module';
 import {ClassModule} from './class/class.module';
+import { LogoutComponent } from './shared/_components/Header/logout/logout.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import { NotInUseModalComponent } from './shared/_components/not-in-use-modal/not-in-use-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LogoutComponent,
+    NotInUseModalComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +31,9 @@ import {ClassModule} from './class/class.module';
     TemperatureModule,
     AuthModule,
     DashboardModule,
-    ClassModule
+    ClassModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,14 +9,16 @@
 <mat-menu #burgerMenu>
   <div class="burgerMenu">
     <h3>Menu</h3>
+    <p>{{user}}</p>
     <hr>
     <ul>
-      <li mat-menu-item routerLink="">Dashboard <mat-icon>star</mat-icon></li>
-      <li mat-menu-item routerLink="">Claim Vent <mat-icon>star</mat-icon></li>
-      <li mat-menu-item routerLink="">Create Presets <mat-icon>star</mat-icon></li>
-      <li mat-menu-item routerLink="">Settings<mat-icon>star</mat-icon></li>
-      <li mat-menu-item routerLink="">About <mat-icon>star</mat-icon></li>
-      <li mat-menu-item routerLink="">Logout <mat-icon>star</mat-icon></li>
+      <li mat-menu-item routerLink="Temperature">Temperature <mat-icon>star</mat-icon></li>
+      <li mat-menu-item routerLink="Claim">Claim Vent <mat-icon>star</mat-icon></li>
+      <li mat-menu-item routerLink="Classroom">Classroom <mat-icon>star</mat-icon></li>
+      <li mat-menu-item (click)="NotInUseModal()">Create Presets <mat-icon>star</mat-icon></li>
+      <li mat-menu-item (click)="NotInUseModal()">Settings<mat-icon>star</mat-icon></li>
+      <li mat-menu-item (click)="NotInUseModal()">About <mat-icon>star</mat-icon></li>
+      <li mat-menu-item (click)="Logout()">Logout <mat-icon>star</mat-icon></li>
     </ul>
   </div>
 
