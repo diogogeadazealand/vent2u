@@ -1,0 +1,16 @@
+h2{
+    text-align: center;
+}
+
+.studentsGrid{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 15px;
+    grid-gap: 15px;
+}
+
+button{
+height: 42px;
+}
+
