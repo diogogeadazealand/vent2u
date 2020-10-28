@@ -22,16 +22,10 @@ import {ClassModule} from './class/class.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< HEAD
-    DashboardTemperature,
-    DashboardModule,
-    AuthModule,
-    ClassModule
-=======
     TemperatureModule,
     AuthModule,
-    DashboardModule
->>>>>>> master
+    DashboardModule,
+    ClassModule
   ],
   providers: [],
   bootstrap: [AppComponent]
