@@ -1,3 +1,11 @@
+// Author:
+// Nikolaj Drejer
+//
+// Date: 28.10.2020
+//
+// Desription:
+// Header component which hold the Topnav and the burger menu
+
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { LogoutComponent } from './logout/logout.component';

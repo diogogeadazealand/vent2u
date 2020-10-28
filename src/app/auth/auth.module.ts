@@ -1,3 +1,10 @@
+// Author:
+// Nikolaj Drejer
+//
+// Date: 25.10.2020
+//
+// Desription:
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';

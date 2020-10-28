@@ -1,3 +1,11 @@
+// Author:
+// Nikolaj Drejer
+//
+// Date: 18.10.2020
+//
+// Desription:
+
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

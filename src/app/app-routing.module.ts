@@ -1,3 +1,11 @@
+// Author:
+// Nikolaj Drejer
+//
+// Desription:
+// Routing module for routes.
+// We use child routes to our dashboard main view - only accessible after login
+// Login and notfound is the two other Main Routes.
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
