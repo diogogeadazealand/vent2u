@@ -10,8 +10,10 @@ import { MainComponent } from './main/main.component';
 import { VentsComponent } from './vents/vents.component';
 import { ClaimComponent } from './claim/claim.component';
 
-import { Header } from './../shared/_components/Header/header.component'
-import { Navigation } from './../shared/_components/Navigation/navigation.component';
+import { Header } from '../shared/_components/Header/header.component';
+import { NavigationComponent } from '../shared/_components/Navigation/navigation.component';
+import { CelsiusPipe } from '../celsius.pipe';
+
 
 
 @NgModule({
@@ -22,13 +24,17 @@ import { Navigation } from './../shared/_components/Navigation/navigation.compon
     VentsComponent,
     ClaimComponent,
     Header,
-    Navigation
+    NavigationComponent,
+    CelsiusPipe
   ],
   imports: [
     CommonModule,
     RouterModule,
     MatIconModule,
     MatToolbarModule,
+  ],
+  exports: [
+    CelsiusPipe
   ]
 })
 export class DashboardModule { }
