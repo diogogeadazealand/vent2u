@@ -21,8 +21,13 @@ const routes: Routes = [
     children: [
       { path: 'Temperature', component: Temperature, },
       { path: 'Vents', component: VentsComponent },
+<<<<<<< HEAD
       { path: 'Claim', component: ClaimComponent },
       { path: 'Classroom', component: ClassComponent }
+=======
+      { path: 'Classroom', component: ClassComponent }, // TODO I guess this should be in another child of child
+      { path: 'Claim', component: ClaimComponent }
+>>>>>>> 808a64cc30914682e3c45fcba4954d601e087350
     ] },
   { path: '',   component: LoginComponent },
   { path: '**', component: NotFoundComponent }
