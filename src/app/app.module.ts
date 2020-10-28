@@ -14,11 +14,13 @@ import { TemperatureModule } from './views/temperature/temperature.module';
 import {AuthModule} from './auth/auth.module';
 import {ClassModule} from './class/class.module';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    NotFoundComponent
-  ],
+    NotFoundComponent,
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
