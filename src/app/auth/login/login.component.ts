@@ -1,3 +1,11 @@
+// Author:
+// Nikolaj Drejer
+//
+// Date: 27.10.2020
+//
+// Desription:
+
+
 import { Component } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
