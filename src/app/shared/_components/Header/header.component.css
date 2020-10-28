@@ -1,0 +1,12 @@
+#logo {
+    font-size: 22pt;
+}
+
+mat-toolbar {
+    justify-content: space-between;
+    width: 100%;
+    background-color: #222;
+    color: white;
+    padding: 20px 25px;
+    text-align: left;
+}

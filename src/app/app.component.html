@@ -3,9 +3,7 @@
         <span id="logo" routerLink="Dashboard">Vent<b style="color: green">2</b>u</span>
         <span><mat-icon>menu</mat-icon></span>
     </mat-toolbar>
-
-    <!--  Page Output-->
-   
+    <claim-grid [classroom]="vents"></claim-grid>
     <router-outlet></router-outlet>
     <footer>
         <nav>
