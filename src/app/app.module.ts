@@ -18,13 +18,17 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import { NotInUseModalComponent } from './shared/_components/not-in-use-modal/not-in-use-modal.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     NotFoundComponent,
+
     LogoutComponent,
     NotInUseModalComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,

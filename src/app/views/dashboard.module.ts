@@ -18,8 +18,10 @@ import { VentsComponent } from './vents/vents.component';
 import { ClaimComponent } from './claim/claim.component';
 
 import { HeaderComponent } from '../shared/_components/Header/header.component';
-import { NavigationComponent } from '../shared/_components/Navigation/navigation.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { NavigationComponent } from '../shared/_components/Navigation/navigation.component';
+import { CelsiusPipe } from '../celsius.pipe';
+
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { MatMenuModule } from '@angular/material/menu';
     VentsComponent,
     ClaimComponent,
     HeaderComponent,
-    NavigationComponent
+    NavigationComponent,
+    CelsiusPipe
   ],
   imports: [
     CommonModule,
@@ -39,5 +42,9 @@ import { MatMenuModule } from '@angular/material/menu';
     MatToolbarModule,
     MatMenuModule
     ]
+  ],
+  exports: [
+    CelsiusPipe
+  ]
 })
 export class DashboardModule { }
