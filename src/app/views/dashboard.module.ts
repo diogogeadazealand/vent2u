@@ -10,8 +10,9 @@ import { MainComponent } from './main/main.component';
 import { VentsComponent } from './vents/vents.component';
 import { ClaimComponent } from './claim/claim.component';
 
-import { Header } from './../shared/_components/Header/header.component'
-import { Navigation } from './../shared/_components/Navigation/navigation.component';
+import { HeaderComponent } from '../shared/_components/Header/header.component';
+import { NavigationComponent } from '../shared/_components/Navigation/navigation.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 @NgModule({
@@ -21,14 +22,15 @@ import { Navigation } from './../shared/_components/Navigation/navigation.compon
     MainComponent,
     VentsComponent,
     ClaimComponent,
-    Header,
-    Navigation
+    HeaderComponent,
+    NavigationComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     MatIconModule,
     MatToolbarModule,
-  ]
+    MatMenuModule
+    ]
 })
 export class DashboardModule { }
