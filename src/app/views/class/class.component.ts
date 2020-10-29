@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentsService } from './students/students.service';
-import { VentService } from '../shared/_services/vent.service';
+import { VentService } from '../../shared/_services/vent.service';
 
 @Component({
   selector: 'app-class',

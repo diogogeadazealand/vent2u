@@ -5,15 +5,16 @@ import { StudentComponent } from './student/student.component';
 import { StudentsComponent } from './students/students.component';
 import { MatButtonModule } from '@angular/material/button';
 import { StudentsService } from './students/students.service';
-import { ClaimGridComponent } from '../shared/_components/claim-grid/claim-grid.component';
-import { VentComponent } from '../shared/_components/claim-grid/vent/vent.component';
-import { VentService } from '../shared/_services/vent.service';
+import { ClaimGridModule } from '../../shared/_components/claim-grid/claim-grid.module';
+import { VentService } from '../../shared/_services/vent.service';
 
 
 @NgModule({
-  declarations: [ClassComponent, StudentComponent, StudentsComponent, ClaimGridComponent, VentComponent ], 
+  declarations: [ClassComponent, StudentComponent, StudentsComponent ], 
   imports: [
-    CommonModule, MatButtonModule, 
+    CommonModule, 
+    MatButtonModule, 
+    ClaimGridModule
   ],
   providers: [ StudentsService, VentService ],
   exports: [ ClassComponent ]

@@ -18,11 +18,10 @@ import { LoginComponent } from './auth/login/login.component'; // Login for dash
 import { DashboardComponent } from './views/dashboard.component'; // This is the UI behind Auth - This is our main view.
 
 // Child Routes Dashboard
-import { VentsComponent } from './views/vents/vents.component'; // Page Vents
 import { HumidityComponent } from './views/humidity/humidity.component'; // Page Humidity
 import { ClaimComponent } from './views/claim/claim.component'; // Page Claiim
 import { TemperatureComponent } from './views/temperature/temperature.component'; // Page Temperature
-import { ClassComponent} from './class/class.component'; // Page Class
+import { ClassComponent} from './views/class/class.component'; // Page Class
 
 
 const routes: Routes = [
@@ -30,7 +29,6 @@ const routes: Routes = [
     children: [
       { path: 'Temperature', component: TemperatureComponent, },
       { path: 'Humidity', component: HumidityComponent },
-      { path: 'Vents', component: VentsComponent },
       { path: 'Claim', component: ClaimComponent },
       { path: 'Classroom', component: ClassComponent }
     ] },

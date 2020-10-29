@@ -14,8 +14,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 import { MainComponent } from './main/main.component';
-import { VentsComponent } from './vents/vents.component';
 import { ClaimComponent } from './claim/claim.component';
+
+import { ClaimGridModule } from '../shared/_components/claim-grid/claim-grid.module'; 
 
 import { HeaderComponent } from '../shared/_components/Header/header.component';
 import { MatMenuModule } from '@angular/material/menu';
@@ -31,7 +32,6 @@ import { CelsiusPipe } from '../celsius.pipe';
     DashboardComponent,
     // Pages
     MainComponent,
-    VentsComponent,
     ClaimComponent,
     HeaderComponent,
     NavigationComponent,
@@ -42,7 +42,8 @@ import { CelsiusPipe } from '../celsius.pipe';
     RouterModule,
     MatIconModule,
     MatToolbarModule,
-    MatMenuModule
+    MatMenuModule,
+    ClaimGridModule
   ],
   exports: [
     CelsiusPipe
