@@ -11,10 +11,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 // View Components
 import { Humidity } from './humidity.component';
-// import { DashboardSlider } from './Slider/slider.component';
-// import { OTempComponent } from './OutsideTemp/otemp.component';
-// import { OTempModule } from './OutsideTemp/otemp.module';
-
 
 import { HumiditySlider } from './HumiditySlider/hslider.component';
 
