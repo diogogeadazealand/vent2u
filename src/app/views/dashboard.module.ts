@@ -20,6 +20,8 @@ import { ClaimComponent } from './claim/claim.component';
 import { HeaderComponent } from '../shared/_components/Header/header.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { NavigationComponent } from '../shared/_components/Navigation/navigation.component';
+
+// Pipelines
 import { CelsiusPipe } from '../celsius.pipe';
 
 

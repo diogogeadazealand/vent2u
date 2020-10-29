@@ -1,6 +1,6 @@
 <div class="flex-layout">
     <div class="temperature-view">
-        <temp-slider></temp-slider>
+        <temp-slider [temperature]="temperature" (temperatureEvent)="onTempChanged($event)"></temp-slider>
         <div class="outside-inside-temp">
             <outside-temperature></outside-temperature>
             <div class="inside-temp">
