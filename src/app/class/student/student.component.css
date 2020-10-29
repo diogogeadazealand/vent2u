@@ -1,0 +1,10 @@
+button{
+    width: 100%;
+    position: relative;
+    text-align: left;
+}
+
+button span{
+  position: fixed;
+  right: 10px;  
+}
