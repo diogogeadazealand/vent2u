@@ -41,7 +41,6 @@ import { CelsiusPipe } from '../celsius.pipe';
     MatIconModule,
     MatToolbarModule,
     MatMenuModule
-    ]
   ],
   exports: [
     CelsiusPipe
