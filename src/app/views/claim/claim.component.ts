@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VentService } from 'src/app/shared/_services/vent.service';
 
 @Component({
   selector: 'app-claim',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClaimComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _VentService: VentService) { }
+
+  vents;
 
   ngOnInit(): void {
+    this.vents = this._VentService.GetVents();
   }
 
 }
