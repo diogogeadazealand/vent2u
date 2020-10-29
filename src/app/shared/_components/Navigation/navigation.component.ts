@@ -5,6 +5,6 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent {
-  @Input() temperature;
-  @Input() humidity;
+  @Input() temperature : number;
+  @Input() humidity : number;
 }

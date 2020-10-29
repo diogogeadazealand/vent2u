@@ -5,15 +5,30 @@ import { Component } from '@angular/core';
   templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent {
-  public componentAdded(temperatureChange) {
-    if(temperatureChange != undefined && temperatureChange.temperatureEvent) {
-      temperatureChange.temperature = this.temperature;
-      temperatureChange.temperatureEvent.subscribe(
+  public componentAdded(component) {
+    if(component != undefined) {
+      if(component.temperatureEvent) {
+      component.temperature = this.temperature;
+      component.temperatureEvent.subscribe(
         (data) => {
           this.temperature = data;
         })
+      }
+      else if(component.humidityEvent) {
+        component.humidity = this.humidity;
+        component.humidityEvent.subscribe(
+          (data) => {
+            this.humidity = data;
+          }
+        )
+      }
     }
   }
   temperature = 0;
   humidity = 0;
+  
+  ngInit() {
+    this.temperature = 17;
+    this.humidity = 53;
+  }
 }
