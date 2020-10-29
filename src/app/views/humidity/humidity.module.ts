@@ -10,7 +10,7 @@ import {MatSliderModule} from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 // View Components
-import { Humidity } from './humidity.component';
+import { HumidityComponent } from './humidity.component';
 
 import { HumiditySlider } from './HumiditySlider/hslider.component';
 
@@ -22,7 +22,7 @@ import { OHumidityModule } from './OutsideHumidity/ohumidity.module';
 import { PresetsModule } from '../../shared/_components/Presets/presets.module';
 @NgModule({
   declarations: [
-    Humidity,
+    HumidityComponent,
     HumiditySlider,
     OHumidityComponent
   ],

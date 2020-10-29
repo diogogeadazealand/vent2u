@@ -10,7 +10,7 @@ import {MatSliderModule} from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 // View Components
-import { Temperature } from './temperature.component';
+import { TemperatureComponent } from './temperature.component';
 import { DashboardSlider } from './Slider/slider.component';
 import { OTempComponent } from './OutsideTemp/otemp.component';
 import { OTempModule } from './OutsideTemp/otemp.module';
@@ -20,7 +20,7 @@ import { PresetsModule } from '../../shared/_components/Presets/presets.module';
 
 @NgModule({
   declarations: [
-    Temperature,
+    TemperatureComponent,
     DashboardSlider,
     OTempComponent
   ],

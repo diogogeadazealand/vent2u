@@ -18,24 +18,18 @@ import { LoginComponent } from './auth/login/login.component'; // Login for dash
 import { DashboardComponent } from './views/dashboard.component'; // This is the UI behind Auth - This is our main view.
 
 // Child Routes Dashboard
-<<<<<<< HEAD
-import { VentsComponent } from './views/vents/vents.component'; // View Vents
-import { ClaimComponent } from './views/claim/claim.component'; // View Vents
-import { Temperature } from './views/temperature/temperature.component'; // View Temperature
-import { Humidity } from './views/humidity/humidity.component'; // View Humidity
-=======
-import { VentsComponent } from './views/vents/vents.component'; // Page2
-import { ClaimComponent } from './views/claim/claim.component';
-import { Temperature } from './views/temperature/temperature.component';
-import { ClassComponent} from './class/class.component'; // Page 3
->>>>>>> c0ca9a9d83e15674fe2ad53bf1294fa98d253194
+import { VentsComponent } from './views/vents/vents.component'; // Page Vents
+import { HumidityComponent } from './views/humidity/humidity.component'; // Page Humidity
+import { ClaimComponent } from './views/claim/claim.component'; // Page Claiim
+import { TemperatureComponent } from './views/temperature/temperature.component'; // Page Temperature
+import { ClassComponent} from './class/class.component'; // Page Class
 
 
 const routes: Routes = [
   { path: 'Dashboard', component: DashboardComponent, canLoad: [AuthGuard],
     children: [
-      { path: 'Temperature', component: Temperature, },
-      { path: 'Humidity', component: Humidity },
+      { path: 'Temperature', component: TemperatureComponent, },
+      { path: 'Humidity', component: HumidityComponent },
       { path: 'Vents', component: VentsComponent },
       { path: 'Claim', component: ClaimComponent },
       { path: 'Classroom', component: ClassComponent }
