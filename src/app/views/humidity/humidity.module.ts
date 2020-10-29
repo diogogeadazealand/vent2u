@@ -10,19 +10,21 @@ import {MatSliderModule} from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 // View Components
-import { TemperatureComponent } from './temperature.component';
-import { DashboardSlider } from './Slider/slider.component';
-import { OTempComponent } from './OutsideTemp/otemp.component';
-import { OTempModule } from './OutsideTemp/otemp.module';
+import { HumidityComponent } from './humidity.component';
 
-// Shared Modules
+import { HumiditySlider } from './HumiditySlider/hslider.component';
+
+// Modules
+import { OHumidityComponent } from './OutsideHumidity/ohumidity.component';
+import { OHumidityModule } from './OutsideHumidity/ohumidity.module';
+
+// Shared Components
 import { PresetsModule } from '../../shared/_components/Presets/presets.module';
-
 @NgModule({
   declarations: [
-    TemperatureComponent,
-    DashboardSlider,
-    OTempComponent
+    HumidityComponent,
+    HumiditySlider,
+    OHumidityComponent
   ],
   exports: [
   ],
@@ -33,8 +35,8 @@ import { PresetsModule } from '../../shared/_components/Presets/presets.module';
     MatIconModule,
     MatSliderModule,
     MatToolbarModule,
-    OTempModule,
-    PresetsModule
+    PresetsModule,
+    OHumidityModule
   ]
 })
-export class TemperatureModule { }
+export class HumidityModule { }

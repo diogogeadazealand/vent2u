@@ -5,5 +5,5 @@ import { Component } from '@angular/core'
     templateUrl: './temperature.component.html',
     styleUrls: ['./temperature.component.css']
 })
-export class Temperature {
+export class TemperatureComponent {
 }

@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
     templateUrl: './presets.component.html',
     styleUrls: ['./presets.component.css']
 })
-export class Presets {
+export class PresetsComponent {
 } 

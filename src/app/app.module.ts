@@ -11,6 +11,8 @@ import { DashboardModule } from './views/dashboard.module';
 
 // Modules TODO Should be moved to dashboard.
 import { TemperatureModule } from './views/temperature/temperature.module';
+import { HumidityModule } from './views/humidity/humidity.module';
+
 import {AuthModule} from './auth/auth.module';
 import {ClassModule} from './class/class.module';
 import { LogoutComponent } from './shared/_components/Header/logout/logout.component';
@@ -33,6 +35,7 @@ import { NotInUseModalComponent } from './shared/_components/not-in-use-modal/no
     BrowserModule,
     AppRoutingModule,
     TemperatureModule,
+    HumidityModule,
     AuthModule,
     DashboardModule,
     ClassModule,
