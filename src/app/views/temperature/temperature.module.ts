@@ -17,7 +17,6 @@ import { OTempModule } from './OutsideTemp/otemp.module';
 
 // Shared Modules
 import { PresetsModule } from '../../shared/_components/Presets/presets.module';
-
 @NgModule({
   declarations: [
     TemperatureComponent,

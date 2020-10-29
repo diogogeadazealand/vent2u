@@ -1,6 +1,6 @@
 <div class="flex-layout">
     <div class="humidity-view">
-        <hum-slider></hum-slider>
+        <hum-slider [humidity]="humidity" (humidityEvent)="onHumidityChanged($event)"></hum-slider>
         <div class="outside-inside">
             <outside-humidity></outside-humidity>
             <div class="inside-humidity">
