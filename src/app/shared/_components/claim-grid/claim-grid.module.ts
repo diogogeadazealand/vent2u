@@ -2,6 +2,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from '../../_components/Dialog/dialog.component';
 
 import { ClaimGridComponent } from './claim-grid.component';
 import { VentComponent } from './vent/vent.component';
@@ -9,7 +11,8 @@ import { VentComponent } from './vent/vent.component';
 @NgModule({
   declarations: [
     VentComponent,
-    ClaimGridComponent  
+    ClaimGridComponent,
+    DialogComponent  
     ],
   exports: [
     VentComponent,
@@ -17,7 +20,8 @@ import { VentComponent } from './vent/vent.component';
     ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
     ]
 })
 export class ClaimGridModule { }
