@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { WeatherService } from '../../../shared/_services/Weather/weather.service';
-import { PercentPipe } from '../../../percent.pipe';
 
 @Component({
     selector: 'outside-humidity',
     template: `
     <div class="outside-humidity">
         <span *ngIf="isLoading">Getting data...</span>
-        <span *ngIf="!isLoading">Outside {{ humidity || percent }}</span>
+        <span *ngIf="!isLoading">Outside {{ humidity }}%</span>
     </div>`,
     styleUrls: ['./ohumidity.component.css'],
     providers: [WeatherService]
