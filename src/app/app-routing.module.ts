@@ -25,14 +25,14 @@ import { ClassComponent} from './views/class/class.component'; // Page Class
 
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent, canLoad: [AuthGuard],
+  { path: 'Dashboard', component: DashboardComponent, canLoad: [AuthGuard],
     children: [
       { path: 'Temperature', component: TemperatureComponent, },
       { path: 'Humidity', component: HumidityComponent },
       { path: 'Claim', component: ClaimComponent },
       { path: 'Classroom', component: ClassComponent }
     ] },
-  { path: 'Login',   component: LoginComponent },
+  { path: '',   component: LoginComponent },
   { path: '**', component: NotFoundComponent }
 ];
 
