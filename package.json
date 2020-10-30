@@ -2,12 +2,7 @@
   "name": "semester-project",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "compodoc": "npm compodoc -p tsconfig.json src"
   },
   "private": true,
   "dependencies": {
@@ -31,6 +26,7 @@
     "@angular-devkit/build-angular": "^0.1002.0",
     "@angular/cli": "~10.1.2",
     "@angular/compiler-cli": "~10.1.2",
+    "@compodoc/compodoc": "^1.1.11",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
