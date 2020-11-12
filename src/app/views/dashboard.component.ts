@@ -38,9 +38,9 @@ export class DashboardComponent {
     // This id parameter is a placeholder until the session gives us the id
     this._ventService.getVentData(2).subscribe(data => {
         this.isLoading = false;
-        let vent = data;
-        this.temperature = vent[0].temperature;
-        this.humidity = vent[0].humidity;
+        let vent = data[0];
+        this.temperature = vent.temperature;
+        this.humidity = vent.humidity;
     });
   }
 }
