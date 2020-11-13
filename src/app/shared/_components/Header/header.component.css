@@ -15,6 +15,18 @@ mat-toolbar {
     text-align: left;
 }
 
+mat-toolbar::ng-deep button {
+    background-color: transparent;
+    color: #FFF;
+    border-color: transparent;
+}
+
+mat-toolbar::ng-deep .mat-icon {
+    font-size: 40px;
+    width: 30px;
+    height: 30px;
+}
+
 header {
     position: fixed;
     top: 0;
