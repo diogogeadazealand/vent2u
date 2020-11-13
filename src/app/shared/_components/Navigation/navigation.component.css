@@ -28,7 +28,7 @@ nav ul li {
 
 nav ul li:before {
     content: "";
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: transparent;
     height: 85px;
     pointer-events: none;
     width: calc(100% - 8px);
@@ -38,6 +38,11 @@ nav ul li:before {
     left: 50%;
     transform: translate(-50%, 0);
     border-radius: 8px 8px 0 0;
+    transition: 0.3s ease-in-out;
+}
+
+nav ul li.is-active:before {
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 nav ul li span {
