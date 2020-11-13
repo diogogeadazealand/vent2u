@@ -8,13 +8,39 @@ import { VentsService } from '../shared/_services/Vents/vents.service';
   providers: [VentsService]
 })
 export class DashboardComponent {
+  constructor(
+    private _ventService: VentsService
+  ) {}
+
+  temperature = null;
+  humidity = null;
+
+  component = null;
+  // This id parameter is a placeholder until the session gives us the id
+  id = 2;
+
+  ngOnInit() {
+    this._ventService.getOne(this.id).subscribe(data => {
+        this.temperature = data[0].temperature;
+        this.humidity = data[0].humidity;
+        if(this.component.temperature !== undefined) {
+          this.component.temperature = data[0].temperature;
+        }
+        else if(this.component.humidity !== undefined) {
+          this.component.humidity = data[0].humidity;
+        }
+      });
+  }
+
   public componentAdded(component) {
     if(component != undefined) {
+      this.component = component;
       if(component.temperatureEvent) {
       component.temperature = this.temperature;
       component.temperatureEvent.subscribe(
         (data) => {
           this.temperature = data;
+          this.updateTemperature(this.id, data)
         })
       }
       else if(component.humidityEvent) {
@@ -22,25 +48,40 @@ export class DashboardComponent {
         component.humidityEvent.subscribe(
           (data) => {
             this.humidity = data;
+            this.updateHumidity(this.id, data)
           }
         )
       }
     }
   }
-  temperature = null;
-  humidity = null;
-  
-  isLoading = true;
-  constructor(private _ventService: VentsService) {
-  }
 
-  ngOnInit() {
-    // This id parameter is a placeholder until the session gives us the id
-    this._ventService.getVentData(2).subscribe(data => {
-        this.isLoading = false;
-        let vent = data[0];
-        this.temperature = vent.temperature;
-        this.humidity = vent.humidity;
-    });
-  }
+  updateTemperature(id, temperature) {
+    let data = {
+      ID: id,
+      temperature: temperature
+    }
+    this._ventService.update(data)
+      .subscribe(
+        response => {
+          console.log(response);
+        },
+        error => {
+          console.log(error);
+        });
+  } 
+
+  updateHumidity(id, humidity) {
+    let data = {
+      ID: id,
+      humidity: humidity
+    }
+    this._ventService.update(data)
+      .subscribe(
+        response => {
+          console.log(response);
+        },
+        error => {
+          console.log(error);
+        });
+  } 
 }
