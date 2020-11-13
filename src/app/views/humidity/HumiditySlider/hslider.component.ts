@@ -11,6 +11,5 @@ export class HumiditySlider {
 
     onHumidityChanged(value : number) {
         this.humidityEvent.emit(value);
-        console.log("Slider Component")
     }
 }

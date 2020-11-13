@@ -14,7 +14,8 @@ export class DashboardComponent {
 
   temperature = null;
   humidity = null;
-  
+
+  component = null;
   // This id parameter is a placeholder until the session gives us the id
   id = 2;
 
@@ -22,11 +23,18 @@ export class DashboardComponent {
     this._ventService.getOne(this.id).subscribe(data => {
         this.temperature = data[0].temperature;
         this.humidity = data[0].humidity;
-    });
+        if(this.component.temperature !== undefined) {
+          this.component.temperature = data[0].temperature;
+        }
+        else if(this.component.humidity !== undefined) {
+          this.component.humidity = data[0].humidity;
+        }
+      });
   }
 
   public componentAdded(component) {
     if(component != undefined) {
+      this.component = component;
       if(component.temperatureEvent) {
       component.temperature = this.temperature;
       component.temperatureEvent.subscribe(
@@ -61,6 +69,7 @@ export class DashboardComponent {
           console.log(error);
         });
   } 
+
   updateHumidity(id, humidity) {
     let data = {
       ID: id,
