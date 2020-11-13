@@ -1,8 +1,8 @@
 <nav>
     <ul>
-        <li routerLink="Temperature"><span>{{temperature | celsius }}</span> Temperature</li>
-        <li routerLink="Humidity"><span>{{humidity }}%</span> Humidity</li>
-        <li routerLink="Classroom"><span> <mat-icon>people</mat-icon> </span>Classroom</li>
-        <li routerLink="Claim"><span> <mat-icon>settings</mat-icon> </span>Settings</li>
+        <li routerLink="Temperature" [routerLinkActive]="['is-active']"><span>{{temperature | celsius }}</span> Temperature</li>
+        <li routerLink="Humidity" [routerLinkActive]="['is-active']"><span>{{humidity }}%</span> Humidity</li>
+        <li routerLink="Classroom" [routerLinkActive]="['is-active']"><span> <mat-icon>people</mat-icon> </span>Classroom</li>
+        <li routerLink="Claim" [routerLinkActive]="['is-active']"><span> <mat-icon>settings</mat-icon> </span>Settings</li>
     </ul>
 </nav>

@@ -29,11 +29,11 @@ import { CelsiusPipe } from '../celsius.pipe';
 @NgModule({
   declarations: [
     DashboardComponent,
+    HeaderComponent,
+    NavigationComponent,
     // Pages
     MainComponent,
     ClaimComponent,
-    HeaderComponent,
-    NavigationComponent,
     CelsiusPipe
   ],
   imports: [

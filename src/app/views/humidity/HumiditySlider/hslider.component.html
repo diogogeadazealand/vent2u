@@ -1,3 +1,9 @@
-<h2>Humidity</h2>
-<p class="humidity">{{ humidity }}%</p>
-<mat-slider [(ngModel)]="humidity" min="0" (change)="onHumidityChanged(humidity)" max="100"></mat-slider>
+<div class="humidity-component">
+    <div class="humidity-slider">
+        <mat-slider [(ngModel)]="humidity" min="0" (change)="onHumidityChanged(humidity)" max="100" vertical></mat-slider>
+    </div>
+    <div class="humidity-info">
+        <h2>Humidity</h2>
+        <p class="humidity">{{ humidity }}%</p>
+    </div>
+</div>

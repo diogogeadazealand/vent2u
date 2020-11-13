@@ -1,18 +1,38 @@
 mat-slider {
-    width: 100%;
     border-radius: 50%;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-}
-
-h2 {
-    text-align: center;
+    color: #FFF;
+    height: 40vh;
 }
 
 .humidity {
-    text-align: center;
-    font-size: 24px;
+    font-size: 60px;
+}
+
+.mat-accent .mat-slider-track-fill,
+.mat-accent .mat-slider-thumb,
+.mat-accent .mat-slider-thumb-label {
+    background-color: #FF416C;
+}
+
+.humidity-slider {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.humidity-component {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+}
+
+.humidity-info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }

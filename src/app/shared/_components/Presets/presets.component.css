@@ -8,4 +8,8 @@
 
 mat-form-field {
     width: 100%;
+    background-color: #FFF;
+    height: 51px;
+    overflow: hidden;
+    color: #000;
 }

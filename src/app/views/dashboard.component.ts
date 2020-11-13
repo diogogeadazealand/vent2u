@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-// import { VentService } from '../shared/_services/vent.service';
 import { VentsService } from '../shared/_services/Vents/vents.service';
 
 @Component({

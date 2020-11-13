@@ -1,40 +1,52 @@
 #logo {
     font-size: 22pt;
 }
-#logo b{
-  color: green;
+
+#logo b {
+    color: green;
 }
 
 mat-toolbar {
     justify-content: space-between;
     width: 100%;
-    background-color: #222;
+    background-color: transparent;
     color: white;
     padding: 20px 25px;
     text-align: left;
 }
-.burgerMenu{
-  text-align: center;
-  padding: 0;
-  width: 180px;
-}
-.burgerMenu h3{
-  font-size: 16pt;
-  margin-bottom: 0;
-}
-.burgerMenu hr{
-  margin-bottom: 0;
-}
-.burgerMenu ul{
-  margin: 0;
-  padding: 5px 10px;
-}
-.burgerMenu li{
-  display: flex;
-  justify-content: space-between;
-  padding: 0;
-}
-.mat-menu-item .mat-icon{
-  margin: 8px 0 0 0;
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
+.burgerMenu {
+    text-align: center;
+    padding: 0;
+    width: 180px;
+}
+
+.burgerMenu h3 {
+    font-size: 16pt;
+    margin-bottom: 0;
+}
+
+.burgerMenu hr {
+    margin-bottom: 0;
+}
+
+.burgerMenu ul {
+    margin: 0;
+    padding: 5px 10px;
+}
+
+.burgerMenu li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.mat-menu-item .mat-icon {
+    margin: 8px 0 0 0;
+}
