@@ -1,3 +1,5 @@
-<h2>Temperature</h2>
-<p class="temperature">{{ temperature }}°C</p>
-<mat-slider [(ngModel)]="temperature" min="0" (change)="onTempChanged(temperature)" max="30"></mat-slider>
+<ul class="temperature">
+    <li class="hide"></li>
+    <li *ngFor="let temp of tempRange"><p>{{ temp }}°C</p></li>
+    <li class="hide"></li>
+</ul>

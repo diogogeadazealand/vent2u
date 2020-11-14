@@ -1,5 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output
+} from '@angular/core';
+
 import { VentsService } from '../shared/_services/Vents/vents.service';
+import { UserMockService as UserService } from "../shared/_services/user-mock.service";
+import { PresetsService } from '../shared/_services/presets.service';
+
+import { User } from '../shared/_models/user.model';
+import { Vent } from '../shared/_models/vent.model';
+import { Preset } from '../shared/_models/preset.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,58 +18,90 @@ import { VentsService } from '../shared/_services/Vents/vents.service';
   styleUrls: ['dashboard.component.css'],
   providers: [VentsService]
 })
-export class DashboardComponent implements OnInit{
-  constructor(
-    private _ventService: VentsService
-  ) {}
 
-  temperature = null;
-  humidity = null;
-  vent = {name: "Vent 12"};
+
+export class DashboardComponent implements OnInit {
+
+  @Output() user: User = new User();
+  @Output() vent: Vent = new Vent();
 
   component = null;
   // This id parameter is a placeholder until the session gives us the id
   id = 2;
 
+
+  constructor(
+    private _ventService: VentsService,
+    private _userService: UserService
+  ) {}
+
   ngOnInit() {
+
+    this.user = this._userService.findOne(1);
+
     this._ventService.getOne(this.id).subscribe(data => {
-        this.temperature = data[0].temperature;
-        this.humidity = data[0].humidity;
-        if(this.component.temperature !== undefined) {
-          this.component.temperature = data[0].temperature;
-        }
-        else if(this.component.humidity !== undefined) {
-          this.component.humidity = data[0].humidity;
-        }
-      });
+
+      this.vent.set(data[0]);
+
+      this.SetTemperature(); //update temperature in the gui
+      this.SetHumidity(); // update humidity i nthe gui
+
+    });
+
+  }
+
+  private SetTemperature(val ? : Number) {
+
+    this.vent.temperature = val || this.vent.temperature;
+
+    if (this.component.temperatureEvent !== undefined) {
+      this.component.temperature = this.vent.temperature;
+    }
+
+    if(val){
+      this.updateTemperature(this.vent.temperature);
+    }
+  }
+
+  private SetHumidity(val ? : Number) {
+   
+    this.vent.humidity = val || this.vent.humidity;
+
+    if (this.component.humidityEvent !== undefined) {//updates interface
+      this.component.humidity = this.vent.humidity;
+    }
+
+    if(val != undefined){//updates database
+      this.updateHumidity(this.vent.humidity);
+    }
   }
 
   public componentAdded(component) {
-    if(component != undefined) {
+    if (component != undefined) {
       this.component = component;
-      if(component.temperatureEvent) {
-      component.temperature = this.temperature;
-      component.temperatureEvent.subscribe(
-        (data) => {
-          this.temperature = data;
-          this.updateTemperature(this.id, data)
-        })
-      }
-      else if(component.humidityEvent) {
-        component.humidity = this.humidity;
+      if (component.temperatureEvent) {
+
+        this.SetTemperature();
+
+        component.temperatureEvent.subscribe(
+          (data) => {
+            this.SetTemperature(data);
+          });
+
+      } else if (component.humidityEvent) {
+
         component.humidityEvent.subscribe(
           (data) => {
-            this.humidity = data;
-            this.updateHumidity(this.id, data)
+            this.SetHumidity(data);
           }
         )
       }
     }
   }
 
-  updateTemperature(id, temperature) {
+  updateTemperature(temperature) {
     let data = {
-      ID: id,
+      ID: this.vent.ID,
       temperature: temperature
     }
     this._ventService.update(data)
@@ -69,11 +112,11 @@ export class DashboardComponent implements OnInit{
         error => {
           console.log(error);
         });
-  } 
+  }
 
-  updateHumidity(id, humidity) {
+  updateHumidity(humidity) {
     let data = {
-      ID: id,
+      ID: this.vent.ID,
       humidity: humidity
     }
     this._ventService.update(data)
@@ -84,28 +127,18 @@ export class DashboardComponent implements OnInit{
         error => {
           console.log(error);
         });
-  } 
+  }
 
-  updatePreset(preset){
-    let data = {
-      ID: this.id,
-      humidity: preset.humidity,
-      temperature: preset.temperature,
-      presets_id: preset.ID
-    }
+  updatePreset(preset) {
 
-    this.humidity = preset.humidity;
-    this.temperature = preset.temperature;
+    this.vent.humidity = preset.humidity;
+    this.vent.temperature = preset.temperature;
+    this.vent.preset_id = preset.ID;
 
-    if(this.component.humidity !== undefined){
-      this.component.humidity = this.humidity;
-    }
+    this.SetTemperature();
+    this.SetHumidity();
 
-    if(this.component.temperature !== undefined){
-      this.component.temperature = this.temperature;
-    }
-
-    this._ventService.update(preset).subscribe(
+    this._ventService.update(this.vent).subscribe(
       response => {
         console.log("Preset changed");
       },

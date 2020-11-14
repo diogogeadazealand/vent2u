@@ -1,42 +1,57 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { NavigationStart, Router } from '@angular/router';
 import { PresetsService } from '../../_services/presets.service';
 
 @Component({
     selector: 'presets',
     templateUrl: './presets.component.html',
-    styleUrls: ['./presets.component.css']
+    styleUrls: ['./presets.component.css'],
 })
 export class PresetsComponent implements OnInit, AfterViewInit {
     
+    list;
     presetsNodeList;
     adjustSelected;
 
     currentPreset = 0;
     presets;
-    
+
     @Output() onPresetChanged = new EventEmitter();
 
-    constructor(private _presetsService: PresetsService){}
+    constructor(private _presetsService: PresetsService, private _router: Router){}
 
     ngOnInit(): void{
-        this._presetsService.findFromUser(1).subscribe(data => {
+        this._presetsService.findAllFromUser(1).subscribe(data => {
             this.presets = data;
+
+            setTimeout(() => {
+                this.presetsNodeList = this.list.children;
+                this.scrollToCurrent(false);
+            }, 500)
+
+        });
+
+        this._router.events.subscribe(event => {
+            if(event instanceof NavigationStart && event.url != "/Dashboard/Temperature"){
+                this.removeListener();
+            }
         })
     }
 
     ngAfterViewInit(): void {
-        let ul = document.querySelector(".presets ul");
-        ul.addEventListener("scroll", () => {
-            
-            if(this.adjustSelected) clearTimeout(this.adjustSelected);
-            this.adjustSelected = setTimeout(() => {
-                this.getCenterButton(this.currentPreset);
-            }, 250);
-        });
-        this.presetsNodeList = ul.children;
+        this.list = document.querySelector(".presets ul");
+        this.presetsNodeList = this.list.children;
     }
 
-    private getCenterButton(curPreset): void{
+    onScroll(): void{
+        clearTimeout(this.adjustSelected);
+        this.adjustSelected = setTimeout(() => {
+            this.getCenterButton(this.currentPreset);
+        }, 200);
+    }
+
+
+    getCenterButton(curPreset): void{
 
         let curElIndex = curPreset;
 
@@ -53,7 +68,7 @@ export class PresetsComponent implements OnInit, AfterViewInit {
             let screenCenter = {left: (window.innerWidth/2) - 10, right: (window.innerWidth/2) + 10 }
 
             //if current element right side is lower than left side, it means that the list scrolled right
-            if(pos.right < screenCenter.left){
+             if(pos.right < screenCenter.left){
 
                 ++curElIndex;
 
@@ -69,9 +84,10 @@ export class PresetsComponent implements OnInit, AfterViewInit {
                     break;
                 }
 
-            } else{
+            } else {
                 this.presetsNodeList[this.currentPreset].classList.remove("selected");
                 this.currentPreset = curElIndex;
+                
                 currentElement.classList.add("selected");
                 this.changePreset();
                 break;
@@ -81,6 +97,39 @@ export class PresetsComponent implements OnInit, AfterViewInit {
 
     changePreset(){
         this.onPresetChanged.emit(this.presets[this.currentPreset]);
+    }
+
+    removeListener(){
+
+        if(!this.list) this.list = document.querySelector(".presets ul");
+
+        if(!this.list) return;
+        this.list.removeEventListener("scroll", () => { this.onScroll();});
+    }
+
+    addListener()
+    {
+        if(!this.list) this.list = document.querySelector(".presets ul");
+        this.list.addEventListener("scroll", () => { 
+            this.onScroll();
+        });
+    }
+
+    scrollToCurrent(setActive = true){
+
+        this.removeListener();
+
+        let curElNode = this.presetsNodeList[this.currentPreset];
+        curElNode.scrollIntoView({inline: "center"});
+
+        if(setActive) {
+            let selected = document.querySelectorAll(".presets .selected");
+            selected.forEach(el => el.classList.remove("selected") );
+            curElNode.classList.add("selected");
+        }
+
+        this.addListener();
+
     }
 
 } 

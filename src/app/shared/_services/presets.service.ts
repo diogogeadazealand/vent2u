@@ -1,5 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { PATH } from "../config.js";
+
+const baseUrl = `${PATH}/presets`;
 
 @Injectable({
   providedIn: 'root'
@@ -8,9 +11,16 @@ export class PresetsService {
 
   constructor(private http: HttpClient) { }
 
-  
-  findFromUser(id){
-    return this.http.get(`http://localhost:8080/vent2u/presets/user/${id}`);
+  findAll(){
+    return this.http.get(baseUrl);
+  }
+
+  findOne(id){
+    return this.http.get(`${baseUrl}/${id}`);
+  }
+
+  findAllFromUser(id){
+    return this.http.get(`${baseUrl}/user/${id}`);
   }
 
 }

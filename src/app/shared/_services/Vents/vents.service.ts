@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { PATH } from "../../config.js";
 
-const baseUrl = 'http://localhost:8080/vent2u/vents';
+const baseUrl = `${PATH}/vents`;
 
 @Injectable()
 export class VentsService {
+
+
   constructor(private http: HttpClient) { }
 
   getAll() {

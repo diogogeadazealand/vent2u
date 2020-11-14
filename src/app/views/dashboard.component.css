@@ -3,4 +3,11 @@
     font-size: 1.8em;
     text-align: center;
     color: white;
+    position: relative;
+}
+
+.vent mat-icon{
+    position: absolute;
+    padding-left: 10px;
+    top: 4px;
 }

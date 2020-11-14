@@ -4,6 +4,8 @@
     border-radius: 25px;
     overflow: hidden;
     position: relative;
+    
+    overflow-anchor: none;
 }
 
 .presets ul::-webkit-scrollbar, .presets ul::-moz-scrollbar {
@@ -17,8 +19,11 @@
     white-space: nowrap;
     padding-left: 0;
     overflow-x: scroll;
+    
+    overflow-anchor: none;
     /*firefox*/
     scrollbar-width: none;
+    
   /*IE10+*/
   -ms-overflow-style: -ms-autohiding-scrollbar;
   scroll-snap-type: x mandatory;
