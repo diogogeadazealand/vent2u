@@ -1,15 +1,46 @@
-.presets button {
-    border: 1px dotted #000;
-}
-
-.presets {
-    margin-top: 60px;
-}
-
-mat-form-field {
-    width: 100%;
-    background-color: #FFF;
-    height: 51px;
+.presets{
+    background-color: rgba(255,255,255, 0.3);
+    margin: 0 20px;
+    border-radius: 25px;
     overflow: hidden;
-    color: #000;
+    position: relative;
+}
+
+.presets ul::-webkit-scrollbar, .presets ul::-moz-scrollbar {
+    display: none;
+}
+
+.presets ul{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    white-space: nowrap;
+    padding-left: 0;
+    overflow-x: scroll;
+    /*firefox*/
+    scrollbar-width: none;
+  /*IE10+*/
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  scroll-snap-type: x mandatory;
+}
+
+.presets ul::before,
+.presets ul::after {
+  content: "";
+  flex: 0 0 50%;
+}
+
+.presets ul li{
+    display: block;
+    font-size: 1.5em;
+    width: fit-content;
+    color: #b5e6c1;
+    padding: 10px 15px;
+    cursor: pointer;
+    scroll-snap-align: center;
+}
+
+.presets ul li.selected{
+    color: white;
+    transition: color 0.3s ease-in-out;
 }

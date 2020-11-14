@@ -1,18 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { VentsService } from '../shared/_services/Vents/vents.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
+  styleUrls: ['dashboard.component.css'],
   providers: [VentsService]
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit{
   constructor(
     private _ventService: VentsService
   ) {}
 
   temperature = null;
   humidity = null;
+  vent = {name: "Vent 12"};
 
   component = null;
   // This id parameter is a placeholder until the session gives us the id
@@ -83,4 +85,32 @@ export class DashboardComponent {
           console.log(error);
         });
   } 
+
+  updatePreset(preset){
+    let data = {
+      ID: this.id,
+      humidity: preset.humidity,
+      temperature: preset.temperature,
+      presets_id: preset.ID
+    }
+
+    this.humidity = preset.humidity;
+    this.temperature = preset.temperature;
+
+    if(this.component.humidity !== undefined){
+      this.component.humidity = this.humidity;
+    }
+
+    if(this.component.temperature !== undefined){
+      this.component.temperature = this.temperature;
+    }
+
+    this._ventService.update(preset).subscribe(
+      response => {
+        console.log("Preset changed");
+      },
+      error => {
+        console.log(error);
+      });
+  }
 }

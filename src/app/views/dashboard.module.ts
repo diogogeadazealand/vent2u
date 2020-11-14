@@ -23,6 +23,7 @@ import { NavigationComponent } from '../shared/_components/Navigation/navigation
 
 // Pipelines
 import { CelsiusPipe } from '../celsius.pipe';
+import { PresetsComponent } from '../shared/_components/Presets/presets.component';
 
 
 
@@ -34,7 +35,8 @@ import { CelsiusPipe } from '../celsius.pipe';
     // Pages
     MainComponent,
     ClaimComponent,
-    CelsiusPipe
+    CelsiusPipe,
+    PresetsComponent
   ],
   imports: [
     CommonModule,
