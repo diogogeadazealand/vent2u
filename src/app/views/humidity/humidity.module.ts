@@ -18,8 +18,6 @@ import { HumiditySlider } from './HumiditySlider/hslider.component';
 import { OHumidityComponent } from './OutsideHumidity/ohumidity.component';
 import { OHumidityModule } from './OutsideHumidity/ohumidity.module';
 
-// Shared Components
-import { PresetsModule } from '../../shared/_components/Presets/presets.module';
 @NgModule({
   declarations: [
     HumidityComponent,
@@ -35,7 +33,6 @@ import { PresetsModule } from '../../shared/_components/Presets/presets.module';
     MatIconModule,
     MatSliderModule,
     MatToolbarModule,
-    PresetsModule,
     OHumidityModule
   ]
 })

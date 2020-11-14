@@ -23,18 +23,20 @@ import { NavigationComponent } from '../shared/_components/Navigation/navigation
 
 // Pipelines
 import { CelsiusPipe } from '../celsius.pipe';
+import { PresetsComponent } from '../shared/_components/Presets/presets.component';
 
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
+    HeaderComponent,
+    NavigationComponent,
     // Pages
     MainComponent,
     ClaimComponent,
-    HeaderComponent,
-    NavigationComponent,
-    CelsiusPipe
+    CelsiusPipe,
+    PresetsComponent
   ],
   imports: [
     CommonModule,

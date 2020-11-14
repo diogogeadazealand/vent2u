@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { PATH } from "../config.js";
-import { Preset } from '../_models/preset.model.js';
 
 const baseUrl = `${PATH}/presets`;
 
@@ -17,22 +16,11 @@ export class PresetsService {
   }
 
   findOne(id){
-    
-    if(!id){
-      return [];
-    }
-
     return this.http.get(`${baseUrl}/${id}`);
   }
 
   findAllFromUser(id){
-    
-    if(!id){
-      return [];
-    }
-
     return this.http.get(`${baseUrl}/user/${id}`);
   }
-
 
 }
