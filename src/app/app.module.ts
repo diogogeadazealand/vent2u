@@ -19,13 +19,13 @@ import { LogoutComponent } from './shared/_components/Header/logout/logout.compo
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NotInUseModalComponent } from './shared/_components/not-in-use-modal/not-in-use-modal.component';
+import { PresetsService } from './shared/_services/presets.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NotFoundComponent,
-
     LogoutComponent,
     NotInUseModalComponent
   ],
@@ -41,7 +41,7 @@ import { NotInUseModalComponent } from './shared/_components/not-in-use-modal/no
     MatButtonModule,
     MatDialogModule
   ],
-  providers: [],
+  providers: [PresetsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
