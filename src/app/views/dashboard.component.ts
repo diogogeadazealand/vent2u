@@ -11,6 +11,8 @@ import { PresetsService } from '../shared/_services/presets.service';
 import { User } from '../shared/_models/user.model';
 import { Vent } from '../shared/_models/vent.model';
 import { Preset } from '../shared/_models/preset.model';
+import { Room } from '../shared/_models/room.model';
+import { Classroom } from '../shared/_models/class.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -29,10 +31,7 @@ export class DashboardComponent implements OnInit {
   humidityComponent = null;
   presetsComponent = null;
   ventControllComponent = null;
-
-  // This id parameter is a placeholder until the session gives us the id
-  id = 2;
-
+  claimComponent = null;
 
   constructor(
     private _ventService: VentsService,
@@ -43,13 +42,14 @@ export class DashboardComponent implements OnInit {
 
     this.user = this._userService.findOne(6);
 
-    this._ventService.getOne(this.id).subscribe(data => {
+    if(this.claimComponent) this.claimComponent.userId = this.user.ID;
 
-      this.vent.set(data[0]);
+    this._ventService.getFromUser(this.user.ID).subscribe(data => {
 
-      this.SetTemperature(); //update temperature in the gui
-      this.SetHumidity(); // update humidity i nthe gui
-      this.SetPreset();
+      if(!data) return;//the user doesn't have any vent claimed
+
+      this.vent.set(data);
+      this.UpdateUi();
     });
 
   }
@@ -156,6 +156,18 @@ export class DashboardComponent implements OnInit {
         });
   }
 
+  getVent(vent){
+
+    this._ventService.getOne(vent.ID).subscribe(data => {
+
+      if(!data) return;//the user doesn't have any vent claimed
+
+      this.vent.set(data);
+      this.UpdateUi();
+    });
+
+  }
+
   updatePreset(preset) {
 
     this.vent.humidity = preset.humidity;
@@ -193,6 +205,19 @@ export class DashboardComponent implements OnInit {
         this.humidityComponent.humidityEvent.subscribe( humidity => {
           this.updateHumidity(humidity);
         });
+      }else if(component.claimEvent){
+
+        this.claimComponent = component;
+        this.claimComponent.currentVent = this.vent;
+        this.claimComponent.claimEvent.subscribe( vent => {
+          this.getVent(vent);
+        });
       }
+    }
+
+    UpdateUi(){
+      this.SetPreset();
+      this.SetTemperature(); //update temperature in the gui
+      this.SetHumidity(); // update humidity i nthe gui
     }
 }

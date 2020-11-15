@@ -53,9 +53,11 @@ export class NavigationComponent implements OnInit, AfterViewInit{
           break;
         case "/classroom":
           this.list.children[2].classList.add("selected");
+        case "/claim":
           this.setSpecial();
           break;
         default: break;
+       
       }
     }
   }

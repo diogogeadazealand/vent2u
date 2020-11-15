@@ -34,10 +34,10 @@ const routes: Routes = [
           { path: '', component: TemperatureComponent, },
           { path: 'humidity', component: HumidityComponent },
         ] },
-        { path: 'classroom', component: ClassComponent, canLoad: [AuthGuard] }
+        { path: 'classroom', component: ClassComponent, canLoad: [AuthGuard] },
+        { path: 'claim', component: ClaimComponent, canLoad: [AuthGuard] }
     ]
   },
-  { path: 'claim', component: ClaimComponent, canLoad: [AuthGuard] },
   { path: 'login',   component: LoginComponent },
   { path: '**', component: NotFoundComponent }
 ];

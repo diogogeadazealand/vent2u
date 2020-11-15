@@ -7,6 +7,7 @@ import { DialogComponent } from '../../_components/Dialog/dialog.component';
 
 import { ClaimGridComponent } from './claim-grid.component';
 import { VentComponent } from './vent/vent.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -15,13 +16,15 @@ import { VentComponent } from './vent/vent.component';
     DialogComponent  
     ],
   exports: [
+    CommonModule,
     VentComponent,
     ClaimGridComponent
     ],
   imports: [
     CommonModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule
     ]
 })
 export class ClaimGridModule { }

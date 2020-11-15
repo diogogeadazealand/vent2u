@@ -1,5 +1,13 @@
 button{
     position: relative;
+    display: block;
+    border-radius: 30px;
+    height: 50px;
+}
+
+.selected{
+    background-color: #8eca8e;
+    color: white;
 }
 
 .circle{

@@ -5,6 +5,7 @@ import { ClaimGridModule } from '../../shared/_components/claim-grid/claim-grid.
 import { VentService } from '../../shared/_services/vent.service';
 import { StudentsService } from '../class/students/students.service';
 import { ClaimComponent } from './claim.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({

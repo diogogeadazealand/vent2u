@@ -1,7 +1,7 @@
 <nav>
     <ul>
-        <li routerLink=""><span>{{temperature | celsius }}</span> Temperature</li>
-        <li routerLink="humidity"><span>{{humidity }}%</span> Humidity</li>
+        <li routerLink=""><span *ngIf="temperature; else tempUndefined">{{temperature | celsius }}</span><ng-template #tempUndefined><span>°C</span></ng-template> Temperature</li>
+        <li routerLink="humidity"><span>{{humidity}}%</span> Humidity</li>
         <li *ngIf="user_role >= 2" routerLink="classroom"><span> <mat-icon>people</mat-icon> </span>Classroom</li>
     </ul>
 </nav>

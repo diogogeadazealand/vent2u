@@ -4,9 +4,10 @@
     display: block;
     margin-top: -1px;
     padding-top: 1px;/*required to avoid margin collapse*/
+    color: white;
 }
 
 .page.special{
     background: white;
-    color: #64f38c;
+    color: #005500;
 }

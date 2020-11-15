@@ -25,6 +25,7 @@ import { NavigationComponent } from '../shared/_components/Navigation/navigation
 import { CelsiusPipe } from '../celsius.pipe';
 import { VentControllModule } from './vent-controll/vent-controll.module';
 import { ClaimModule } from './claim/claim.module';
+import { RoomsService } from '../shared/_services/rooms.service';
 
 
 
@@ -46,6 +47,7 @@ import { ClaimModule } from './claim/claim.module';
     ClaimModule,
     VentControllModule
   ],
+  providers: [RoomsService],
   exports: [
     CelsiusPipe
   ]
