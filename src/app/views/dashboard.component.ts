@@ -104,6 +104,11 @@ export class DashboardComponent implements OnInit {
   
         this.ventControllComponent.presetsLoadedEvent.subscribe( (component) => {
             this.presetsComponent = component;
+
+            if(this.vent.preset_id) {
+              this.presetsComponent.currentPresetId = this.vent.preset_id;
+            }
+
             this.presetsComponent.SetUser(this.user.ID);
         });
         

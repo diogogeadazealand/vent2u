@@ -36,17 +36,18 @@ export class PresetsComponent implements OnInit, AfterViewInit {
         this.list = document.querySelector(".presets ul");
         this.presetsNodeList = this.list.children;
         this.onLoad.emit();
+        this.addListener();
     }
 
-    onScroll(): void{
+    onScroll(e): void{
         clearTimeout(this.adjustSelected);
-        this.adjustSelected = setTimeout(() => {
-            this.getCenterButton(this.currentPreset);
-        }, 200);
+        this.adjustSelected = setTimeout(() => { this.getCenterButton(this.currentPreset);}, 200);
     }
 
 
     getCenterButton(curPreset): void{
+
+        if(!curPreset) return;
 
         let curElIndex = curPreset;
 
@@ -84,7 +85,7 @@ export class PresetsComponent implements OnInit, AfterViewInit {
                 this.currentPreset = curElIndex;
                 
                 currentElement.classList.add("selected");
-                this.changePreset();
+                if(curPreset) this.changePreset();
                 break;
             }
         }
@@ -99,14 +100,14 @@ export class PresetsComponent implements OnInit, AfterViewInit {
         if(!this.list) this.list = document.querySelector(".presets ul");
 
         if(!this.list) return;
-        this.list.removeEventListener("scroll", () => { this.onScroll();});
+        this.list.removeEventListener("scroll", (e) => { this.onScroll(e)});
     }
 
     addListener()
     {
         if(!this.list) this.list = document.querySelector(".presets ul");
-        this.list.addEventListener("scroll", () => { 
-            this.onScroll();
+        this.list.addEventListener("scroll", (e) => { 
+            this.onScroll(e);
         });
     }
 
@@ -127,6 +128,7 @@ export class PresetsComponent implements OnInit, AfterViewInit {
                     return;
                 }
             });
+            if(!this.currentPreset) return;//something happened, maybe it has a preset from other user
         }
 
         if(!this.presetsNodeList) return;
