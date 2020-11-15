@@ -1,0 +1,12 @@
+.page{
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(100, 243, 140, 1) 0%, rgba(0, 85, 0, 1) 100%);
+    display: block;
+    margin-top: -1px;
+    padding-top: 1px;/*required to avoid margin collapse*/
+}
+
+.page.special{
+    background: white;
+    color: #64f38c;
+}

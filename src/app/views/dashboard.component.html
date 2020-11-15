@@ -1,3 +1,5 @@
+<div class="page">
 <app-header></app-header>
 <router-outlet (activate)="componentAdded($event)"></router-outlet>
 <app-navigation [user_role]="user.user_role.ID" [temperature]='vent.temperature' [humidity]='vent.humidity'></app-navigation>
+</div>
