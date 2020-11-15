@@ -13,27 +13,21 @@ export class PresetsComponent implements OnInit, AfterViewInit {
     presetsNodeList;
     adjustSelected;
 
-    currentPreset = 0;
+    currentPresetId;
+    currentPreset;
     presets;
+    userID;
 
     @Output() onPresetChanged = new EventEmitter();
+    @Output() onLoad = new EventEmitter();
 
     constructor(private _presetsService: PresetsService, private _router: Router){}
 
     ngOnInit(): void{
-        this._presetsService.findAllFromUser(1).subscribe(data => {
-            this.presets = data;
-
-            setTimeout(() => {
-                this.presetsNodeList = this.list.children;
-                this.scrollToCurrent(false);
-            }, 500)
-
-        });
 
         this._router.events.subscribe(event => {
-            if(event instanceof NavigationStart && event.url != "/Dashboard/Temperature"){
-                this.removeListener();
+            if(event instanceof NavigationStart && event.url !== "/"){
+              this.removeListener();
             }
         })
     }
@@ -41,6 +35,7 @@ export class PresetsComponent implements OnInit, AfterViewInit {
     ngAfterViewInit(): void {
         this.list = document.querySelector(".presets ul");
         this.presetsNodeList = this.list.children;
+        this.onLoad.emit();
     }
 
     onScroll(): void{
@@ -115,7 +110,26 @@ export class PresetsComponent implements OnInit, AfterViewInit {
         });
     }
 
+    public ScrollToIndex(id){
+
+        this.currentPresetId = id;
+        
+        if(this.presets)
+            this.scrollToCurrent();
+    }
+
     scrollToCurrent(setActive = true){
+
+        if(this.currentPreset == undefined){
+            this.presets.forEach( (preset, i) => {
+                if(preset.ID == this.currentPresetId) {
+                    this.currentPreset = i;
+                    return;
+                }
+            });
+        }
+
+        if(!this.presetsNodeList) return;
 
         this.removeListener();
 
@@ -130,6 +144,23 @@ export class PresetsComponent implements OnInit, AfterViewInit {
 
         this.addListener();
 
+    }
+
+    public SetUser(user_id){
+        this.userID = user_id;
+        this.getPresets();
+    }
+
+    private getPresets(){
+        this._presetsService.findAllFromUser(this.userID).subscribe(data => {
+            this.presets = data;
+
+            setTimeout(() => {
+                this.presetsNodeList = this.list.children;
+                this.scrollToCurrent(false);
+            }, 500)
+
+        });
     }
 
 } 

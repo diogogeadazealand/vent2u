@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, Input } from '@angular/core'
+import { Component, EventEmitter, Output, Input, ViewChild, OnInit } from '@angular/core'
 
 @Component({
     selector: 'app-temperature',
@@ -6,9 +6,25 @@ import { Component, EventEmitter, Output, Input } from '@angular/core'
     styleUrls: ['./temperature.component.css']
 })
 export class TemperatureComponent {
+    @ViewChild("slider") slider;
     @Input() temperature : number;
     @Output() temperatureEvent = new EventEmitter<number>();
+
     onTempChanged(value : number) {
         this.temperatureEvent.emit(value);
+    }
+
+    public scrollToTemperature(){
+  
+        if(this.slider){
+            this.slider.temperature = this.temperature;
+            this.slider.scrollToTemperature();
+        }
+    }
+
+    onSliderLoaded(event){
+        if(this.temperature){
+            this.slider.scrollToTemperature();
+        }
     }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { VentService } from 'src/app/shared/_services/vent.service';
 
 @Component({
-  selector: 'app-claim',
+  selector: 'claim',
   templateUrl: './claim.component.html',
   styleUrls: ['./claim.component.css']
 })

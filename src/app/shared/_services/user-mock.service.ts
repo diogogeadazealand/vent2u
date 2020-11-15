@@ -12,13 +12,13 @@ export class UserMockService {
   public findOne(id): User{
       let user = new User();
       user.set({
-        ID: 1,
-        name: "Keith",
+        ID: 5,
+        name: "Philip",
         email: "Proin@nullaanteiaculis.org",
         loggedIn: true,
         user_role: {
-          ID: 3,
-          name: "Teacher"
+          ID: 1,
+          name: "Student"
         }
       } );
 

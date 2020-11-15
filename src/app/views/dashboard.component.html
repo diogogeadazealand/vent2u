@@ -1,5 +1,3 @@
 <app-header></app-header>
-<h2 class='vent'>Vent {{vent.ID}} <mat-icon>apps</mat-icon> </h2>
-<presets (onPresetChanged)="updatePreset($event)"></presets>
 <router-outlet (activate)="componentAdded($event)"></router-outlet>
-<app-navigation [temperature]='vent.temperature' [humidity]='vent.humidity'></app-navigation>
+<app-navigation [user_role]="user.user_role.ID" [temperature]='vent.temperature' [humidity]='vent.humidity'></app-navigation>

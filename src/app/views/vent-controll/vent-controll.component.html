@@ -1,0 +1,4 @@
+<h2 *ngIf="vent; else noneSelected" routerLink="claim" class='vent'>Vent {{vent.ID}} <mat-icon>apps</mat-icon> </h2>
+<ng-template #noneSelected><h2 class='vent none'>No vent selected<mat-icon>apps</mat-icon> </h2></ng-template>
+<presets #presets (onLoad)="onPresetsLoaded($event)" (onPresetChanged)="onPresetChanged($event)"></presets>
+<router-outlet (activate)="componentAdded($event)"></router-outlet>
