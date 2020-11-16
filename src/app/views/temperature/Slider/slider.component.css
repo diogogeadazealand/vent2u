@@ -25,11 +25,11 @@ h2 {
 
 .temperature::before,
 .temperature::after {
-  content: "";
-  flex: 0 0 50%;
+    content: "";
+    flex: 0 0 50%;
 }
 
-ul.temperature::-webkit-scrollbar{
+ul.temperature::-webkit-scrollbar {
     display: none;
 }
 
@@ -37,8 +37,7 @@ ul.temperature::-moz-scrollbar {
     display: none;
 }
 
-
-.temperature li{
+.temperature li {
     font-size: 50px;
     line-height: 70px;
     height: 50px;
@@ -50,20 +49,22 @@ ul.temperature::-moz-scrollbar {
     margin: 5px 0;
 }
 
-.temperature li.selected p{
-    transform: scale(1.3);
+.temperature li.selected p {
+    transform: scale(1.75);
     color: white;
+    opacity: 1;
     transition: all 0.3s ease-in-out;
 }
 
-.temperature li p{
+.temperature li p {
     margin: 0;
+    opacity: 0.4;
     position: absolute;
     top: 0;
-    left: calc( 50vw - ( 107.4px / 2 ) );
+    left: calc( 50vw - ( 107.4px / 2));
 }
 
-.hide{
+.hide {
     visibility: hidden;
 }
 

@@ -38,9 +38,10 @@ nav ul li:before {
     transform: translate(-50%, 0);
     border-radius: 8px 8px 0 0;
     transition: 0.3s ease-in-out;
+    z-index: -1;
 }
 
-nav ul li.is-active:before {
+nav ul li.selected:before {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -52,23 +53,27 @@ nav ul li span {
     text-align: center;
 }
 
-nav li{
+nav li {
     color: rgb(221, 221, 221);
 }
 
-nav .special li{
+nav .special li {
     color: #64f38c;
 }
 
-nav .selected{
+nav .selected {
     color: white;
 }
 
-nav .special li.selected{
-    color: #005500;
+nav .special li.selected:before {
+    background-color: #64f38c;
 }
 
-.selected{
+nav .special li.selected {
+    color: white!important;
+}
+
+.selected {
     transform: scale(1.1);
     transition: transform 0.2s ease-in-out;
 }
