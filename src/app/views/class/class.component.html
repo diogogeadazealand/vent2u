@@ -1,2 +1,10 @@
 <!--<claim-grid [classroom]="vents"></claim-grid>-->
-<app-students [students]="students"></app-students>
+<mat-tab-group>
+    <mat-tab label="Class">
+        <app-students [students]="students"></app-students>
+        <user-vent [vents]="vents"></user-vent>
+    </mat-tab>
+    <mat-tab label="Room">
+        Room
+    </mat-tab>
+</mat-tab-group>

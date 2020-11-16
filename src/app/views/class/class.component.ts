@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentsService } from './students/students.service';
-import { VentService } from '../../shared/_services/vent.service';
+import { VentsService } from '../../shared/_services/Vents/vents.service';
 
 @Component({
   selector: 'app-class',
@@ -10,10 +10,11 @@ import { VentService } from '../../shared/_services/vent.service';
 export class ClassComponent implements OnInit {
 students;
 vents;
-  constructor(private _StudentService:StudentsService, private _VentService:VentService) { }
+  constructor(private _StudentService:StudentsService, private _VentsService:VentsService) { }
 
   ngOnInit (): void {
-    this.vents = this._VentService.GetVents();
+    // Hardcoded ID until room is set by user
+    this.vents = this._VentsService.getFromRoom(2);
     this.students = this._StudentService.getStudents();
   }
 }

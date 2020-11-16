@@ -35,6 +35,7 @@ const routes: Routes = [
           { path: 'humidity', component: HumidityComponent },
         ] },
         { path: 'classroom', component: ClassComponent, canLoad: [AuthGuard] },
+        { path: 'room', component: ClassComponent, canLoad: [AuthGuard] },
         { path: 'claim', component: ClaimComponent, canLoad: [AuthGuard] }
     ]
   },

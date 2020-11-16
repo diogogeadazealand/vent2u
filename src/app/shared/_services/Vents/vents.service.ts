@@ -6,8 +6,6 @@ const baseUrl = `${PATH}/vents`;
 
 @Injectable()
 export class VentsService {
-
-
   constructor(private http: HttpClient) { }
 
   getAll() {
