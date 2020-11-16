@@ -67,3 +67,7 @@ ul.temperature::-moz-scrollbar {
 .hide {
     visibility: hidden;
 }
+
+.hidden{
+    display: none;
+}

@@ -6,9 +6,11 @@ import { Component, EventEmitter, Output, Input, ViewChild, OnInit } from '@angu
     styleUrls: ['./temperature.component.css']
 })
 export class TemperatureComponent {
+
     @ViewChild("slider") slider;
     @Input() temperature : number;
     @Output() temperatureEvent = new EventEmitter<number>();
+    ventId;
 
     onTempChanged(value : number) {
         this.temperatureEvent.emit(value);

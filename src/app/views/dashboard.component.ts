@@ -60,6 +60,7 @@ export class DashboardComponent implements OnInit {
 
     if (this.temperatureComponent != undefined) {
       this.temperatureComponent.temperature = this.vent.temperature;
+      this.temperatureComponent.ventId = this.vent.ID;
       this.temperatureComponent.scrollToTemperature();
     }
 
@@ -82,6 +83,8 @@ export class DashboardComponent implements OnInit {
   }
 
   private SetPreset(preset ?){
+
+    if(this.vent)
 
     this.vent.preset_id = (preset) ? preset.ID : this.vent.preset_id;
 
@@ -126,6 +129,9 @@ export class DashboardComponent implements OnInit {
   }
 
   updateTemperature(temperature) {
+
+    if(this.vent.ID == undefined) return;
+
     let data = {
       ID: this.vent.ID,
       temperature: temperature
@@ -142,6 +148,9 @@ export class DashboardComponent implements OnInit {
   }
 
   updateHumidity(humidity) {
+
+    if(this.vent.ID == undefined) return;
+
     let data = {
       ID: this.vent.ID,
       humidity: humidity
@@ -162,13 +171,15 @@ export class DashboardComponent implements OnInit {
 
       if(!data) return;//the user doesn't have any vent claimed
 
-      this.vent.set(data);
+      this.vent.set(data[0]);
       this.UpdateUi();
     });
 
   }
 
   updatePreset(preset) {
+
+    if(this.vent.ID == undefined) return;
 
     this.vent.humidity = preset.humidity;
     this.vent.temperature = preset.temperature;
@@ -197,6 +208,7 @@ export class DashboardComponent implements OnInit {
 
         if(this.vent.temperature){
           this.temperatureComponent.temperature = this.vent.temperature;
+          this.temperatureComponent.ventId = this.vent.ID;
           this.temperatureComponent.scrollToTemperature();
         }
 
@@ -206,12 +218,18 @@ export class DashboardComponent implements OnInit {
           this.updateHumidity(humidity);
         });
       }else if(component.claimEvent){
-
         this.claimComponent = component;
         this.claimComponent.currentVent = this.vent;
         this.claimComponent.userId = this.user.ID;
         this.claimComponent.claimEvent.subscribe( vent => {
-          this.getVent(vent);
+
+          if(vent.user_id != undefined) this.getVent(vent);
+          else {
+            this.vent = new Vent();
+            this.temperatureComponent.ventId = undefined;
+            this.UpdateUi();
+          }
+
         });
       }
     }

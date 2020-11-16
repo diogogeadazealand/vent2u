@@ -38,6 +38,7 @@ nav ul li:before {
     transform: translate(-50%, 0);
     border-radius: 8px 8px 0 0;
     transition: 0.3s ease-in-out;
+    z-index: -1;
 }
 
 nav ul li.selected:before {
@@ -64,8 +65,12 @@ nav .selected {
     color: white;
 }
 
+nav .special li.selected:before {
+    background-color: #64f38c;
+}
+
 nav .special li.selected {
-    color: #005500;
+    color: white!important;
 }
 
 .selected {

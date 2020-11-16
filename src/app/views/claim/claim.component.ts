@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Location } from '@angular/common';
 import { RoomsService } from 'src/app/shared/_services/rooms.service';
 import { VentsService } from 'src/app/shared/_services/Vents/vents.service';
+import { Vent } from 'src/app/shared/_models/vent.model';
 
 @Component({
   selector: 'claim',
@@ -17,6 +18,8 @@ export class ClaimComponent implements OnInit {
   userId;
   currentVent;
 
+  vent;
+
   @Output() claimEvent = new EventEmitter();
 
   ngOnInit(): void {
@@ -30,20 +33,30 @@ export class ClaimComponent implements OnInit {
   }
 
   claimVent(vent){
-    debugger;
     vent.user_id = this.userId;
     
+    this.vent = vent;
+
     if(this.currentVent.ID) 
     {
       this.unclaimVent(() => {
-        this._ventsService.update(vent).subscribe( data => {
+        this.currentVent.ID = this.vent.ID;
+        this.currentVent.user_id = this.userId;
+        this._ventsService.update(this.currentVent).subscribe( data => {
+          this.claimEvent.emit(this.vent);
           this._location.back();
         });
 
       });
     } else {
-      this._ventsService.update(vent).subscribe( data => {
-        this._location.back();
+
+      this.currentVent.ID = this.vent.ID;
+      this.currentVent.user_id = this.userId;
+
+      this._ventsService.update(this.currentVent).subscribe( data => {
+          this.claimEvent.emit(this.vent);
+          this._location.back();
+  
       });
     }
     
@@ -51,12 +64,19 @@ export class ClaimComponent implements OnInit {
   }
 
   unclaimVent(callback){
-    if(this.currentVent.user_id != this.userId) return;
+
     this.currentVent.user_id = null;
-    if(this._ventsService.update(this.currentVent)) {
+    this.currentVent.preset_id = null;
+
+    this._ventsService.update(this.currentVent).subscribe( data => {
+      
+      this.claimEvent.emit(this.currentVent);//update dashboard
+      this.vents.find(vent => vent.ID == this.currentVent.ID).isClaimed = 0;
+      this.currentVent = new Vent();
+
       if(callback) callback();
-      else this._location.back();
-    }
+
+    });
 
   }
 

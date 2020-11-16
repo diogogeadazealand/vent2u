@@ -35,8 +35,8 @@ export class PresetsComponent implements OnInit, AfterViewInit {
     ngAfterViewInit(): void {
         this.list = document.querySelector(".presets ul");
         this.presetsNodeList = this.list.children;
-        this.onLoad.emit();
         this.addListener();
+        this.onLoad.emit(this);
     }
 
     onScroll(e): void{

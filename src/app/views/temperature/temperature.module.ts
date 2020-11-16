@@ -14,6 +14,7 @@ import { TemperatureComponent } from './temperature.component';
 import { DashboardSlider } from './Slider/slider.component';
 import { OTempComponent } from './OutsideTemp/otemp.component';
 import { OTempModule } from './OutsideTemp/otemp.module';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { OTempModule } from './OutsideTemp/otemp.module';
   ],
   imports: [
     CommonModule,
+    BrowserModule,
     FormsModule,
     MatSelectModule,
     MatIconModule,
