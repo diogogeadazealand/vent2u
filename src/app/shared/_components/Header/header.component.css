@@ -1,9 +1,6 @@
 #logo {
     font-size: 22pt;
-}
-
-#logo b {
-    color: green;
+    font-weight: 300;
 }
 
 mat-toolbar {
