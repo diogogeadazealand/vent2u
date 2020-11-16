@@ -1,4 +1,4 @@
-<div class="flex-layout">
+<div *ngIf="ventId != undefined" class="flex-layout">
         <temp-slider #slider [temperature]="temperature" (onLoaded)="onSliderLoaded($event)" (temperatureEvent)="onTempChanged($event)"></temp-slider>
         <div class="outside-inside-temp">
             <outside-temperature></outside-temperature>

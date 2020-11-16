@@ -126,6 +126,9 @@ export class DashboardComponent implements OnInit {
   }
 
   updateTemperature(temperature) {
+
+    if(this.vent.ID == undefined) return;
+
     let data = {
       ID: this.vent.ID,
       temperature: temperature
@@ -142,6 +145,9 @@ export class DashboardComponent implements OnInit {
   }
 
   updateHumidity(humidity) {
+
+    if(this.vent.ID == undefined) return;
+
     let data = {
       ID: this.vent.ID,
       humidity: humidity
@@ -170,6 +176,8 @@ export class DashboardComponent implements OnInit {
 
   updatePreset(preset) {
 
+    if(this.vent.ID == undefined) return;
+
     this.vent.humidity = preset.humidity;
     this.vent.temperature = preset.temperature;
     this.vent.preset_id = preset.ID;
@@ -197,6 +205,7 @@ export class DashboardComponent implements OnInit {
 
         if(this.vent.temperature){
           this.temperatureComponent.temperature = this.vent.temperature;
+          this.temperatureComponent.ventId = this.vent.ID;
           this.temperatureComponent.scrollToTemperature();
         }
 
@@ -211,6 +220,7 @@ export class DashboardComponent implements OnInit {
         this.claimComponent.currentVent = this.vent;
         this.claimComponent.userId = this.user.ID;
         this.claimComponent.claimEvent.subscribe( vent => {
+          debugger;
           this.getVent(vent);
         });
       }
