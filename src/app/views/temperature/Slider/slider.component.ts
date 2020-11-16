@@ -14,6 +14,7 @@ export class DashboardSlider implements AfterViewInit, OnInit{
 
     tempRange = [];
     ul;
+    @Input() ventId;
     tempNodeList: any;
     
     sendChanges;
@@ -128,6 +129,7 @@ export class DashboardSlider implements AfterViewInit, OnInit{
     }
 
     removeListener(){
+
         this.ul.removeEventListener("scroll", () => {
             this.onScroll();
         });

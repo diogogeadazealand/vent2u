@@ -1,4 +1,4 @@
-<ul class="temperature">
+<ul class="temperature" [hidden]="ventId == undefined">
     <li class="hide"></li>
     <li *ngFor="let temp of tempRange"><p>{{ temp }}°C</p></li>
     <li class="hide"></li>

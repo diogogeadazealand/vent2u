@@ -24,7 +24,7 @@ export class VentControllComponent {
   }
 
   onPresetsLoaded(event){
-    this.presetsLoadedEvent.emit(this.presetComponent);
+    this.presetsLoadedEvent.emit(event);
   }
 
   public onPresetChanged(preset){

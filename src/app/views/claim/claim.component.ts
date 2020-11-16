@@ -39,14 +39,10 @@ export class ClaimComponent implements OnInit {
 
     if(this.currentVent.ID) 
     {
-      debugger;
       this.unclaimVent(() => {
         this.currentVent.ID = this.vent.ID;
         this.currentVent.user_id = this.userId;
-        debugger;
         this._ventsService.update(this.currentVent).subscribe( data => {
-          debugger;
-
           this.claimEvent.emit(this.vent);
           this._location.back();
         });
