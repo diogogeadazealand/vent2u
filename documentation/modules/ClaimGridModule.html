@@ -8,142 +8,598 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	    <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="../" class="navbar-brand">semester-project documentation</a>
-            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../">semester-project documentation</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./modules.html" >
+                            <span class="fa fa-archive"></span>
+                            <span>Modules</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            ></span>
+                        </a>
+                        <ul class="links collapse in"
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/AppModule.html" >AppModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/AuthModule.html" >AuthModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/AuthRoutingModule.html" >AuthRoutingModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/ClaimGridModule.html"  class="active" >ClaimGridModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/ClaimModule.html" >ClaimModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/ClassModule.html" >ClassModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/DashboardModule.html" >DashboardModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/HumidityModule.html" >HumidityModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/OHumidityModule.html" >OHumidityModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/OTempModule.html" >OTempModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/PresetsModule.html" >PresetsModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/TemperatureModule.html" >TemperatureModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/VentControllModule.html" >VentControllModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-components-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ClaimComponent.html" >ClaimComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ClaimGridComponent.html" >ClaimGridComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ClassComponent.html" >ClassComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/DashboardComponent.html" >DashboardComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/DashboardSlider.html" >DashboardSlider</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/DialogComponent.html" >DialogComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/HeaderComponent.html" >HeaderComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/HumidityComponent.html" >HumidityComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/HumiditySlider.html" >HumiditySlider</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/LogoutComponent.html" >LogoutComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/MainComponent.html" >MainComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/NavigationComponent.html" >NavigationComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/NotFoundComponent.html" >NotFoundComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/OHumidityComponent.html" >OHumidityComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/OTempComponent.html" >OTempComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/PresetsComponent.html" >PresetsComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/StudentComponent.html" >StudentComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/StudentsComponent.html" >StudentsComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/TemperatureComponent.html" >TemperatureComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/VentComponent.html" >VentComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/VentControllComponent.html" >VentControllComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-file-code-o"></span>
+                            <span>Classes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-classes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-classes-links"
+                            >
+                                <li class="link">
+                                    <a href="../classes/Classroom.html" >Classroom</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/Preset.html" >Preset</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/Room.html" >Room</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/User.html" >User</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/Vent.html" >Vent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-injectables-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="../injectables/AuthGuard.html" >AuthGuard</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/AuthService.html" >AuthService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/PresetsService.html" >PresetsService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/RoomsService.html" >RoomsService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/StudentsService.html" >StudentsService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/UserMockService.html" >UserMockService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/UserService.html" >UserService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/VentService.html" >VentService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/VentsService.html" >VentsService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/WeatherService.html" >WeatherService</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-plus"></span>
+                            <span>Pipes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-pipes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-pipes-links"
+                            >
+                                <li class="link">
+                                    <a href="../pipes/CelsiusPipe.html" >CelsiusPipe</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+                    <li class="divider"></li>
+                    <li class="copyright">
+                            Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                            </a>
+                    </li>
+            
+                </ul>
+            
+            </nav>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <compodoc-menu mode="normal"></compodoc-menu>
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../">semester-project documentation</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./modules.html" >
+                                   <span class="fa fa-archive"></span>
+                                   <span>Modules</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   ></span>
+                               </a>
+                               <ul class="links collapse in"
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/AppModule.html" >AppModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/AuthModule.html" >AuthModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/AuthRoutingModule.html" >AuthRoutingModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/ClaimGridModule.html"  class="active" >ClaimGridModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/ClaimModule.html" >ClaimModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/ClassModule.html" >ClassModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/DashboardModule.html" >DashboardModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/HumidityModule.html" >HumidityModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/OHumidityModule.html" >OHumidityModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/OTempModule.html" >OTempModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/PresetsModule.html" >PresetsModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/TemperatureModule.html" >TemperatureModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/VentControllModule.html" >VentControllModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#components-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ClaimComponent.html" >ClaimComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ClaimGridComponent.html" >ClaimGridComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ClassComponent.html" >ClassComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/DashboardComponent.html" >DashboardComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/DashboardSlider.html" >DashboardSlider</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/DialogComponent.html" >DialogComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/HeaderComponent.html" >HeaderComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/HumidityComponent.html" >HumidityComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/HumiditySlider.html" >HumiditySlider</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/LogoutComponent.html" >LogoutComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/MainComponent.html" >MainComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/NavigationComponent.html" >NavigationComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/NotFoundComponent.html" >NotFoundComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/OHumidityComponent.html" >OHumidityComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/OTempComponent.html" >OTempComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/PresetsComponent.html" >PresetsComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/StudentComponent.html" >StudentComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/StudentsComponent.html" >StudentsComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/TemperatureComponent.html" >TemperatureComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/VentComponent.html" >VentComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/VentControllComponent.html" >VentControllComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-file-code-o"></span>
+                                   <span>Classes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#classes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="classes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../classes/Classroom.html" >Classroom</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/Preset.html" >Preset</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/Room.html" >Room</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/User.html" >User</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/Vent.html" >Vent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#injectables-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="../injectables/AuthGuard.html" >AuthGuard</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/AuthService.html" >AuthService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/PresetsService.html" >PresetsService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/RoomsService.html" >RoomsService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/StudentsService.html" >StudentsService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/UserMockService.html" >UserMockService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/UserService.html" >UserService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/VentService.html" >VentService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/VentsService.html" >VentsService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/WeatherService.html" >WeatherService</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-plus"></span>
+                                   <span>Pipes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#pipes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="pipes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../pipes/CelsiusPipe.html" >CelsiusPipe</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                           <li class="copyright">
+                                   Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                                   </a>
+                           </li>
+                   
+                       </ul>
+                   
+                   </nav>
                </div>
-               <!-- START CONTENT -->
                <div class="content module">
                    <div class="content-data">
 
-
-
 <ol class="breadcrumb">
-    <li>Modules</li>
-    <li>ClaimGridModule</li>
+  <li>Modules</li>
+  <li>ClaimGridModule</li>
 </ol>
 
-<div class="text-center module-graph-container">
-    <div id="module-graph-svg">
-        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
- "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.44.1 (20200629.0846)
- -->
-<!-- Title: dependencies Pages: 1 -->
-<svg width="504pt" height="284pt"
- viewBox="0.00 0.00 504.00 284.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 280)">
-<title>dependencies</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-280 500,-280 500,4 -4,4"/>
-<text text-anchor="start" x="227.01" y="-42.4" font-family="sans-serif" font-weight="bold" font-size="14.00">Legend</text>
-<polygon fill="#ffffb3" stroke="transparent" points="14,-10 14,-30 34,-30 34,-10 14,-10"/>
-<text text-anchor="start" x="37.63" y="-15.4" font-family="sans-serif" font-size="14.00"> &#160;Declarations</text>
-<polygon fill="#8dd3c7" stroke="transparent" points="127,-10 127,-30 147,-30 147,-10 127,-10"/>
-<text text-anchor="start" x="150.73" y="-15.4" font-family="sans-serif" font-size="14.00"> &#160;Module</text>
-<polygon fill="#80b1d3" stroke="transparent" points="213,-10 213,-30 233,-30 233,-10 213,-10"/>
-<text text-anchor="start" x="236.78" y="-15.4" font-family="sans-serif" font-size="14.00"> &#160;Bootstrap</text>
-<polygon fill="#fdb462" stroke="transparent" points="310,-10 310,-30 330,-30 330,-10 310,-10"/>
-<text text-anchor="start" x="333.67" y="-15.4" font-family="sans-serif" font-size="14.00"> &#160;Providers</text>
-<polygon fill="#fb8072" stroke="transparent" points="406,-10 406,-30 426,-30 426,-10 406,-10"/>
-<text text-anchor="start" x="429.73" y="-15.4" font-family="sans-serif" font-size="14.00"> &#160;Exports</text>
-<g id="clust1" class="cluster">
-<title>cluster_ClaimGridModule</title>
-<polygon fill="none" stroke="black" stroke-dasharray="1,5" points="29.5,-70 29.5,-268 466.5,-268 466.5,-70 29.5,-70"/>
-</g>
-<g id="clust2" class="cluster">
-<title>cluster_ClaimGridModule_declarations</title>
-<polygon fill="none" stroke="black" points="37.5,-78 37.5,-130 458.5,-130 458.5,-78 37.5,-78"/>
-</g>
-<g id="clust7" class="cluster">
-<title>cluster_ClaimGridModule_exports</title>
-<polygon fill="none" stroke="black" points="102.5,-208 102.5,-260 392.5,-260 392.5,-208 102.5,-208"/>
-</g>
-<!-- ClaimGridComponent -->
-<g id="node1" class="node">
-<title>ClaimGridComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="450.21,-122 308.79,-122 308.79,-86 450.21,-86 450.21,-122"/>
-<text text-anchor="middle" x="379.5" y="-99.8" font-family="Times,serif" font-size="14.00">ClaimGridComponent</text>
-</g>
-<!-- ClaimGridModule -->
-<g id="node4" class="node">
-<title>ClaimGridModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="291.43,-187 288.43,-191 267.43,-191 264.43,-187 171.57,-187 171.57,-151 291.43,-151 291.43,-187"/>
-<text text-anchor="middle" x="231.5" y="-164.8" font-family="Times,serif" font-size="14.00">ClaimGridModule</text>
-</g>
-<!-- ClaimGridComponent&#45;&gt;ClaimGridModule -->
-<g id="edge1" class="edge">
-<title>ClaimGridComponent&#45;&gt;ClaimGridModule</title>
-<path fill="none" stroke="black" d="M346.88,-122.11C346.88,-141.34 346.88,-169 346.88,-169 346.88,-169 301.55,-169 301.55,-169"/>
-<polygon fill="black" stroke="black" points="301.55,-165.5 291.55,-169 301.55,-172.5 301.55,-165.5"/>
-</g>
-<!-- DialogComponent -->
-<g id="node2" class="node">
-<title>DialogComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="291.44,-122 171.56,-122 171.56,-86 291.44,-86 291.44,-122"/>
-<text text-anchor="middle" x="231.5" y="-99.8" font-family="Times,serif" font-size="14.00">DialogComponent</text>
-</g>
-<!-- DialogComponent&#45;&gt;ClaimGridModule -->
-<g id="edge2" class="edge">
-<title>DialogComponent&#45;&gt;ClaimGridModule</title>
-<path fill="none" stroke="black" d="M231.5,-122.11C231.5,-122.11 231.5,-140.99 231.5,-140.99"/>
-<polygon fill="black" stroke="black" points="228,-140.99 231.5,-150.99 235,-140.99 228,-140.99"/>
-</g>
-<!-- VentComponent -->
-<g id="node3" class="node">
-<title>VentComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="153.55,-122 45.45,-122 45.45,-86 153.55,-86 153.55,-122"/>
-<text text-anchor="middle" x="99.5" y="-99.8" font-family="Times,serif" font-size="14.00">VentComponent</text>
-</g>
-<!-- VentComponent&#45;&gt;ClaimGridModule -->
-<g id="edge3" class="edge">
-<title>VentComponent&#45;&gt;ClaimGridModule</title>
-<path fill="none" stroke="black" d="M132.12,-122.11C132.12,-141.34 132.12,-169 132.12,-169 132.12,-169 161.69,-169 161.69,-169"/>
-<polygon fill="black" stroke="black" points="161.69,-172.5 171.69,-169 161.69,-165.5 161.69,-172.5"/>
-</g>
-<!-- ClaimGridComponent  -->
-<g id="node5" class="node">
-<title>ClaimGridComponent </title>
-<polygon fill="#fb8072" stroke="black" points="384.71,-252 240.29,-252 240.29,-216 384.71,-216 384.71,-252"/>
-<text text-anchor="middle" x="312.5" y="-229.8" font-family="Times,serif" font-size="14.00">ClaimGridComponent </text>
-</g>
-<!-- ClaimGridModule&#45;&gt;ClaimGridComponent  -->
-<g id="edge4" class="edge">
-<title>ClaimGridModule&#45;&gt;ClaimGridComponent </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M265.68,-187.11C265.68,-187.11 265.68,-205.99 265.68,-205.99"/>
-<polygon fill="black" stroke="black" points="262.18,-205.99 265.68,-215.99 269.18,-205.99 262.18,-205.99"/>
-</g>
-<!-- VentComponent  -->
-<g id="node6" class="node">
-<title>VentComponent </title>
-<polygon fill="#fb8072" stroke="black" points="222.54,-252 110.46,-252 110.46,-216 222.54,-216 222.54,-252"/>
-<text text-anchor="middle" x="166.5" y="-229.8" font-family="Times,serif" font-size="14.00">VentComponent </text>
-</g>
-<!-- ClaimGridModule&#45;&gt;VentComponent  -->
-<g id="edge5" class="edge">
-<title>ClaimGridModule&#45;&gt;VentComponent </title>
-<path fill="none" stroke="black" stroke-dasharray="5,2" d="M197.15,-187.11C197.15,-187.11 197.15,-205.99 197.15,-205.99"/>
-<polygon fill="black" stroke="black" points="193.65,-205.99 197.15,-215.99 200.65,-205.99 193.65,-205.99"/>
-</g>
-</g>
-</svg>
-
-    </div>
-    <i id="fullscreen" class="icon ion-ios-resize module-graph-fullscreen-btn" aria-hidden="true"></i>
+<div class="text-center">
+    <object id="demo-svg" type="image/svg+xml" data="../modules/ClaimGridModule/dependencies.svg" style="width: 100%; height: 250px;">
+            Your browser does not support SVG
+    </object>
     <div class="btn-group">
         <button id="zoom-in" class="btn btn-default btn-sm">Zoom in</button>
         <button id="reset" class="btn btn-default btn-sm">Reset</button>
@@ -154,17 +610,16 @@
 <script src="../js/svg-pan-zoom.controls.js"></script>
 
 <ul class="nav nav-tabs" role="tablist">
-    <li  class="active" >
-        <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+    <li class="active">
+        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
     </li>
-    <li >
-        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
     </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
-
+    <div class="tab-pane fade active in" id="infos">
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -173,47 +628,38 @@
         </p>
 
 
-
-
         <div class="container-fluid module">
             <div class="row">
                 <div class="col-sm-3">
-                    <h3>Declarations<a href="https://angular.io/api/core/NgModule#declarations" target="_blank"
-                            title="Official documentation about module declarations"><span class="icon ion-ios-information-circle-outline"></span></a></h3>
+                    <h3>Declarations<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#declarations-anchor" target="_blank"><span class="fa fa-info-circle"></span></a></h3>
                     <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="../components/ClaimGridComponent.html">ClaimGridComponent</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../components/DialogComponent.html">DialogComponent</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../components/VentComponent.html">VentComponent</a>
-                        </li>
+                            <li class="list-group-item">
+                                <a href="../components/VentComponent.html">VentComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/ClaimGridComponent.html">ClaimGridComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/DialogComponent.html">DialogComponent</a>
+                            </li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
-                    <h3>Exports<a href="https://angular.io/api/core/NgModule#exports" target="_blank" title="Official documentation about module exports"><span
-                                class="icon ion-ios-information-circle-outline"></a></h3>
+                    <h3>Exports<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#exports-anchor" target="_blank"><span class="fa fa-info-circle"></a></h3>
                     <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="../components/ClaimGridComponent.html">ClaimGridComponent</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="../components/VentComponent.html">VentComponent</a>
-                        </li>
+                            <li class="list-group-item">
+                                    <a href="../components/VentComponent.html" >VentComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                    <a href="../components/ClaimGridComponent.html" >ClaimGridComponent</a>
+                            </li>
                     </ul>
                 </div>
             </div>
         </div>
-
-
     </div>
-
-
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">
-import { NgModule } from &#x27;@angular/core&#x27;;
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre><code class="hljs javascript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
 import { FormsModule } from &#x27;@angular/forms&#x27;;
 import { MatDialogModule } from &#x27;@angular/material/dialog&#x27;;
@@ -221,6 +667,7 @@ import { DialogComponent } from &#x27;../../_components/Dialog/dialog.component&
 
 import { ClaimGridComponent } from &#x27;./claim-grid.component&#x27;;
 import { VentComponent } from &#x27;./vent/vent.component&#x27;;
+import { MatButtonModule } from &#x27;@angular/material/button&#x27;;
 
 @NgModule({
   declarations: [
@@ -229,13 +676,15 @@ import { VentComponent } from &#x27;./vent/vent.component&#x27;;
     DialogComponent  
     ],
   exports: [
+    CommonModule,
     VentComponent,
     ClaimGridComponent
     ],
   imports: [
     CommonModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule
     ]
 })
 export class ClaimGridModule { }
@@ -252,14 +701,9 @@ export class ClaimGridModule { }
 
 
 
-                   
-
-
-
-
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -267,22 +711,8 @@ export class ClaimGridModule { }
     </div>
 </div>
 </div>
-               <!-- END CONTENT -->
            </div>
        </div>
-
-       <script>
-            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'ClaimGridModule.html';
-            var MAX_SEARCH_RESULTS = 15;
-       </script>
-
-       <script src="../js/libs/custom-elements.min.js"></script>
-       <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
-       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
@@ -293,17 +723,20 @@ export class ClaimGridModule { }
 
        <script src="../js/compodoc.js"></script>
 
-       <script src="../js/tabs.js"></script>
-       <script src="../js/menu.js"></script>
-       <script src="../js/libs/clipboard.min.js"></script>
-       <script src="../js/libs/prism.js"></script>
-       <script src="../js/sourceCode.js"></script>
-          <script src="../js/search/search.js"></script>
-          <script src="../js/search/lunr.min.js"></script>
-          <script src="../js/search/search-lunr.js"></script>
-          <script src="../js/search/search_index.js"></script>
-       <script src="../js/lazy-load-graphs.js"></script>
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
 
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/highlight.pack.js"></script>
+       <script src="../js/libs/highlightjs-line-numbers.min.js"></script>
+       <script src="../js/search/search_index.js"></script>
+       <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                hljs.initHighlightingOnLoad();
+                hljs.initLineNumbersOnLoad();
+            });
+       </script>
 
     </body>
 </html>
