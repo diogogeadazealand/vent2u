@@ -29,9 +29,14 @@ h2 {
   flex: 0 0 50%;
 }
 
-ul.temperature::-webkit-scrollbar, ul.temperature::-moz-scrollbar {
+ul.temperature::-webkit-scrollbar{
     display: none;
 }
+
+ul.temperature::-moz-scrollbar {
+    display: none;
+}
+
 
 .temperature li{
     font-size: 50px;

@@ -4,10 +4,14 @@
 }
 
 #booking-grid {
-    grid-gap: 15px 40px;
-    padding: 15px
+    grid-gap: 25px;
+    padding: 15px;
 }
 
 #group-grid{
     grid-gap: 10px
+}
+
+.loading p{
+    text-align: center;
 }

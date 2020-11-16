@@ -1,3 +1,7 @@
-<button mat-raised-button [disabled]="vent.claimed" (click)="openDialog()">{{vent.name}}
+<button *ngIf="vent.ID != currentVentId" mat-raised-button [disabled]="vent.isClaimed == 1" type="button" (click)="claim($event)">{{vent.ID}}
+  <span class="circle" *ngIf="vent.claimRequests && vent.claimRequests.length > 0"></span>
+</button>
+
+<button *ngIf="vent.ID == currentVentId" mat-raised-button class="selected" type="button" (click)="unclaim($event)">V{{vent.ID}}
   <span class="circle" *ngIf="vent.claimRequests && vent.claimRequests.length > 0"></span>
 </button>

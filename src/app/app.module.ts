@@ -18,7 +18,6 @@ import { ClassModule } from './views/class/class.module';
 import { LogoutComponent } from './shared/_components/Header/logout/logout.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
-import { NotInUseModalComponent } from './shared/_components/not-in-use-modal/not-in-use-modal.component';
 import { PresetsService } from './shared/_services/presets.service';
 
 
@@ -26,8 +25,7 @@ import { PresetsService } from './shared/_services/presets.service';
   declarations: [
     AppComponent,
     NotFoundComponent,
-    LogoutComponent,
-    NotInUseModalComponent
+    LogoutComponent
   ],
 
   imports: [

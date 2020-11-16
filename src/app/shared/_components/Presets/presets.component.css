@@ -8,10 +8,6 @@
     overflow-anchor: none;
 }
 
-.presets ul::-webkit-scrollbar, .presets ul::-moz-scrollbar {
-    display: none;
-}
-
 .presets ul{
     display: flex;
     flex-direction: row;
@@ -27,6 +23,15 @@
   /*IE10+*/
   -ms-overflow-style: -ms-autohiding-scrollbar;
   scroll-snap-type: x mandatory;
+  overflow: -moz-scrollbars-none;
+}
+
+.presets ul::-moz-scrollbar {
+    display: none;;
+}
+
+.presets ul::-webkit-scrollbar {
+    display: none;
 }
 
 .presets ul::before,

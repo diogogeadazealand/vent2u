@@ -1,13 +1,13 @@
-.vent{
-    margin-top: 100px;
-    font-size: 1.8em;
-    text-align: center;
+.page{
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(100, 243, 140, 1) 0%, rgba(0, 85, 0, 1) 100%);
+    display: block;
+    margin-top: -1px;
+    padding-top: 1px;/*required to avoid margin collapse*/
     color: white;
-    position: relative;
 }
 
-.vent mat-icon{
-    position: absolute;
-    padding-left: 10px;
-    top: 4px;
+.page.special{
+    background: white;
+    color: #005500;
 }

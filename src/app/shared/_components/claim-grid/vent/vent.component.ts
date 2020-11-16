@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Vent } from 'src/app/shared/_models/vent.model';
 import { DialogComponent } from '../../Dialog/dialog.component';
 
 
@@ -10,13 +11,22 @@ import { DialogComponent } from '../../Dialog/dialog.component';
 })
 export class VentComponent {
 
-  constructor(public dialog: MatDialog) {}
   @Input() vent;
+  @Input() currentVentId;
+  @Output() ventClaimedEvent = new EventEmitter();
+  @Output() ventUnclaimedEvent = new EventEmitter();
 
-  openDialog() : void {
-    let dialogRef = this.dialog.open(DialogComponent, {
-      height: '400px',
-      width: '600px',
-    });
+  claim(e) : void {
+    this.ventClaimedEvent.emit(this.vent);
   }
+  
+  unclaim(e){
+    this.ventUnclaimedEvent.emit();
+  }
+
+  isCurrent(){
+    if(this.vent.ID == this.currentVentId) return "selected";
+    return "";
+  }
+
 }

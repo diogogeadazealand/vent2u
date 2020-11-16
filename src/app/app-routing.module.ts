@@ -22,17 +22,23 @@ import { HumidityComponent } from './views/humidity/humidity.component'; // Page
 import { ClaimComponent } from './views/claim/claim.component'; // Page Claiim
 import { TemperatureComponent } from './views/temperature/temperature.component'; // Page Temperature
 import { ClassComponent} from './views/class/class.component'; // Page Class
+import { VentControllComponent } from './views/vent-controll/vent-controll.component';
 
 
 const routes: Routes = [
-  { path: 'Dashboard', component: DashboardComponent, canLoad: [AuthGuard],
+  { path: '', component: DashboardComponent,
     children: [
-      { path: 'Temperature', component: TemperatureComponent, },
-      { path: 'Humidity', component: HumidityComponent },
-      { path: 'Claim', component: ClaimComponent },
-      { path: 'Classroom', component: ClassComponent }
-    ] },
-  { path: '',   component: LoginComponent },
+      { 
+        path: '', component: VentControllComponent,
+        children: [
+          { path: '', component: TemperatureComponent, },
+          { path: 'humidity', component: HumidityComponent },
+        ] },
+        { path: 'classroom', component: ClassComponent, canLoad: [AuthGuard] },
+        { path: 'claim', component: ClaimComponent, canLoad: [AuthGuard] }
+    ]
+  },
+  { path: 'login',   component: LoginComponent },
   { path: '**', component: NotFoundComponent }
 ];
 

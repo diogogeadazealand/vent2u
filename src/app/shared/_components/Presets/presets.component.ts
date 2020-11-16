@@ -13,27 +13,21 @@ export class PresetsComponent implements OnInit, AfterViewInit {
     presetsNodeList;
     adjustSelected;
 
-    currentPreset = 0;
+    currentPresetId;
+    currentPreset;
     presets;
+    userID;
 
     @Output() onPresetChanged = new EventEmitter();
+    @Output() onLoad = new EventEmitter();
 
     constructor(private _presetsService: PresetsService, private _router: Router){}
 
     ngOnInit(): void{
-        this._presetsService.findAllFromUser(1).subscribe(data => {
-            this.presets = data;
-
-            setTimeout(() => {
-                this.presetsNodeList = this.list.children;
-                this.scrollToCurrent(false);
-            }, 500)
-
-        });
 
         this._router.events.subscribe(event => {
-            if(event instanceof NavigationStart && event.url != "/Dashboard/Temperature"){
-                this.removeListener();
+            if(event instanceof NavigationStart && event.url !== "/"){
+              this.removeListener();
             }
         })
     }
@@ -41,17 +35,21 @@ export class PresetsComponent implements OnInit, AfterViewInit {
     ngAfterViewInit(): void {
         this.list = document.querySelector(".presets ul");
         this.presetsNodeList = this.list.children;
+        this.onLoad.emit();
+        this.addListener();
     }
 
-    onScroll(): void{
+    onScroll(e): void{
         clearTimeout(this.adjustSelected);
-        this.adjustSelected = setTimeout(() => {
-            this.getCenterButton(this.currentPreset);
-        }, 200);
+        this.adjustSelected = setTimeout(() => { 
+            if(this.currentPreset == undefined) this.currentPreset = 0;
+            this.getCenterButton(this.currentPreset);}, 200);
     }
 
 
     getCenterButton(curPreset): void{
+
+        if(curPreset == undefined) return;
 
         let curElIndex = curPreset;
 
@@ -89,7 +87,7 @@ export class PresetsComponent implements OnInit, AfterViewInit {
                 this.currentPreset = curElIndex;
                 
                 currentElement.classList.add("selected");
-                this.changePreset();
+                if(!isNaN(curPreset)) this.changePreset();
                 break;
             }
         }
@@ -104,18 +102,38 @@ export class PresetsComponent implements OnInit, AfterViewInit {
         if(!this.list) this.list = document.querySelector(".presets ul");
 
         if(!this.list) return;
-        this.list.removeEventListener("scroll", () => { this.onScroll();});
+        this.list.removeEventListener("scroll", (e) => { this.onScroll(e)});
     }
 
     addListener()
     {
         if(!this.list) this.list = document.querySelector(".presets ul");
-        this.list.addEventListener("scroll", () => { 
-            this.onScroll();
+        this.list.addEventListener("scroll", (e) => { 
+            this.onScroll(e);
         });
     }
 
+    public ScrollToIndex(id){
+
+        this.currentPresetId = id;
+        
+        if(this.presets)
+            this.scrollToCurrent();
+    }
+
     scrollToCurrent(setActive = true){
+
+        if(this.currentPreset == undefined){
+            this.presets.forEach( (preset, i) => {
+                if(preset.ID == this.currentPresetId) {
+                    this.currentPreset = i;
+                    return;
+                }
+            });
+            if(!this.currentPreset) return;//something happened, maybe it has a preset from other user
+        }
+
+        if(!this.presetsNodeList) return;
 
         this.removeListener();
 
@@ -130,6 +148,23 @@ export class PresetsComponent implements OnInit, AfterViewInit {
 
         this.addListener();
 
+    }
+
+    public SetUser(user_id){
+        this.userID = user_id;
+        this.getPresets();
+    }
+
+    private getPresets(){
+        this._presetsService.findAllFromUser(this.userID).subscribe(data => {
+            this.presets = data;
+
+            setTimeout(() => {
+                this.presetsNodeList = this.list.children;
+                this.scrollToCurrent(false);
+            }, 500)
+
+        });
     }
 
 } 

@@ -29,4 +29,12 @@ export class VentsService {
   delete(id) {
     return this.http.delete(`${baseUrl}/${id}`);    
   }
+
+  getFromRoom(id){
+    return this.http.get(`${baseUrl}/room/${id}`);
+  }
+
+  getFromUser(id){
+    return this.http.get(`${baseUrl}/user/${id}`);
+  }
 }

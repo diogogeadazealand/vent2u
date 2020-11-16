@@ -11,6 +11,8 @@ import { PresetsService } from '../shared/_services/presets.service';
 import { User } from '../shared/_models/user.model';
 import { Vent } from '../shared/_models/vent.model';
 import { Preset } from '../shared/_models/preset.model';
+import { Room } from '../shared/_models/room.model';
+import { Classroom } from '../shared/_models/class.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -25,10 +27,11 @@ export class DashboardComponent implements OnInit {
   @Output() user: User = new User();
   @Output() vent: Vent = new Vent();
 
-  component = null;
-  // This id parameter is a placeholder until the session gives us the id
-  id = 2;
-
+  temperatureComponent = null;
+  humidityComponent = null;
+  presetsComponent = null;
+  ventControllComponent = null;
+  claimComponent = null;
 
   constructor(
     private _ventService: VentsService,
@@ -37,15 +40,16 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
 
-    this.user = this._userService.findOne(1);
+    this.user = this._userService.findOne(6);
 
-    this._ventService.getOne(this.id).subscribe(data => {
+    if(this.claimComponent) this.claimComponent.userId = this.user.ID;
 
-      this.vent.set(data[0]);
+    this._ventService.getFromUser(this.user.ID).subscribe(data => {
 
-      this.SetTemperature(); //update temperature in the gui
-      this.SetHumidity(); // update humidity i nthe gui
+      if(!data) return;//the user doesn't have any vent claimed
 
+      this.vent.set(data);
+      this.UpdateUi();
     });
 
   }
@@ -54,8 +58,9 @@ export class DashboardComponent implements OnInit {
 
     this.vent.temperature = val || this.vent.temperature;
 
-    if (this.component.temperatureEvent !== undefined) {
-      this.component.temperature = this.vent.temperature;
+    if (this.temperatureComponent != undefined) {
+      this.temperatureComponent.temperature = this.vent.temperature;
+      this.temperatureComponent.scrollToTemperature();
     }
 
     if(val){
@@ -67,8 +72,8 @@ export class DashboardComponent implements OnInit {
    
     this.vent.humidity = val || this.vent.humidity;
 
-    if (this.component.humidityEvent !== undefined) {//updates interface
-      this.component.humidity = this.vent.humidity;
+    if (this.humidityComponent != undefined) {//updates interface
+      this.humidityComponent.humidity = this.vent.humidity;
     }
 
     if(val != undefined){//updates database
@@ -76,27 +81,48 @@ export class DashboardComponent implements OnInit {
     }
   }
 
+  private SetPreset(preset ?){
+
+    this.vent.preset_id = (preset) ? preset.ID : this.vent.preset_id;
+
+    if (this.presetsComponent != undefined) {//updates interface
+      this.presetsComponent.ScrollToIndex(this.vent.preset_id);
+    }
+
+    if(preset != undefined){//updates database
+      this.updatePreset(preset);
+    }
+  }
+
   public componentAdded(component) {
-    if (component != undefined) {
-      this.component = component;
-      if (component.temperatureEvent) {
 
-        this.SetTemperature();
+    if(component != undefined){
+        
+      if(component.isVentController){
+        this.ventControllComponent = component;
+        this.ventControllComponent.vent = this.vent;
+  
+        this.ventControllComponent.presetsLoadedEvent.subscribe( (component) => {
+            this.presetsComponent = component;
 
-        component.temperatureEvent.subscribe(
-          (data) => {
-            this.SetTemperature(data);
+            if(this.vent.preset_id) {
+              this.presetsComponent.currentPresetId = this.vent.preset_id;
+            }
+
+            this.presetsComponent.SetUser(this.user.ID);
+        });
+        
+          this.ventControllComponent.presetEvent.subscribe( preset => {
+            this.SetPreset(preset);
           });
 
-      } else if (component.humidityEvent) {
+        this.ventControllComponent.componentAddedEvent.subscribe(component => {
+          this.updateComponents(component);
+        });
+      } else this.updateComponents(component);
 
-        component.humidityEvent.subscribe(
-          (data) => {
-            this.SetHumidity(data);
-          }
-        )
-      }
     }
+
   }
 
   updateTemperature(temperature) {
@@ -104,6 +130,7 @@ export class DashboardComponent implements OnInit {
       ID: this.vent.ID,
       temperature: temperature
     }
+    this.vent.temperature = temperature;
     this._ventService.update(data)
       .subscribe(
         response => {
@@ -129,6 +156,18 @@ export class DashboardComponent implements OnInit {
         });
   }
 
+  getVent(vent){
+
+    this._ventService.getOne(vent.ID).subscribe(data => {
+
+      if(!data) return;//the user doesn't have any vent claimed
+
+      this.vent.set(data);
+      this.UpdateUi();
+    });
+
+  }
+
   updatePreset(preset) {
 
     this.vent.humidity = preset.humidity;
@@ -146,4 +185,40 @@ export class DashboardComponent implements OnInit {
         console.log(error);
       });
   }
+
+    updateComponents(component){
+
+      if (component.temperatureEvent) {
+        this.temperatureComponent = component;
+
+        this.temperatureComponent.temperatureEvent.subscribe( temperature => {
+          this.updateTemperature(temperature);
+        });
+
+        if(this.vent.temperature){
+          this.temperatureComponent.temperature = this.vent.temperature;
+          this.temperatureComponent.scrollToTemperature();
+        }
+
+      } else if(component.humidityEvent){
+        this.humidityComponent = component;
+        this.humidityComponent.humidityEvent.subscribe( humidity => {
+          this.updateHumidity(humidity);
+        });
+      }else if(component.claimEvent){
+
+        this.claimComponent = component;
+        this.claimComponent.currentVent = this.vent;
+        this.claimComponent.userId = this.user.ID;
+        this.claimComponent.claimEvent.subscribe( vent => {
+          this.getVent(vent);
+        });
+      }
+    }
+
+    UpdateUi(){
+      this.SetPreset();
+      this.SetTemperature(); //update temperature in the gui
+      this.SetHumidity(); // update humidity i nthe gui
+    }
 }

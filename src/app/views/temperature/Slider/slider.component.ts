@@ -6,10 +6,11 @@ import { NavigationEnd, NavigationStart, Router } from '@angular/router';
     templateUrl: './slider.component.html',
     styleUrls: ['./slider.component.css']
 })
-export class DashboardSlider implements OnChanges, AfterViewInit, OnInit{
+export class DashboardSlider implements AfterViewInit, OnInit{
 
     @Input() temperature : number;
     @Output() temperatureEvent = new EventEmitter<number>();
+    @Output() onLoaded = new EventEmitter();
 
     tempRange = [];
     ul;
@@ -29,12 +30,8 @@ export class DashboardSlider implements OnChanges, AfterViewInit, OnInit{
 
     ngOnInit(): void{
         this._router.events.subscribe( event => {
-            if(event instanceof NavigationStart && event.url != "/Dashboard/Temperature"){
-                console.log(event.url);
+            if(event instanceof NavigationStart && event.url != "/"){
                 this.removeListener();
-            } else if(event instanceof NavigationEnd && event.url == "/Dashboard/Temperature"){
-                console.log(event.url);
-                this.addListener();
             }
         });
     }
@@ -43,22 +40,20 @@ export class DashboardSlider implements OnChanges, AfterViewInit, OnInit{
         this.ul = document.querySelector(".temperature");
         this.tempNodeList = this.ul.children;
 
+        this.onLoaded.emit();
+
+        this.addListener();
+
         if(this.temperature) {
-            this.addListener();
             this.scrollToTemperature();
         }
-    }
-
-    ngOnChanges(newValue: any){
-
-        this.scrollToTemperature();
     }
     
     onTempChanged(value : number) {
         this.temperatureEvent.emit(value);
     }
 
-    scrollToTemperature(){
+    public scrollToTemperature(){
 
         if(!this.temperature || !this.ul) return;
 

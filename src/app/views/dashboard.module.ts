@@ -23,7 +23,9 @@ import { NavigationComponent } from '../shared/_components/Navigation/navigation
 
 // Pipelines
 import { CelsiusPipe } from '../celsius.pipe';
-import { PresetsComponent } from '../shared/_components/Presets/presets.component';
+import { VentControllModule } from './vent-controll/vent-controll.module';
+import { ClaimModule } from './claim/claim.module';
+import { RoomsService } from '../shared/_services/rooms.service';
 
 
 
@@ -34,9 +36,7 @@ import { PresetsComponent } from '../shared/_components/Presets/presets.componen
     NavigationComponent,
     // Pages
     MainComponent,
-    ClaimComponent,
-    CelsiusPipe,
-    PresetsComponent
+    CelsiusPipe
   ],
   imports: [
     CommonModule,
@@ -44,8 +44,10 @@ import { PresetsComponent } from '../shared/_components/Presets/presets.componen
     MatIconModule,
     MatToolbarModule,
     MatMenuModule,
-    ClaimGridModule
+    ClaimModule,
+    VentControllModule
   ],
+  providers: [RoomsService],
   exports: [
     CelsiusPipe
   ]
