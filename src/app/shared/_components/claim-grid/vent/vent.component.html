@@ -1,4 +1,4 @@
-<button *ngIf="vent.ID != currentVentId" mat-raised-button [disabled]="vent.isClaimed == 1" type="button" (click)="claim($event)">V{{vent.ID}}
+<button *ngIf="vent.ID != currentVentId" mat-raised-button [disabled]="vent.isClaimed == 1" type="button" (click)="claim($event)">{{vent.ID}}
   <span class="circle" *ngIf="vent.claimRequests && vent.claimRequests.length > 0"></span>
 </button>
 

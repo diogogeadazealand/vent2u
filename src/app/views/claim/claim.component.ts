@@ -30,6 +30,7 @@ export class ClaimComponent implements OnInit {
   }
 
   claimVent(vent){
+    debugger;
     vent.user_id = this.userId;
     
     if(this.currentVent.ID) 

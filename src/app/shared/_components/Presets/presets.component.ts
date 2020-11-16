@@ -41,13 +41,15 @@ export class PresetsComponent implements OnInit, AfterViewInit {
 
     onScroll(e): void{
         clearTimeout(this.adjustSelected);
-        this.adjustSelected = setTimeout(() => { this.getCenterButton(this.currentPreset);}, 200);
+        this.adjustSelected = setTimeout(() => { 
+            if(this.currentPreset == undefined) this.currentPreset = 0;
+            this.getCenterButton(this.currentPreset);}, 200);
     }
 
 
     getCenterButton(curPreset): void{
 
-        if(!curPreset) return;
+        if(curPreset == undefined) return;
 
         let curElIndex = curPreset;
 
@@ -85,7 +87,7 @@ export class PresetsComponent implements OnInit, AfterViewInit {
                 this.currentPreset = curElIndex;
                 
                 currentElement.classList.add("selected");
-                if(curPreset) this.changePreset();
+                if(!isNaN(curPreset)) this.changePreset();
                 break;
             }
         }

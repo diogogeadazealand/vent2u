@@ -209,6 +209,7 @@ export class DashboardComponent implements OnInit {
 
         this.claimComponent = component;
         this.claimComponent.currentVent = this.vent;
+        this.claimComponent.userId = this.user.ID;
         this.claimComponent.claimEvent.subscribe( vent => {
           this.getVent(vent);
         });
