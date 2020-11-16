@@ -8,29 +8,588 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	    <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
             <a href="../" class="navbar-brand">semester-project documentation</a>
-            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../">semester-project documentation</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./modules.html" >
+                            <span class="fa fa-archive"></span>
+                            <span>Modules</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            ></span>
+                        </a>
+                        <ul class="links collapse in"
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/AppModule.html" >AppModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/AuthModule.html" >AuthModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/AuthRoutingModule.html" >AuthRoutingModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/ClaimGridModule.html" >ClaimGridModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/ClaimModule.html" >ClaimModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/ClassModule.html" >ClassModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/DashboardModule.html" >DashboardModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/HumidityModule.html" >HumidityModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/OHumidityModule.html" >OHumidityModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/OTempModule.html" >OTempModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/PresetsModule.html" >PresetsModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/TemperatureModule.html" >TemperatureModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/VentControllModule.html" >VentControllModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-components-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ClaimComponent.html" >ClaimComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ClaimGridComponent.html" >ClaimGridComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ClassComponent.html" >ClassComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/DashboardComponent.html"  class="active" >DashboardComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/DashboardSlider.html" >DashboardSlider</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/DialogComponent.html" >DialogComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/HeaderComponent.html" >HeaderComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/HumidityComponent.html" >HumidityComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/HumiditySlider.html" >HumiditySlider</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/LogoutComponent.html" >LogoutComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/MainComponent.html" >MainComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/NavigationComponent.html" >NavigationComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/NotFoundComponent.html" >NotFoundComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/OHumidityComponent.html" >OHumidityComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/OTempComponent.html" >OTempComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/PresetsComponent.html" >PresetsComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/StudentComponent.html" >StudentComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/StudentsComponent.html" >StudentsComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/TemperatureComponent.html" >TemperatureComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/VentComponent.html" >VentComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/VentControllComponent.html" >VentControllComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-file-code-o"></span>
+                            <span>Classes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-classes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-classes-links"
+                            >
+                                <li class="link">
+                                    <a href="../classes/Classroom.html" >Classroom</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/Preset.html" >Preset</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/Room.html" >Room</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/User.html" >User</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/Vent.html" >Vent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-injectables-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="../injectables/AuthGuard.html" >AuthGuard</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/AuthService.html" >AuthService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/PresetsService.html" >PresetsService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/RoomsService.html" >RoomsService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/StudentsService.html" >StudentsService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/UserMockService.html" >UserMockService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/UserService.html" >UserService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/VentService.html" >VentService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/VentsService.html" >VentsService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/WeatherService.html" >WeatherService</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-plus"></span>
+                            <span>Pipes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-pipes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-pipes-links"
+                            >
+                                <li class="link">
+                                    <a href="../pipes/CelsiusPipe.html" >CelsiusPipe</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+                    <li class="divider"></li>
+                    <li class="copyright">
+                            Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                            </a>
+                    </li>
+            
+                </ul>
+            
+            </nav>
         </div>
 
         <div class="container-fluid main">
            <div class="row main">
                <div class="hidden-xs menu">
-                   <compodoc-menu mode="normal"></compodoc-menu>
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../">semester-project documentation</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./modules.html" >
+                                   <span class="fa fa-archive"></span>
+                                   <span>Modules</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   ></span>
+                               </a>
+                               <ul class="links collapse in"
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/AppModule.html" >AppModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/AuthModule.html" >AuthModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/AuthRoutingModule.html" >AuthRoutingModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/ClaimGridModule.html" >ClaimGridModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/ClaimModule.html" >ClaimModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/ClassModule.html" >ClassModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/DashboardModule.html" >DashboardModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/HumidityModule.html" >HumidityModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/OHumidityModule.html" >OHumidityModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/OTempModule.html" >OTempModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/PresetsModule.html" >PresetsModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/TemperatureModule.html" >TemperatureModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/VentControllModule.html" >VentControllModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#components-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ClaimComponent.html" >ClaimComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ClaimGridComponent.html" >ClaimGridComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ClassComponent.html" >ClassComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/DashboardComponent.html"  class="active" >DashboardComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/DashboardSlider.html" >DashboardSlider</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/DialogComponent.html" >DialogComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/HeaderComponent.html" >HeaderComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/HumidityComponent.html" >HumidityComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/HumiditySlider.html" >HumiditySlider</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/LogoutComponent.html" >LogoutComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/MainComponent.html" >MainComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/NavigationComponent.html" >NavigationComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/NotFoundComponent.html" >NotFoundComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/OHumidityComponent.html" >OHumidityComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/OTempComponent.html" >OTempComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/PresetsComponent.html" >PresetsComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/StudentComponent.html" >StudentComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/StudentsComponent.html" >StudentsComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/TemperatureComponent.html" >TemperatureComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/VentComponent.html" >VentComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/VentControllComponent.html" >VentControllComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-file-code-o"></span>
+                                   <span>Classes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#classes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="classes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../classes/Classroom.html" >Classroom</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/Preset.html" >Preset</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/Room.html" >Room</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/User.html" >User</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/Vent.html" >Vent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#injectables-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="../injectables/AuthGuard.html" >AuthGuard</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/AuthService.html" >AuthService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/PresetsService.html" >PresetsService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/RoomsService.html" >RoomsService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/StudentsService.html" >StudentsService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/UserMockService.html" >UserMockService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/UserService.html" >UserService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/VentService.html" >VentService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/VentsService.html" >VentsService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/WeatherService.html" >WeatherService</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-plus"></span>
+                                   <span>Pipes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#pipes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="pipes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../pipes/CelsiusPipe.html" >CelsiusPipe</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                           <li class="copyright">
+                                   Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                                   </a>
+                           </li>
+                   
+                       </ul>
+                   
+                   </nav>
                </div>
-               <!-- START CONTENT -->
                <div class="content component">
                    <div class="content-data">
-
-
 
 
 <ol class="breadcrumb">
@@ -38,30 +597,23 @@
   <li>DashboardComponent</li>
 </ol>
 
-<ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
-        </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
-        </li>
-</ul>
 
-<div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+        </li>
+        <li>
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade active in" id="infos"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
     <code>src/app/views/dashboard.component.ts</code>
 </p>
-
-
 
 
 
@@ -79,365 +631,677 @@
 
 
 
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                    <code>
+                        VentsService
+                    </code>
+                </td>
+            </tr>
+
 
             <tr>
                 <td class="col-md-3">selector</td>
                 <td class="col-md-9"><code>app-dashboard</code></td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>dashboard.component.css</code></td>
+            </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./dashboard.component.html</code></td>
+                <td class="col-md-9"><code>dashboard.component.html</code></td>
             </tr>
 
 
-
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
-
-    <section>
-    <h3 id="index">Index</h3>
-    <table class="table table-sm table-bordered index-table">
-        <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Properties</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#humidity">humidity</a>
-                            </li>
-                            <li>
-                                <a href="#temperature">temperature</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#componentAdded">componentAdded</a>
-                            </li>
-                            <li>
-                                <a href="#ngInit">ngInit</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-
-
-
-
         </tbody>
     </table>
 </section>
 
 
+    <section>
+        <h3 id="outputs">Outputs</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>user</code>
+                        </td>
+                        <td class="col-md-10">
+                            <em><code>$event</code> type:</em>    <code><a href="../classes/User.html" target="_self" >User</a></code>
 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>vent</code>
+                        </td>
+                        <td class="col-md-10">
+                            <em><code>$event</code> type:</em>    <code><a href="../classes/Vent.html" target="_self" >Vent</a></code>
 
-
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
 
     <section>
+        <h3 id="constructor">Constructor</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>constructor(_ventService: <a href="../injectables/VentsService.html" >VentsService</a>, _userService: <a href="../injectables/UserMockService.html" >UserMockService</a>)</code>
+                        </td>
+                    </tr>
     
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="componentAdded"></a>
-                    <span class="name">
-                        <b>
-                            <span class="modifier">Public</span>
-                            componentAdded
-                        </b>
-                        <a href="#componentAdded"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>componentAdded(component)</code>
-                </td>
-            </tr>
+                </tbody>
+            </table>
+    </section>
 
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="8"
-                            class="link-to-prism">src/app/views/dashboard.component.ts:8</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>component</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngInit"></a>
-                    <span class="name">
-                        <b>
-                            ngInit
-                        </b>
-                        <a href="#ngInit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngInit()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">src/app/views/dashboard.component.ts:30</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</section>
     <section>
+        <h3 id="methods">Methods</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Private</span> SetTemperature</b>
+                        </td>
+                    </tr>
     
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="humidity"></a>
-                        <span class="name">
-                            <b>
-                            humidity</b>
-                            <a href="#humidity"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                <span class="modifier-icon method fa fa-play lock">
+                                    <span class="fa fa-lock"></span>
+                                </span>
+                            <code>SetTemperature(val: Number)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Private</span> SetHumidity</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <span class="modifier-icon method fa fa-play lock">
+                                    <span class="fa fa-lock"></span>
+                                </span>
+                            <code>SetHumidity(val: Number)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Private</span> SetPreset</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <span class="modifier-icon method fa fa-play lock">
+                                    <span class="fa fa-lock"></span>
+                                </span>
+                            <code>SetPreset(preset: any)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Public</span> componentAdded</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <span class="modifier-icon method fa fa-play circle">
+                                    <span class="fa fa-circle"></span>
+                                </span>
+                            <code>componentAdded(component: any)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> updateTemperature</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>updateTemperature(temperature: any)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> updateHumidity</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>updateHumidity(humidity: any)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> getVent</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>getVent(vent: any)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> updatePreset</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>updatePreset(preset: any)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> updateComponents</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>updateComponents(component: any)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> UpdateUi</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>UpdateUi()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
 
+    <section>
+        <h3 id="inputs">Properties</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> claimComponent</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>0</code>
+                            <code>claimComponent:     <code>any</code>
+    </bcode>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/views/dashboard.component.ts:28</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="temperature"></a>
-                        <span class="name">
-                            <b>
-                            temperature</b>
-                            <a href="#temperature"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
+                            <b> humidityComponent</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>0</code>
+                            <code>humidityComponent:     <code>any</code>
+    </bcode>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/views/dashboard.component.ts:27</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-</section>
-
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> presetsComponent</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>presetsComponent:     <code>any</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> temperatureComponent</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>temperatureComponent:     <code>any</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> ventControllComponent</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>ventControllComponent:     <code>any</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
 </div>
+        <div class="tab-pane fade tab-source-code" id="source">
+            <pre><code class="hljs javascript">import {
+  Component,
+  OnInit,
+  Output
+} from &#x27;@angular/core&#x27;;
 
+import { VentsService } from &#x27;../shared/_services/Vents/vents.service&#x27;;
+import { UserMockService as UserService } from &quot;../shared/_services/user-mock.service&quot;;
+import { PresetsService } from &#x27;../shared/_services/presets.service&#x27;;
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { User } from &#x27;../shared/_models/user.model&#x27;;
+import { Vent } from &#x27;../shared/_models/vent.model&#x27;;
+import { Preset } from &#x27;../shared/_models/preset.model&#x27;;
+import { Room } from &#x27;../shared/_models/room.model&#x27;;
+import { Classroom } from &#x27;../shared/_models/class.model&#x27;;
 
 @Component({
   selector: &#x27;app-dashboard&#x27;,
-  templateUrl: &#x27;./dashboard.component.html&#x27;
+  templateUrl: &#x27;./dashboard.component.html&#x27;,
+  styleUrls: [&#x27;dashboard.component.css&#x27;],
+  providers: [VentsService]
 })
-export class DashboardComponent {
-  public componentAdded(component) {
-    if(component !&#x3D; undefined) {
-      if(component.temperatureEvent) {
-      component.temperature &#x3D; this.temperature;
-      component.temperatureEvent.subscribe(
-        (data) &#x3D;&gt; {
-          this.temperature &#x3D; data;
-        })
-      }
-      else if(component.humidityEvent) {
-        component.humidity &#x3D; this.humidity;
-        component.humidityEvent.subscribe(
-          (data) &#x3D;&gt; {
-            this.humidity &#x3D; data;
-          }
-        )
-      }
+
+
+export class DashboardComponent implements OnInit {
+
+  @Output() user: User &#x3D; new User();
+  @Output() vent: Vent &#x3D; new Vent();
+
+  temperatureComponent &#x3D; null;
+  humidityComponent &#x3D; null;
+  presetsComponent &#x3D; null;
+  ventControllComponent &#x3D; null;
+  claimComponent &#x3D; null;
+
+  constructor(
+    private _ventService: VentsService,
+    private _userService: UserService
+  ) {}
+
+  ngOnInit() {
+
+    this.user &#x3D; this._userService.findOne(6);
+
+    if(this.claimComponent) this.claimComponent.userId &#x3D; this.user.ID;
+
+    this._ventService.getFromUser(this.user.ID).subscribe(data &#x3D;&gt; {
+
+      if(!data) return;//the user doesn&#x27;t have any vent claimed
+
+      this.vent.set(data);
+      this.UpdateUi();
+    });
+
+  }
+
+  private SetTemperature(val ? : Number) {
+
+    this.vent.temperature &#x3D; val || this.vent.temperature;
+
+    if (this.temperatureComponent !&#x3D; undefined) {
+      this.temperatureComponent.temperature &#x3D; this.vent.temperature;
+      this.temperatureComponent.ventId &#x3D; this.vent.ID;
+      this.temperatureComponent.scrollToTemperature();
+    }
+
+    if(val){
+      this.updateTemperature(this.vent.temperature);
     }
   }
-  temperature &#x3D; 0;
-  humidity &#x3D; 0;
-  
-  ngInit() {
-    this.temperature &#x3D; 17;
-    this.humidity &#x3D; 53;
+
+  private SetHumidity(val ? : Number) {
+   
+    this.vent.humidity &#x3D; val || this.vent.humidity;
+
+    if (this.humidityComponent !&#x3D; undefined) {//updates interface
+      this.humidityComponent.humidity &#x3D; this.vent.humidity;
+    }
+
+    if(val !&#x3D; undefined){//updates database
+      this.updateHumidity(this.vent.humidity);
+    }
   }
-}</code></pre>
-    </div>
 
-    <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;app-header&gt;&lt;/app-header&gt;
-&lt;router-outlet (activate)&#x3D;&quot;componentAdded($event)&quot;&gt;&lt;/router-outlet&gt;
-&lt;app-navigation [temperature]&#x3D;&#x27;temperature&#x27; [humidity]&#x3D;&#x27;humidity&#x27;&gt;&lt;/app-navigation&gt;</code></pre>
-    </div>
+  private SetPreset(preset ?){
 
+    if(this.vent)
 
-    <div class="tab-pane fade " id="c-tree">
-        <div id="tree-container"></div>
-        <div class="tree-legend">
-            <div class="title">
-                <b>Legend</b>
-            </div>
-            <div>
-                <div class="color htmlelement"></div><span>Html element</span>
-            </div>
-            <div>
-                <div class="color component"></div><span>Component</span>
-            </div>
-            <div>
-                <div class="color directive"></div><span>Html element with directive</span>
-            </div>
+    this.vent.preset_id &#x3D; (preset) ? preset.ID : this.vent.preset_id;
+
+    if (this.presetsComponent !&#x3D; undefined) {//updates interface
+      this.presetsComponent.ScrollToIndex(this.vent.preset_id);
+    }
+
+    if(preset !&#x3D; undefined){//updates database
+      this.updatePreset(preset);
+    }
+  }
+
+  public componentAdded(component) {
+
+    if(component !&#x3D; undefined){
+        
+      if(component.isVentController){
+        this.ventControllComponent &#x3D; component;
+        this.ventControllComponent.vent &#x3D; this.vent;
+  
+        this.ventControllComponent.presetsLoadedEvent.subscribe( (component) &#x3D;&gt; {
+            this.presetsComponent &#x3D; component;
+
+            if(this.vent.preset_id) {
+              this.presetsComponent.currentPresetId &#x3D; this.vent.preset_id;
+            }
+
+            this.presetsComponent.SetUser(this.user.ID);
+        });
+        
+          this.ventControllComponent.presetEvent.subscribe( preset &#x3D;&gt; {
+            this.SetPreset(preset);
+          });
+
+        this.ventControllComponent.componentAddedEvent.subscribe(component &#x3D;&gt; {
+          this.updateComponents(component);
+        });
+      } else this.updateComponents(component);
+
+    }
+
+  }
+
+  updateTemperature(temperature) {
+
+    if(this.vent.ID &#x3D;&#x3D; undefined) return;
+
+    let data &#x3D; {
+      ID: this.vent.ID,
+      temperature: temperature
+    }
+    this.vent.temperature &#x3D; temperature;
+    this._ventService.update(data)
+      .subscribe(
+        response &#x3D;&gt; {
+          console.log(response);
+        },
+        error &#x3D;&gt; {
+          console.log(error);
+        });
+  }
+
+  updateHumidity(humidity) {
+
+    if(this.vent.ID &#x3D;&#x3D; undefined) return;
+
+    let data &#x3D; {
+      ID: this.vent.ID,
+      humidity: humidity
+    }
+    this._ventService.update(data)
+      .subscribe(
+        response &#x3D;&gt; {
+          console.log(response);
+        },
+        error &#x3D;&gt; {
+          console.log(error);
+        });
+  }
+
+  getVent(vent){
+
+    this._ventService.getOne(vent.ID).subscribe(data &#x3D;&gt; {
+
+      if(!data) return;//the user doesn&#x27;t have any vent claimed
+
+      this.vent.set(data[0]);
+      this.UpdateUi();
+    });
+
+  }
+
+  updatePreset(preset) {
+
+    if(this.vent.ID &#x3D;&#x3D; undefined) return;
+
+    this.vent.humidity &#x3D; preset.humidity;
+    this.vent.temperature &#x3D; preset.temperature;
+    this.vent.preset_id &#x3D; preset.ID;
+
+    this.SetTemperature();
+    this.SetHumidity();
+
+    this._ventService.update(this.vent).subscribe(
+      response &#x3D;&gt; {
+        console.log(&quot;Preset changed&quot;);
+      },
+      error &#x3D;&gt; {
+        console.log(error);
+      });
+  }
+
+    updateComponents(component){
+
+      if (component.temperatureEvent) {
+        this.temperatureComponent &#x3D; component;
+
+        this.temperatureComponent.temperatureEvent.subscribe( temperature &#x3D;&gt; {
+          this.updateTemperature(temperature);
+        });
+
+        if(this.vent.temperature){
+          this.temperatureComponent.temperature &#x3D; this.vent.temperature;
+          this.temperatureComponent.ventId &#x3D; this.vent.ID;
+          this.temperatureComponent.scrollToTemperature();
+        }
+
+      } else if(component.humidityEvent){
+        this.humidityComponent &#x3D; component;
+        this.humidityComponent.humidityEvent.subscribe( humidity &#x3D;&gt; {
+          this.updateHumidity(humidity);
+        });
+      }else if(component.claimEvent){
+        this.claimComponent &#x3D; component;
+        this.claimComponent.currentVent &#x3D; this.vent;
+        this.claimComponent.userId &#x3D; this.user.ID;
+        this.claimComponent.claimEvent.subscribe( vent &#x3D;&gt; {
+
+          if(vent.user_id !&#x3D; undefined) this.getVent(vent);
+          else {
+            this.vent &#x3D; new Vent();
+            this.temperatureComponent.ventId &#x3D; undefined;
+            this.UpdateUi();
+          }
+
+        });
+      }
+    }
+
+    UpdateUi(){
+      this.SetPreset();
+      this.SetTemperature(); //update temperature in the gui
+      this.SetHumidity(); // update humidity i nthe gui
+    }
+}
+</code></pre>
         </div>
     </div>
 
-    
-</div>
-
-<script src="../js/libs/vis.min.js"></script>
-<script src="../js/libs/htmlparser.js"></script>
-<script src="../js/libs/deep-iterator.js"></script>
-<script>
-        var COMPONENT_TEMPLATE = '<div><app-header></app-header><router-outlet (activate)="componentAdded($event)"></router-outlet><app-navigation [temperature]=\'temperature\' [humidity]=\'humidity\'></app-navigation></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ClaimComponent', 'selector': 'app-claim'},{'name': 'ClaimGridComponent', 'selector': 'claim-grid'},{'name': 'ClassComponent', 'selector': 'app-class'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'DashboardSlider', 'selector': 'temp-slider'},{'name': 'DialogComponent', 'selector': 'app-dialog'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HumidityComponent', 'selector': 'app-humidity'},{'name': 'HumiditySlider', 'selector': 'hum-slider'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'LogoutComponent', 'selector': 'app-logout'},{'name': 'MainComponent', 'selector': 'app-main'},{'name': 'NavigationComponent', 'selector': 'app-navigation'},{'name': 'NotFoundComponent', 'selector': 'app-notfound'},{'name': 'NotInUseModalComponent', 'selector': 'app-not-in-use-modal'},{'name': 'OHumidityComponent', 'selector': 'outside-humidity'},{'name': 'OTempComponent', 'selector': 'outside-temperature'},{'name': 'PresetsComponent', 'selector': 'presets'},{'name': 'StudentComponent', 'selector': 'app-student'},{'name': 'StudentsComponent', 'selector': 'app-students'},{'name': 'TemperatureComponent', 'selector': 'app-temperature'},{'name': 'VentComponent', 'selector': 'vent'}];
-    var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'DashboardComponent'};
-</script>
-<script src="../js/tree.js"></script>
 
 
 
 
 
-
-
-
-
-
-                   
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -445,22 +1309,8 @@ export class DashboardComponent {
     </div>
 </div>
 </div>
-               <!-- END CONTENT -->
            </div>
        </div>
-
-       <script>
-            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'DashboardComponent.html';
-            var MAX_SEARCH_RESULTS = 15;
-       </script>
-
-       <script src="../js/libs/custom-elements.min.js"></script>
-       <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
-       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
@@ -471,17 +1321,20 @@ export class DashboardComponent {
 
        <script src="../js/compodoc.js"></script>
 
-       <script src="../js/tabs.js"></script>
-       <script src="../js/menu.js"></script>
-       <script src="../js/libs/clipboard.min.js"></script>
-       <script src="../js/libs/prism.js"></script>
-       <script src="../js/sourceCode.js"></script>
-          <script src="../js/search/search.js"></script>
-          <script src="../js/search/lunr.min.js"></script>
-          <script src="../js/search/search-lunr.js"></script>
-          <script src="../js/search/search_index.js"></script>
-       <script src="../js/lazy-load-graphs.js"></script>
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
 
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/highlight.pack.js"></script>
+       <script src="../js/libs/highlightjs-line-numbers.min.js"></script>
+       <script src="../js/search/search_index.js"></script>
+       <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                hljs.initHighlightingOnLoad();
+                hljs.initLineNumbersOnLoad();
+            });
+       </script>
 
     </body>
 </html>
