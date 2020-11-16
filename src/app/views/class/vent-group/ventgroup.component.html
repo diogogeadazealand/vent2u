@@ -1,0 +1,9 @@
+<h2>Vents</h2>
+
+<div class="teacher-vent">
+    <button mat-raised-button>Teacher Vent</button>
+</div>
+
+<div class="ventsGrid">
+    <user-vent [vent]="vent" *ngFor="let vent of vents"></user-vent>
+</div>

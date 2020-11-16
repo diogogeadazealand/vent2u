@@ -1,0 +1,23 @@
+h2 {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.ventsGrid {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 15px;
+    grid-gap: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+user-vent {
+    display: inline-block;
+}
+
+.teacher-vent {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}

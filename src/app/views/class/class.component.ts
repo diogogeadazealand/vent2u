@@ -10,11 +10,14 @@ import { VentsService } from '../../shared/_services/Vents/vents.service';
 export class ClassComponent implements OnInit {
 students;
 vents;
+result:any[];
   constructor(private _StudentService:StudentsService, private _VentsService:VentsService) { }
 
   ngOnInit (): void {
     // Hardcoded ID until room is set by user
-    this.vents = this._VentsService.getFromRoom(2);
+    this._VentsService.getFromRoom(2).subscribe(data => {
+      this.vents = data;
+    });
     this.students = this._StudentService.getStudents();
   }
 }

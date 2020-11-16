@@ -1,0 +1,9 @@
+button {
+    font-size: 10px;
+    width: 100%;
+}
+
+button.claimed {
+    background-color: green;
+    color: #FFF;
+}
