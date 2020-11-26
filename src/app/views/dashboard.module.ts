@@ -12,10 +12,6 @@ import { DashboardComponent } from './dashboard.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { ClaimComponent } from './claim/claim.component';
-
-import { ClaimGridModule } from '../shared/_components/claim-grid/claim-grid.module'; 
-
 import { HeaderComponent } from '../shared/_components/Header/header.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { NavigationComponent } from '../shared/_components/Navigation/navigation.component';
