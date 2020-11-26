@@ -12,7 +12,6 @@ import { DashboardComponent } from './dashboard.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { MainComponent } from './main/main.component';
 import { ClaimComponent } from './claim/claim.component';
 
 import { ClaimGridModule } from '../shared/_components/claim-grid/claim-grid.module'; 
@@ -35,7 +34,6 @@ import { RoomsService } from '../shared/_services/rooms.service';
     HeaderComponent,
     NavigationComponent,
     // Pages
-    MainComponent,
     CelsiusPipe
   ],
   imports: [
