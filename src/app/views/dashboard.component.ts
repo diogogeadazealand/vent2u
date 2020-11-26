@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
   temperatureComponent = null;
   humidityComponent = null;
   presetsComponent = null;
-  ventControllComponent = null;
+  ventControllerComponent = null;
   claimComponent = null;
 
   constructor(
@@ -87,10 +87,6 @@ export class DashboardComponent implements OnInit {
     if (this.presetsComponent != undefined) {//updates interface
       this.presetsComponent.ScrollToIndex(this.vent.preset_id);
     }
-
-    if(preset != undefined){//updates database
-      this.updatePreset(preset);
-    }
   }
 
   public componentAdded(component) {
@@ -98,10 +94,10 @@ export class DashboardComponent implements OnInit {
     if(component != undefined){
         
       if(component.isVentController){
-        this.ventControllComponent = component;
-        this.ventControllComponent.vent = this.vent;
+        this.ventControllerComponent = component;
+        this.ventControllerComponent.vent = this.vent;
   
-        this.ventControllComponent.presetsLoadedEvent.subscribe( (component) => {
+        this.ventControllerComponent.presetsLoadedEvent.subscribe( (component) => {
             this.presetsComponent = component;
 
             if(this.vent.preset_id) {
@@ -111,11 +107,11 @@ export class DashboardComponent implements OnInit {
             this.presetsComponent.SetUser(this.user.ID);
         });
         
-          this.ventControllComponent.presetEvent.subscribe( preset => {
+          this.ventControllerComponent.presetEvent.subscribe( preset => {
             this.SetPreset(preset);
           });
 
-        this.ventControllComponent.componentAddedEvent.subscribe(component => {
+        this.ventControllerComponent.componentAddedEvent.subscribe(component => {
           this.updateComponents(component);
         });
       } else this.updateComponents(component);
@@ -171,26 +167,6 @@ export class DashboardComponent implements OnInit {
       this.UpdateUi();
     });
 
-  }
-
-  updatePreset(preset) {
-
-    if(this.vent.ID == undefined) return;
-
-    this.vent.humidity = preset.humidity;
-    this.vent.temperature = preset.temperature;
-    this.vent.preset_id = preset.ID;
-
-    this.SetTemperature();
-    this.SetHumidity();
-
-    this._ventService.update(this.vent).subscribe(
-      response => {
-        console.log("Preset changed");
-      },
-      error => {
-        console.log(error);
-      });
   }
 
     updateComponents(component){

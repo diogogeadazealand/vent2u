@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VentControllComponent } from './vent-controll.component';
+import { VentControllerComponent } from './vent-controller.component';
 
-describe('VentControllComponent', () => {
-  let component: VentControllComponent;
-  let fixture: ComponentFixture<VentControllComponent>;
+describe('VentControllerComponent', () => {
+  let component: VentControllerComponent;
+  let fixture: ComponentFixture<VentControllerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VentControllComponent ]
+      declarations: [ VentControllerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VentControllComponent);
+    fixture = TestBed.createComponent(VentControllerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -18,10 +18,9 @@ import { NavigationComponent } from '../shared/_components/Navigation/navigation
 
 // Pipelines
 import { CelsiusPipe } from '../celsius.pipe';
-import { VentControllModule } from './vent-controll/vent-controll.module';
+import { VentControllerModule } from './vent-controll/vent-controller.module';
 import { ClaimModule } from './claim/claim.module';
 import { RoomsService } from '../shared/_services/rooms.service';
-
 
 
 @NgModule({
@@ -39,7 +38,7 @@ import { RoomsService } from '../shared/_services/rooms.service';
     MatToolbarModule,
     MatMenuModule,
     ClaimModule,
-    VentControllModule
+    VentControllerModule
   ],
   providers: [RoomsService],
   exports: [

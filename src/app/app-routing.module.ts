@@ -22,14 +22,14 @@ import { HumidityComponent } from './views/humidity/humidity.component'; // Page
 import { ClaimComponent } from './views/claim/claim.component'; // Page Claiim
 import { TemperatureComponent } from './views/temperature/temperature.component'; // Page Temperature
 import { ClassComponent} from './views/class/class.component'; // Page Class
-import { VentControllComponent } from './views/vent-controll/vent-controll.component';
+import { VentControllerComponent } from './views/vent-controll/vent-controller.component';
 
 
 const routes: Routes = [
   { path: '', component: DashboardComponent,
     children: [
       { 
-        path: '', component: VentControllComponent,
+        path: '', component: VentControllerComponent,
         children: [
           { path: '', component: TemperatureComponent, },
           { path: 'humidity', component: HumidityComponent },

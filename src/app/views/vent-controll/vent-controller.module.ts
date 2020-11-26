@@ -6,13 +6,13 @@ import { MatIconModule } from '@angular/material/icon';
 // Pipelines
 import { TemperatureModule } from '../temperature/temperature.module';
 import { HumidityModule } from '../humidity/humidity.module';
-import { VentControllComponent } from './vent-controll.component';
+import { VentControllerComponent } from './vent-controller.component';
 
 
 
 @NgModule({
   declarations: [
-    VentControllComponent
+    VentControllerComponent
   ],
   imports: [
     CommonModule,
@@ -25,4 +25,4 @@ import { VentControllComponent } from './vent-controll.component';
   exports: [
   ]
 })
-export class VentControllModule { }
+export class VentControllerModule { }
