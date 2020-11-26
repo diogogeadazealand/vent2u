@@ -6,13 +6,9 @@ import {
 
 import { VentsService } from '../shared/_services/Vents/vents.service';
 import { UserMockService as UserService } from "../shared/_services/user-mock.service";
-import { PresetsService } from '../shared/_services/presets.service';
 
 import { User } from '../shared/_models/user.model';
 import { Vent } from '../shared/_models/vent.model';
-import { Preset } from '../shared/_models/preset.model';
-import { Room } from '../shared/_models/room.model';
-import { Classroom } from '../shared/_models/class.model';
 
 @Component({
   selector: 'app-dashboard',
