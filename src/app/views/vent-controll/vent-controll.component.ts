@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { Preset } from 'src/app/shared/_models/preset.model';
 import { Vent } from 'src/app/shared/_models/vent.model';
 
 @Component({
