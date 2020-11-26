@@ -6,7 +6,6 @@ import { MatIconModule } from '@angular/material/icon';
 // Pipelines
 import { TemperatureModule } from '../temperature/temperature.module';
 import { HumidityModule } from '../humidity/humidity.module';
-import { PresetsModule } from 'src/app/shared/_components/Presets/presets.module';
 import { VentControllComponent } from './vent-controll.component';
 
 
@@ -20,7 +19,6 @@ import { VentControllComponent } from './vent-controll.component';
     RouterModule,
     RouterModule,
     MatIconModule,
-    PresetsModule,
     TemperatureModule,
     HumidityModule
   ],

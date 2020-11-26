@@ -1,4 +1,9 @@
-<h2 *ngIf="vent.ID; else noneSelected" routerLink="claim" class='vent'>Vent {{vent.ID}} <mat-icon>apps</mat-icon> </h2>
-<ng-template #noneSelected><h2 class='vent none' routerLink="claim">No vent selected<mat-icon>apps</mat-icon> </h2></ng-template>
-<presets *ngIf="vent.ID != undefined" #presets (onLoad)="onPresetsLoaded($event)" (onPresetChanged)="onPresetChanged($event)"></presets>
+<h2 *ngIf="vent.ID; else noneSelected" routerLink="claim" class='vent'>Vent {{vent.ID}}
+    <mat-icon>apps</mat-icon>
+</h2>
+<ng-template #noneSelected>
+    <h2 class='vent none' routerLink="claim">No vent selected
+        <mat-icon>apps</mat-icon>
+    </h2>
+</ng-template>
 <router-outlet (activate)="componentAdded($event)"></router-outlet>
