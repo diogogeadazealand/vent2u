@@ -22,7 +22,7 @@ import { HumidityComponent } from './views/humidity/humidity.component'; // Page
 import { ClaimComponent } from './views/claim/claim.component'; // Page Claiim
 import { TemperatureComponent } from './views/temperature/temperature.component'; // Page Temperature
 import { ClassComponent} from './views/class/class.component'; // Page Class
-import { VentControllerComponent } from './views/vent-controll/vent-controller.component';
+import { VentControllerComponent } from './views/vent-controller/vent-controller.component';
 
 
 const routes: Routes = [

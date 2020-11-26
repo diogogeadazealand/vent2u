@@ -18,7 +18,7 @@ import { NavigationComponent } from '../shared/_components/Navigation/navigation
 
 // Pipelines
 import { CelsiusPipe } from '../celsius.pipe';
-import { VentControllerModule } from './vent-controll/vent-controller.module';
+import { VentControllerModule } from './vent-controller/vent-controller.module';
 import { ClaimModule } from './claim/claim.module';
 import { RoomsService } from '../shared/_services/rooms.service';
 

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, Input, ViewChild, OnInit } from '@angular/core'
+import { Component, EventEmitter, Output, Input, ViewChild } from '@angular/core'
 
 @Component({
     selector: 'app-temperature',
@@ -17,14 +17,13 @@ export class TemperatureComponent {
     }
 
     public scrollToTemperature(){
-  
         if(this.slider){
             this.slider.temperature = this.temperature;
             this.slider.scrollToTemperature();
         }
     }
 
-    onSliderLoaded(event){
+    onSliderLoaded(){
         if(this.temperature){
             this.slider.scrollToTemperature();
         }
